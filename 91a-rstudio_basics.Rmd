@@ -1,8 +1,34 @@
 # R and RStudio Basics {#rstudiobasics}
 
+## What is R? 
 
-- What is R? What is RStudio?
+In Chapter \@ref(whyR), I discussed many of the reasons why you should be doing your analyses (especially those of the data type) using R.  If you skipped over that chapter in the hopes of just hopping into learning about R, I request that you to go back to it and carefully read it over.  As you begin working with R, it is especially important to review that introductory chapter.
+
+### R beginnings
+
+R was created by a group of statisticians who wanted an open-source alternative to the costly proprietary options.  Being created by statisticians (instead of computer scientists) means that R has some quirky aspects to it that take a little bit of time to get used to.  We'll see that many packages have been developed to help with this and that you don't need to have advanced degrees in Statistics to be able to work with R now.
+
+Getting back to the development of R... R was created by **R**oss Ihaka and **R**obert Gentleman in New Zealand at the University of Auckland.  It is a spin-off of the S programming language and is named partly after the first names of its developers (as you can see in the emphasis above).  The beginning ideas for creating R came in 1992 and the first version of R was released in 1994. You can find much more about the background of R and its features as well as its connections to the S language on its [Wikipedia page](https://en.wikipedia.org/wiki/R_(programming_language)).
+
+### R packages
+
+I first learned to use R while a graduate student at Northern Arizona University from Philip Turk in 2007.  At the time, I never thought that R would have exploded in users as we have seen in the last few years before 2016.  I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.  In 2007, it was still largely a language used by statisticians to do analyses.  
+
+Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience.  So what has changed since 2007 about learning R?
+
+I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies.  Packages are created by users of R to increase the functionality of the base R installation.  Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler.  From the Wikipedia page referenced earlier, as of January 2016, there were around 7800 additional R packages available on common R repositories.^[You'll see how to download these packages via `install.packages("dplyr")` and load them into your current R working environment via `library("dplyr")`, for example, in Chapter \@ref(rmdanal).]
+
+Another great development is the graphical user interface called RStudio and the package developed by the those that work for RStudio, Inc. called `rmarkdown`.  We will discuss `rmarkdown` (also referred to as RMarkdown) in a Chapter \@ref(rmarkdown), and will now focus on discussing RStudio.
+
+## What is RStudio?
+
+
+## Installing R and RStudio
+
 - Installing R and RStudio directions with screenshots
+
+## Working in RStudio
+
 - Screenshots of RStudio frames?
 
 
