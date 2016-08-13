@@ -2,3 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+*.Rproj
+placeholder.html
+_book/*
+_bookdown_files/*
