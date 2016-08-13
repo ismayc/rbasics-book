@@ -1,0 +1,227 @@
+\documentclass[]{tufte-book}
+
+% ams
+\usepackage{amssymb,amsmath}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \makeatletter
+  \@ifpackageloaded{fontspec}{}{\usepackage{fontspec}}
+  \makeatother
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \makeatletter
+  \@ifpackageloaded{soul}{
+     \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
+     \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
+   }{}
+  \makeatother
+\fi
+
+% graphix
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+
+% booktabs
+\usepackage{booktabs}
+
+% url
+\usepackage{url}
+
+% hyperref
+\usepackage{hyperref}
+
+% units.
+\usepackage{units}
+
+
+\setcounter{secnumdepth}{2}
+
+% citations
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+% pandoc syntax highlighting
+
+% longtable
+\usepackage{longtable,booktabs}
+
+% multiplecol
+\usepackage{multicol}
+
+% strikeout
+\usepackage[normalem]{ulem}
+
+% morefloats
+\usepackage{morefloats}
+
+
+% tightlist macro required by pandoc >= 1.14
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% title / author / date
+\title{Getting used to R, RStudio, and RMarkdown}
+\author{Chester Ismay}
+\date{2016-08-13}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{framed,color}
+\definecolor{shadecolor}{RGB}{248,248,248}
+
+\ifxetex
+  \usepackage{letltxmacro}
+  \setlength{\XeTeXLinkMargin}{1pt}
+  \LetLtxMacro\SavedIncludeGraphics\includegraphics
+  \def\includegraphics#1#{% #1 catches optional stuff (star/opt. arg.)
+    \IncludeGraphicsAux{#1}%
+  }%
+  \newcommand*{\IncludeGraphicsAux}[2]{%
+    \XeTeXLinkBox{%
+      \SavedIncludeGraphics#1{#2}%
+    }%
+  }%
+\fi
+
+%% Need to clean up
+\newenvironment{rmdblock}[1]
+  {\begin{shaded*}
+  \begin{itemize}
+  \renewcommand{\labelitemi}{
+    \raisebox{-.7\height}[0pt][0pt]{
+  %    {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
+    }
+  }
+  \item
+  }
+  {
+  \end{itemize}
+  \end{shaded*}
+  }
+%% Probably can be omitted
+\newenvironment{rmdnote}
+  {\begin{rmdblock}{note}}
+  {\end{rmdblock}}
+\newenvironment{rmdcaution}
+  {\begin{rmdblock}{caution}}
+  {\end{rmdblock}}
+\newenvironment{rmdimportant}
+  {\begin{rmdblock}{important}}
+  {\end{rmdblock}}
+\newenvironment{rmdtip}
+  {\begin{rmdblock}{tip}}
+  {\end{rmdblock}}
+\newenvironment{rmdwarning}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+\newenvironment{learncheck}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+\newenvironment{review}
+  {\begin{rmdblock}{warning}}
+  {\end{rmdblock}}
+
+% To tweak tufte layout
+\geometry{
+  left=0.8in, % left margin
+  textwidth=35pc, % main text block
+  marginparsep=1pc, % gutter between main text block and margin notes
+  marginparwidth=8pc % width of margin notes
+}
+
+\begin{document}
+
+\maketitle
+
+
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+
+\chapter{Introduction}\label{intro}
+
+This book was written using the \textbf{bookdown} R package from Yihui
+Xie. You can find different formats for the book by clicking on the save
+icon in the top pane of this book. HTML is the preferred format but PDF
+and ePub formats are also available.
+
+This resource is designed to provide new users to R, RStudio, and
+RMarkdown with the introductory steps needed to begin their own
+reproducible research. Many screenshots and GIFs will be included, but
+if further clarification is needed, please create a GitHub issue or
+email
+\href{mailto:chester.ismay@gmail.com}{\nolinkurl{chester.ismay@gmail.com}}.
+
+\chapter{R and RStudio Basics}\label{rstudiobasics}
+
+\begin{itemize}
+\tightlist
+\item
+  What is R? What is RStudio?
+\item
+  Installing R and RStudio directions with screenshots
+\item
+  Screenshots of RStudio frames?
+\end{itemize}
+
+\textbf{Last updated:}
+
+\begin{verbatim}
+## [1] "Saturday, August 13, 2016 14:54:44 PDT"
+\end{verbatim}
+
+\chapter{R Markdown}\label{rmarkdown}
+
+\begin{itemize}
+\tightlist
+\item
+  Walk through the components of an R Markdown file
+\item
+  Resource for Markdown:
+  \url{https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet}
+\item
+  RMarkdown chunk options
+\item
+  Help -\textgreater{} Cheatsheets
+\end{itemize}
+
+\chapter{Introductory R analysis using R Markdown}\label{rmdanal}
+
+\begin{itemize}
+\tightlist
+\item
+  ``File organization and naming are powerful weapons against chaos.'' -
+  Jenny Bryan
+\item
+  Give an introduction into using R with periodic table dataset
+\item
+  Mean, median, standard deviation, five-number summary, distribution
+\item
+  Some content to cover:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    data structures (vectors, lists, data frames, matrices)
+  \item
+    indexing/subsetting
+  \item
+    functions (default arguments)
+  \item
+    Case matters in R!
+  \item
+    Why do some arguments require quotations and others don't?
+  \end{itemize}
+\end{itemize}
+
+\bibliography{bib/packages.bib,bib/books.bib,bib/articles.bib}
+
+
+
+\end{document}

@@ -1,0 +1,23 @@
+--- 
+title: "Getting used to R, RStudio, and RMarkdown"
+author: "Chester Ismay"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [bib/books.bib, bib/packages.bib, bib/articles.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: #rstudio/bookdown-demo
+description: "An introduction into using R, RStudio, and RMarkdown for new users"
+---
+
+```{r set-options, include=FALSE}
+options(width = 72)
+knitr::opts_chunk$set(tidy = FALSE)
+```
+
+# Introduction {#intro}
+
+This book was written using the **bookdown** R package from Yihui Xie.  You can find different formats for the book by clicking on the save icon in the top pane of this book.  HTML is the preferred format but PDF and ePub formats are also available.
+
+This resource is designed to provide new users to R, RStudio, and RMarkdown with the introductory steps needed to begin their own reproducible research.  Many screenshots and GIFs will be included, but if further clarification is needed, please create a GitHub issue or email <chester.ismay@gmail.com>.

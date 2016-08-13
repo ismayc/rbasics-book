@@ -1,0 +1,11 @@
+# Introductory R analysis using R Markdown {#rmdanal}
+
+- "File organization and naming are powerful weapons against chaos." - Jenny Bryan
+- Give an introduction into using R with periodic table dataset
+- Mean, median, standard deviation, five-number summary, distribution
+- Some content to cover:
+    + data structures (vectors, lists, data frames, matrices)
+    + indexing/subsetting
+    + functions (default arguments)
+    + Case matters in R!
+    + Why do some arguments require quotations and others don't?

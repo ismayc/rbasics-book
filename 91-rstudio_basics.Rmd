@@ -1,0 +1,12 @@
+# R and RStudio Basics {#rstudiobasics}
+
+- What is R? What is RStudio?
+- Installing R and RStudio directions with screenshots
+- Screenshots of RStudio frames?
+
+
+**Last updated:**
+
+```{r time_app1, echo=FALSE}
+format(Sys.time(), "%A, %B %d, %Y %X %Z")
+```
