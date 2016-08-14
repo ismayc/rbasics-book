@@ -18,6 +18,7 @@ knitr::opts_chunk$set(tidy = FALSE)
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown','ggplot2'
 ), 'bib/packages.bib')
+if(file.exists("rbasics.Rmd")) file.remove("rbasics.Rmd")
 ```
 
 
@@ -25,4 +26,6 @@ knitr::write_bib(c(
 
 This book was written using the **bookdown** R package from Yihui Xie.  You can find different formats for the book by clicking on the save icon `r knitr::include_graphics("screenshots/save_icon.png")` in the top pane of this book website.  HTML is the preferred format but PDF and ePub formats are also available.
 
-This resource is designed to provide new users to R, RStudio, and RMarkdown with the introductory steps needed to begin their own reproducible research.  Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.
+This resource is designed to provide new users to R, RStudio, and RMarkdown with the introductory steps needed to begin their own reproducible research.  A review of many of the common R errors encountered (and what they mean in laymen's terms) is also provided. Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.
+
+This book will evolve and be updated as needed based on feedbackS.  Check the date at the beginning of this chapter to see when it was last updated.  In addition, each individual chapter shows the time of last update.

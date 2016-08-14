@@ -2,7 +2,7 @@
 
 ## What is R? 
 
-In Chapter \@ref(whyR), I discussed many of the reasons why you should be doing your analyses (especially those of the data type) using R.  If you skipped over that chapter in the hopes of just hopping into learning about R, I request that you to go back to it and carefully read it over.  As you begin working with R, it is especially important to review that introductory chapter.
+In Chapter \@ref(whyR), I discussed many of the reasons why you should be doing your analyses (especially those of the data type) using R.  If you skipped over that chapter in the hopes of just hopping into learning about R, I request that you to go back to it and carefully read it over.  As you begin working with R, it is especially important to review that introductory chapter from time to time.
 
 ### R beginnings
 
@@ -12,9 +12,9 @@ Getting back to the development of R... R was created by **R**oss Ihaka and **R*
 
 ### R packages
 
-I first learned to use R while a graduate student at Northern Arizona University from Philip Turk in 2007.  At the time, I never thought that R would have exploded in users as we have seen in the last few years before 2016.  I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.  In 2007, it was still largely a language used by statisticians to do analyses.  
+I first learned to use R while a graduate student at Northern Arizona University from [Dr. Philip Turk](http://www.stat.colostate.edu/~pturk/) in 2007.  At the time, I never thought that R could have exploded in users as we have seen since 2011.  I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.  
 
-Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience.  So what has changed since 2007 about learning R?
+In 2007, it was still largely esoteric and tricky language used by statisticians to do analyses.  Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience.  So what has changed since 2007 about learning R?
 
 I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies.  Packages are created by users of R to increase the functionality of the base R installation.  Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler.  From the Wikipedia page referenced earlier, as of January 2016, there were around 7800 additional R packages available on common R repositories.^[You'll see how to download these packages via `install.packages("dplyr")` and load them into your current R working environment via `library("dplyr")`, for example, in Chapter \@ref(rmdanal).]
 
@@ -22,18 +22,29 @@ Another great development is the graphical user interface called RStudio and the
 
 ## What is RStudio?
 
+RStudio is a powerful, free, open-source integrated development environment for R.  It began development in 2010 and its first beta release came in February 2011.  It is available in two editions:  RStudio Desktop and RStudio Server.  This book will focus mostly on using the RStudio Server, but both versions are nearly identical to work with.  
 
-## Installing R and RStudio
+You can find instructions linked below for downloading R and RStudio on Windows and Mac machines.  If you are using RStudio Server, your professor and members of your organization's IT department have done these steps for you.  On the RStudio Server you log on using a web browser to an account sitting on the cloud.  There are many advantages to using the RStudio Server for the beginning user including sharing of R projects to help with feedback and error resolution.  Installation of software can also cause its own headaches and this is eliminated by using the RStudio Server.
 
-- Installing R and RStudio directions with screenshots
+After you complete a few months of work with the RStudio Server, it is recommended that you download RStudio Desktop to your computer.  The instructions to do so are below.
 
-## Working in RStudio
+### Installing R and RStudio Desktop
 
+A step-by-step guide to installing R and RStudio Desktop with screenshots can be found
+
+- [here](http://www.reed.edu/data-at-reed/software/R/r_studio.html) for the Mac and
+- [here](http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html) for a PC.
+
+Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX) you can skip some of the later steps of the installation.  It is recommended that you select **HTML** as the Default Output Format for RMarkdown.  You'll see more about this in Chapter \@ref(rmarkdown).
+
+## Working in RStudio Server
+
+- RStudio Server
 - Screenshots of RStudio frames?
 
 
 **Last updated:**
 
-```{r time_app1a, echo=FALSE}
-format(Sys.time(), "%A, %B %d, %Y %X %Z")
+```{r time_rstudio, echo=FALSE}
+paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
 ```

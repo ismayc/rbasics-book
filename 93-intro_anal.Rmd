@@ -1,5 +1,6 @@
 # Introductory R analysis using R Markdown {#rmdanal}
 
+- A beginning workflow
 - "File organization and naming are powerful weapons against chaos." - Jenny Bryan
 - Give an introduction into using R with periodic table dataset
 - Mean, median, standard deviation, five-number summary, distribution
@@ -9,3 +10,11 @@
     + functions (default arguments)
     + Case matters in R!
     + Why do some arguments require quotations and others don't?
+- R Markdown templates
+
+
+**Last updated:**
+
+```{r time_rmdanal, echo=FALSE}
+paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
+```

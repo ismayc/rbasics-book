@@ -4,3 +4,10 @@
  - Resource for Markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - RMarkdown chunk options
 - Help -> Cheatsheets
+
+
+**Last updated:**
+
+```{r time_rmd, echo=FALSE}
+paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
+```
