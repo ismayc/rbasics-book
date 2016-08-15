@@ -5,16 +5,19 @@
 
 ## Using R with periodic table dataset
 
+- The `library` function
+
 ## Mean, median, standard deviation, five-number summary, distribution
 
 ## Additional content to cover
 
-    + data structures (vectors, lists, data frames, matrices)
-    + indexing/subsetting
-    + functions (default arguments)
-    + Case matters in R!
-    + Why do some arguments require quotations and others don't?
-    
++ data structures (vectors, lists, data frames, matrices)
++ Vectorized operations
++ indexing/subsetting
++ functions (default arguments)
++ Case matters in R!
++ Why do some arguments require quotations and others don't?
+
 ## R Markdown templates
 
 

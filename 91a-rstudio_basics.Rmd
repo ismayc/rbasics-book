@@ -63,7 +63,7 @@ knitr::include_graphics("screenshots/desktop_initial.png")
 
 As you can see they are almost identical.  This makes working between the two different RStudio set-ups painless.  A discussion of what each of the three different RStudio panes (will soon be four panes) and their corresponding tabs will occur in Chapter \@ref(rmarkdown).  You'll find that a lot of what follows also applies to RStudio Desktop (except for the Shared Projects feature), but it always recommended to create an RStudio project regardless of whether you are on the cloud or working locally.
 
-### Basic workflow
+### Basic Workflow with RStudio
 
 A good habit to get into whenever you start a new project with R code is to create a new RStudio project to go along with it.  RStudio project files have the extension `.Rproj` and store metadata that goes along with the documents you've saved and information about the R environment you are working in. More information about RStudio projects is available from RStudio, Inc. [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
@@ -75,7 +75,11 @@ The GIF below shows you how to create a new RStudio project called `initial` and
 knitr::include_graphics("gifs/proj_rmd.gif")
 ```
 
-Now that we have our **first_rmarkdown.Rmd** file set up.  You will an example of how to share this project with another user.  This will enable you and collaborators (other students, your instructor, etc.) to work on the **Rmd** file at the same time.  This is similar to working on a Google Doc at the same time as someone else.
+We have our **first_rmarkdown.Rmd** file set up.  
+
+### Sharing Projects on RStudio Server Pro
+
+You will now see an example of how to share this project with another user.  This will enable you and collaborators (other students, your instructor, etc.) to work on the **Rmd** file at the same time.  This is similar to working on a Google Doc at the same time as someone else.
 
 RStudio Server comes in a couple different formats and you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature.  You can find more information from RStudio, Inc. on this [here](https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro).  Below is an example GIF of sharing this **initial.Rproj** project file with another user of the RStudio Server.
 

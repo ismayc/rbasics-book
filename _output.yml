@@ -3,6 +3,8 @@ bookdown::gitbook:
   split_by: "chapter+number"
   config:
     toc:
+      collapse: section
+      scroll_highlight: true
       before: |
         <li><a href="./"></a></li>
       after: |
