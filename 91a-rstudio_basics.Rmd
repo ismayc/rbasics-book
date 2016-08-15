@@ -107,7 +107,6 @@ It may not be clear what these additions are really doing just yet.  You'll be p
 
 The next pane includes by default an **Environment** tab and a **History** tab.  To get a sense of what these tabs provide we'll need to also use the bottom left pane and the **Console** tab.  I'll show you how to create multiple objects in R using the **Console**.  Initially you will see that the **Environment** tab tells us that the "Environment is empty."  If you click on the **History** tab, you should also see a blank screen with a few icons.  We won't go over using all of these buttons here, but you are encouraged to hover over them and click on them to get a sense for what they do.  As I enter code into the **Console** watch to see how the **Environment** and **History** tabs change.
 
-
 ```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input"}
 knitr::include_graphics("gifs/env_history.gif")
 ```
@@ -140,6 +139,8 @@ knitr::include_graphics("gifs/naming_objects.gif")
 ```
 
 You may have notice that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error.  It won't catch all errors, but this can be helpful.  Not also that `Name`, `name`, and `nAme` refer to three different values.
+
+Another thing to notice is that you can store numbers into an object with a given name like we did earlier with `num1`.  If we'd like to store a character string such as "Chester", we can provide the name of the object on the left-hand-side of `<-` and the string in quotation marks on the right-hand-side of `<-`.  There are more complex object types that you will see in Chapter \@ref(rmdanal), but it is always important to think about the difference between a number and a character in R.
 
 It's also a good idea to not call objects the names of functions that are built into R.  You may want to call the addition of two numbers `sum` and R will allow this, but it is **HIGHLY** recommended that you create more descriptive names and not choose to name objects the same as common R functions.  Something like `sum_densities` is better and less likely to be the name of a function.
 
