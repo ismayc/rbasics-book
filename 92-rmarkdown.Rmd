@@ -1,5 +1,11 @@
 # R Markdown {#rmarkdown}
 
+```{r include=FALSE}
+# Not sure why alignment was shifted back to left?
+knitr::opts_chunk$set(tidy = FALSE, fig.align = "center")
+```
+
+
 R Markdown provides an easy way to produce a rich, fully-documented reproducible analysis.  It allows its user to share a single file that contains all of the commentary, R code, and metadata needed to reproduce the analysis from beginning to end.  R Markdown allows for chunks of R code to be included along with Markdown text to produce a nicely formatted HTML, PDF, or Word file without having to know any HTML or $\LaTeX$ code or have to fuss with getting the formatting just right in a Microsoft Word DOCX file.  
 
 One R Markdown file can generate a variety of different formats and all of this is done in a single text file with a few bits of formatting.  I think you'll be pleasantly surprised at how easy it is to write an R Markdown document after your first few encounters. 
