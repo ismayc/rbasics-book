@@ -57,7 +57,7 @@ As you can see above, you can create a lot of different sized headers by simply 
 
 ### Emphasis
 
-Whenever you see a hashtag in the text of your R Markdown document, you now know that this will correspond to bolded larger text^[Unless you want to have a fourth, fifth, or sixth level header, but these are not common.] that denotes the start of a section of your document.  
+Whenever you see a hash-tag in the text of your R Markdown document, you now know that this will correspond to bolded larger text^[Unless you want to have a fourth, fifth, or sixth level header, but these are not common.] that denotes the start of a section of your document.  
 
 This is one of the nice features of R Markdown.  You can simply look at the plain text and know what it will produce in the knitted document.  We can also add different styles of emphasis to words, phrases, or sentences by surrounding them in matching symbols.  Below are some examples.
 
@@ -83,7 +83,9 @@ The GIF below shows the process of creating both ordered and unordered lists.
 knitr::include_graphics("gifs/lists.gif")
 ```
 
-Note that only numbers are needed as we saw by numbering "Warm up food" with a "1."  We can also combine unordered and ordered lists by indenting the text two spaces.  This text produces the output that immediately follows.
+Note that only numbers are needed as we saw by numbering "Warm up food" with a "1."  We can also combine unordered and ordered lists by indenting the text two spaces.  
+
+In many of the examples that follow, you will see the actual text you'd type into your R Markdown document highlighted with a gray background and also the results of that text immediately below it.
 
 ```markdown
 1. Wake up
@@ -92,11 +94,13 @@ Note that only numbers are needed as we saw by numbering "Warm up food" with a "
   - Open kitchen door
   - Get plate out of cupboard
 2. Make coffee
-  1. Warm up water
-  2. Grind beans
+  i. Warm up water
+  ii. Grind beans
 3. Make breakfast
 
-  We can have a paragraph (or two) here describing how we could go about making breakfast.  If we indent the paragraph a few spaces and create a newline, it will indent below the item.
+  We can have a paragraph (or two) here describing how we could go about making
+  breakfast.  If we indent the paragraph a few spaces and create a newline, it 
+  will indent below the item.
 ```
 1. Wake up
     - Get out of bed
@@ -108,35 +112,166 @@ Note that only numbers are needed as we saw by numbering "Warm up food" with a "
     ii. Grind beans
 3. Make breakfast
 
-  We can have a paragraph (or two) here describing how we could go about making breakfast.  If we indent the paragraph a few spaces it will indent below the item.
+    We can have a paragraph (or two) here describing how we could go about making breakfast.  If we indent the paragraph a few spaces it will indent below the item.
 
 ### Miscellaneous Markdown
 
-- Line breaks
+**Line breaks / white spacing**
 
-- Horizontal rules
+Line breaks in combination with white space are incredibly important pieces in Markdown.  They frequently denote the start of a new paragraph.
 
-- Blockquotes
+```markdown
+Here is an example of text with only a line break.
+You may expect this line to appear in a new paragraph but it doesn't.
+```
 
-- Commenting Text
+Here is an example of text with only a line break.
+You may expect this line to appear in a new paragraph but it doesn't.
+
+In order to start a new paragraph, you'll need to be sure that white space exists between the two paragraphs:
+
+```markdown
+Here is an example of text with a line break and white space.
+
+You may expect this line to appear in a new paragraph and it does.
+```
+
+Here is an example of text with a line break and white space.
+
+You may expect this line to appear in a new paragraph and it does.
+
+**Horizontal rules**
+
+Another useful way to divide up different parts of your analysis is by including horizontal lines.  These can be easily adding by placing three asterisks next to each other (or three hyphens):
+
+```markdown
+***
+```
+
+***
+
+```markdown
+---
+```
+
+---
+
+**Blockquotes**
+
+If you'd like to quote someone or produce an indented text block, you can easily do so by adding a `>` before the passage:
+
+```markdown
+> Reproducible research is the idea that data analyses, and more generally, 
+scientific claims, are published with their data and software code so that
+others may verify the findings and build upon them. - Roger Peng
+```
+> Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. - Roger Peng
+
+**Commenting Text**
+
+There are times where you might want to comment out text inside an R Markdown document.  Say you wrote something that you don't really want in the resulting knitted document, but you aren't quite sure if you should delete it completely.  To do so you'll just need to enclose the block of text in `<!-- -->` as seen below:
+
+```markdown
+<!--
+I'd like to save this text for later and don't want to delete it yet.
+-->
+```
+
+<!--
+I'd like to save this text for later and don't want to delete it yet.
+-->
+
+You won't see the commented out results here in the book.
+
+**Equations**
+
+If you'd like nice mathematical formulas in your document, you can add them between two dollar signs:
+
+```markdown
+$y = mx + b$
+```
+
+$y = mx + b$
 
 ### R Chunks
 
+It took us a bit to get to what I believe is the best part about R Markdown: the addition of R code into the document and a compilation of that code in the resulting knitted document. You've seen some R chunks in the R Markdown file already.  There are some properties to get used to about them:
+
+- They always begin and end with three backticks ` ``` `.
+- After the initial three backticks, you'll see R chunks begin with `{r`, potentially some names and other chunk options, and then close that first line with a `}`.
+- The lines wrapped inside the beginning and closing three backticks is R code that you could run in the R Console.  
+
+Note that spaces in front of these backticks will produce 
+
+Let's explore an example of recognizing and creating our own R chunks in our **first_rmarkdown.Rmd** file:
+
+```{r rchunks, echo=FALSE, fig.cap="Creating and identifying R chunks"}
+knitr::include_graphics("gifs/rchunks.gif")
+```
+
+This example introduces you to two different ways to create a vector of values.  You'll see further discussion of this in Chapter \@ref(rmdanal).  You can see that the code is automatically run when we pressed the **Knit HTML** button with its output in the knitted file.  
+
+**Important note**: Any other potential R chunks after this chunk will have access to the three variables created here:  `count20`, `count100_by_5`, and `prod`.  Any chunks before the `mult_vectors` named chunk **_WILL NOT_** have access to these variables yet.  You can read the document like a book, so it is important to add objects and work with them in appropriate order.  You'll receive errors from R if you don't.
+
 ### Inline R code
+
+We've seen that we can add R code and have that run in an R chunk of code enclosed by three backticks.  We may want to do a simple calculation on the fly inside of the text of our document though.
+
+```{r inliner, echo=FALSE, fig.cap="R code running in the text"}
+knitr::include_graphics("gifs/inliner.gif")
+```
+
+Another crafty approach is to have the text produced in our document to automatically update based on the results of R code.  To see an example of this, we will select a number at random from our `count20` vector.  If it is greater than or equal to 10, we will say so.  If it isn't, we will say so.
+
+```{r inliner2, echo=FALSE, fig.cap="Update text corresponding to R value"}
+knitr::include_graphics("gifs/inliner2.gif")
+```
+
+You also see that an error was made in that I didn't include the third argument to `ifelse` in quotation marks.  When I fixed the code and pressed **Knit HTML** again the error went away.
 
 ### Code Highlighting
 
+As you see in the previous example, it is a good habit to highlight the names of your R objects to distinguish them from the usual text.  This can be done by enclosing the word in a single backtick such as what we did with `one_value`.
+
 ## R Markdown Chunk Options
+
+The most common R chunk options you'll likely work with are `echo`, `eval`, and `include`.  By default, all three of these options are set to `TRUE`.
+
+- `echo` dictates whether the code that produces the result should be printed before the corresponding R output
+
+- `eval` specifies whether the code should be evaluated or just displayed without its output
+
+- `include` specifies whether the code AND its output should be included in the resulting knitted document.  If it is set to `FALSE` the code is run but no remnant of the code or its output will be in the resulting document.
+
+```{r chunkops, echo=FALSE, fig.cap="Common R chunk options"}
+knitr::include_graphics("gifs/chunkops.gif")
+```
+
+Since we specified that `eval=FALSE` and that was where we declared the `one_value` variable we now obtain an error.  You can also include multiple chunk options by separating them by a comma.
+
+```{r chunkops2, echo=FALSE, fig.cap="Common R chunk options - Part 2"}
+knitr::include_graphics("gifs/chunkops2.gif")
+```
+
 
 ## General Guidelines for Writing R Markdown Files
 
-White space is your friend.
+White space is your friend.  You should always include a blank white space between R chunks and your Markdown text.  It makes your document much more readable and can reduce some potential errors.  Also, leave a line of white space between header text and your paragraphs.
 
-Commentary is always good.  Explain yourself and your ideas whenever you can.
+Commentary is always good.  Explain yourself and your ideas whenever you can.  Remember that your greatest collaborator is likely yourself a few months down the road.  Be nice to yourself and explain what you are doing so that you can remember!
 
-Remember that the Console and R Markdown environments (when Knitting) don't interact with each other.  This forces you to include the code that produces exactly the results you want to share with others.  Don't 
+Remember that the Console and R Markdown environments (when Knitting) don't interact with each other.  This forces you to include only the code in your R chunks that produces exactly the results you want to share with others.  Don't inflate your document with extra output.  You need to be concise and clear in exactly what you are doing.
+
+The chunk options can really beautify your documents and customize them exactly to what you'd like the reader of your documents to see.  You can find more information on all of the available R chunk options [here](http://yihui.name/knitr/options/).
 
 ## Help -> Cheatsheets
+
+RStudio includes really nice cheatsheets that can act as great references to many of the common tasks you will do inside of RStudio.  You can get nice PDF versions of the files by going to **Help -> Cheatsheets** inside RStudio.
+
+```{r cheatsheets, echo=FALSE, fig.cap="RStudio Cheatsheets Screenshot"}
+knitr::include_graphics("screenshots/cheatsheets.png")
+```
+
 
 <!--
 **Exercises**
