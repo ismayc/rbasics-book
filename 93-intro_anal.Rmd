@@ -1,4 +1,4 @@
-# Introductory R analysis using R Markdown {#rmdanal}
+# Introductory R Analysis using R Markdown {#rmdanal}
 
 - A beginning workflow
 - "File organization and naming are powerful weapons against chaos." - Jenny Bryan

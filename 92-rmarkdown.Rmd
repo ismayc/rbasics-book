@@ -2,7 +2,7 @@
 
 - Walk through the components of an R Markdown file
  - Resource for Markdown: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-- RMarkdown chunk options
+- R Markdown chunk options
 - Help -> Cheatsheets
 
 

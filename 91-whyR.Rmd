@@ -18,7 +18,7 @@ There are lots of answers to this question, but some of the most important for u
     
 3. Using R makes collaboration easier.
 
-    This also helps you with collaboration since, as you will see later, you can share an RMarkdown file containing all of your analysis, documentation, commentary, and the code to others.  This reduces the time to needed to work with others and reduces the likelihood of errors being made in following along with point-and-click analyses.   The mantra here will be to **Say No to Copy-And-Paste!** both for your sanity and for the sake of science.
+    This also helps you with collaboration since, as you will see later, you can share an R Markdown file containing all of your analysis, documentation, commentary, and the code to others.  This reduces the time to needed to work with others and reduces the likelihood of errors being made in following along with point-and-click analyses.   The mantra here will be to **Say No to Copy-And-Paste!** both for your sanity and for the sake of science.
     
 4. Finding answers to questions is much simpler.
 
