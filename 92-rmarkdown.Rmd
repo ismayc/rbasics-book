@@ -285,9 +285,3 @@ knitr::include_graphics("screenshots/cheatsheets.png")
 - Create R Markdown files to produce the HTML files in the screenshots below.
 
 -->
-
-**Last updated:**
-
-```{r time_rmd, echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```

@@ -181,9 +181,3 @@ You'll also notice a **Description** of the package as well as the **Version** n
 **Help**
 
 We also saw an example of using the **Help** tab when we invoked the `?` function. This will show you documentation on R functions, datasets, and packages.  If you see code that you aren't really sure about, it is often a good go-to to enter a question mark followed by the name and see if the built-in documentation can help you out.
-
-**Last updated:**
-
-```{r time_rstudio, echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```

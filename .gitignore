@@ -3,6 +3,7 @@
 .RData
 .Ruserdata
 *.Rproj
+.DS_Store
 placeholder.html
 _book/*
 _bookdown_files/*

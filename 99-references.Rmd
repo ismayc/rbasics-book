@@ -1,1 +1,15 @@
 `r if (knitr:::is_html_output()) '# References'`
+
+```{r include=FALSE}
+files <- list.files("/Users/Chester/Google Drive/Resources/rbasics/_book/",
+           all.files = TRUE,
+           full.names = TRUE,
+           include.dirs = TRUE)
+file.copy(from = files, 
+        # to = "/Users/Chester/Desktop/temp",
+          to = "/Users/Chester/Google Drive/Resources/rbasics-book", 
+          overwrite = TRUE, 
+          recursive = TRUE, 
+          copy.mode = TRUE)
+```
+

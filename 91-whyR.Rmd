@@ -33,9 +33,3 @@ There are lots of answers to this question, but some of the most important for u
     One unfortunate thing that we frequently take for granted is that our brain tricks us into picking the easy route.  If you truly want to learn how to do something (like programming with R), you'll need to feel frustrated at times.  Any time you learn something you've been frustrated.  (We tend to forget all the frustration and only think about where we currently are.)  R still frustrates me from time to time, but I grow through practice and I look forward to the challenges.  Hadley Wickham encapsulated this phenomenon nicely in the Prologue of the book "Hands-On Programming with R" [@handson2014]:
     
     > As you learn to program, you are going to get frustrated. You are learning a new language, and it will take time to become fluent. But frustration is not just natural, it’s actually a positive sign that you should watch for. Frustration is your brain’s way of being lazy; it’s trying to get you to quit and go do something easy or fun. If you want to get physically fitter, you need to push your body even though it complains. If you want to get better at programming, you’ll need to push your brain. Recognize when you get frustrated and see it as a good thing: you’re now stretching yourself. Push yourself a little further every day, and you’ll soon be a confident programmer.
-
-**Last updated:**
-
-```{r time_whyR, echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```

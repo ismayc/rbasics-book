@@ -3,10 +3,3 @@
 https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md
 
 http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html
-
-
-**Last updated:**
-
-```{r time_errors, echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```

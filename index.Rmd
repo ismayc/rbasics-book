@@ -31,3 +31,10 @@ In the HTML version of this book, you can find different formats for the book by
 This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research.  A review of many of the common R errors encountered (and what they mean in laymen's terms) is also provided. Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.  Push requests for typos or improvements are also welcome.
 
 This book will evolve and be updated as needed based on feedback.  Check the date at the beginning of this chapter to see when the book was last updated.  In addition, each individual chapter shows the time of last update.
+
+
+**Book was last updated:**
+
+```{r time_whyR, echo=FALSE}
+paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
+```
