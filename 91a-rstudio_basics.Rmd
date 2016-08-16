@@ -142,7 +142,7 @@ Another important property of R is that is case-sensitive.  You'll see what this
 knitr::include_graphics("gifs/naming_objects.gif")
 ```
 
-You may have notice that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error.  It won't catch all errors, but this can be helpful.  Not also that `Name`, `name`, and `nAme` refer to three different values.
+You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error.  It won't catch all errors, but this can be helpful.  Not also that `Name`, `name`, and `nAme` refer to three different values.
 
 Another thing to notice is that you can store numbers into an object with a given name like we did earlier with `num1`.  If we'd like to store a character string such as "Chester", we can provide the name of the object on the left-hand-side of `<-` and the string in quotation marks on the right-hand-side of `<-`.  There are more complex object types that you will see in Chapter \@ref(rmdanal), but it is always important to think about the difference between a number and a character in R.
 

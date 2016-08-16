@@ -1,6 +1,6 @@
 # R Analysis using R Markdown {#rmdanal}
 
-In this chapter, you'll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R.  You'll be working with a common dataset derived from something that you likely have encounted before:  the periodic table from chemistry.
+In this chapter, you'll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R.  You'll be working with a common dataset derived from something that you likely have encountered before:  the periodic table from chemistry.
 
 ## A beginning workflow
 
