@@ -1,5 +1,9 @@
 # Deciphering Common R Errors {#errors}
 
+This chapter will be updated with GIFs as common errors are reported to me throughout the year.
+
+For references on errors and some solutions in the meantime, check out the following two links by Noam Ross and David Smith:
+
 https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md
 
 http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html

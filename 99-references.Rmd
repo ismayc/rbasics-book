@@ -1,4 +1,4 @@
-`r if (knitr:::is_html_output()) '# References'`
+`r if(knitr:::is_html_output()) '# References'`
 
 ```{r include=FALSE}
 files <- list.files("/Users/Chester/Google Drive/Resources/rbasics/_book/",

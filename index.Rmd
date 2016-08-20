@@ -35,6 +35,6 @@ This book will evolve and be updated as needed based on feedback.  You can alway
 
 **Book was last updated:**
 
-```{r time_whyR, echo=FALSE}
+```{r echo=FALSE}
 paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
 ```

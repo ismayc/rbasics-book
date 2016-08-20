@@ -99,7 +99,7 @@ You may be initially a little overwhelmed by all the different panes and tabs th
 
 Likely the pane where you will spend a majority of your time is in the top left.  When you first login this pane isn't there, but it was created when we made the **first_rmarkdown.Rmd**.  This pane serves as a place to view the contents of files and objects in R.  In the GIF below, you can see that we can change the text in this file and then save the file.  
 
-Note that the tab that gives the filename will change its color from black to <font color="red">red</font> and an asterisk will appear after the filename.  This is to remind you that the file is not saved.  You'll need to get into the habit of saving files frequently. You can have multiple tabs open and view different files in this pane.  You'll also see that you can `View` datasets in this pane in Chapter \@ref(markdown).
+Note that the tab that gives the filename will change its color from black to <font color="red">red</font> and an asterisk will appear after the filename.  This is to remind you that the file is not saved.  You'll need to get into the habit of saving files frequently. You can have multiple tabs open and view different files in this pane.  You'll also see that you can `View` datasets in this pane in Chapter \@ref(rmarkdown).
 
 ```{r codeeditor, echo=FALSE, fig.cap="Editing an R Markdown file in RStudio"}
 knitr::include_graphics("gifs/top_left_pane.gif")

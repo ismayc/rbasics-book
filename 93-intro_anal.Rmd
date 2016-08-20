@@ -2,30 +2,111 @@
 
 In this chapter, you'll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R.  You'll be working with a common dataset derived from something that you likely have encountered before:  the periodic table from chemistry.
 
-## A beginning workflow
+## A beginning directory/file workflow
 
-- "File organization and naming are powerful weapons against chaos." - Jenny Bryan
+> "File organization and naming are powerful weapons against chaos." - Jenny Bryan
+
+Something that is not frequently discussed when working with files and programming languages like R is the importance of naming your files something relevantly and having organization of your files in folders.  You may be tempted to call a file `analysis.Rmd` but what happens when you need to change your analysis months from now and you've named many files for many different projects `analysis.Rmd` in many different folders.  It's much better to give your future self a break and commit to concise naming strategies.
+
+You can choose a variety of ways to name files.  These guidelines are what I try to follow:
+
+1. Group similar style files into the same folder whenever possible.
+
+    Try not to have one folder that contains all of the different types of files you are working with.  It is much easier to find what you are looking for if you put all of your `data` files in a `data` folder, all of your `figure` files in a `figure` folder, and so on.
+
+    This rule can be broken if you only have one or two of each type.  It can be the case that too many folders can waste your time when a useful search for the appropriate file may be able to find your find faster than digging through a complex hierarchy of directories.
+
+2. Name your files consistently so that what the file contains can be easily identified from the name of your file, but be concise.
+
+    Seeing `test1.Rmd` and `test2.Rmd` doesn't tell us much about what is actually in the files.  It's OK to create a temporary file or two if you don't think you will be using it going forward, but you should be in the habit of reviewing your work at the end of your session and naming files that we needed appropriately.  Something like `model_fit_sodium.Rmd` is so much better in the long-run.  Remember to think about your future self whenever you can, especially with programming.  Be nice to yourself so that future self really appreciates past self.
+
+3. Use an underscore to separate elements of the file name.
+
+    The underscore `_` produces a visually appealing way for us to realize there is a separation between content.  You may be tempted to just use a space, but spaces cause problems in R and in other programming languages.  Some folks prefer to just change the case of the first letter of the word to bring attention.  Here are a few examples of file names.  You can be the judge as to what is most appealing to you:
+
+    `barplot_weight_height.Rmd` vs `barplotWeightHeight.Rmd` vs (the worst) `barplotweightheight.Rmd`
+
+    Whatever you choose for style, be consistent and think about other users as you name your files.  If you were passed a smorgasbord of files that is a mess to deal with and hard to understand, you wouldn't like it, right?  Don't be that person to someone else (or yourself)!
 
 ## Using R with periodic table dataset
 
-- The `library` function
+We now hop into the basics of working with a dataset in R.  We will also explore the ways R stores data in **objects**, how to access specific elements in those objects, and also how to use **functions**, which are one of the most useful pieces of R to help with organization and clean code.
+
+### Loading data from a file
+
+One of the most common ways you'll want to work with data is by importing it from a file.  A common file format that works nicely with R is the CSV (comma-seperated values) file.  The following R commands first download the CSV file from the internet on my webpage into the `periodic-table-data.csv` file on your computer, then reads in the CSV stored, and then gives the name `periodic_table` to the data frame that stores these values in R:
+
+```{r load_elements}
+download.file(url = "http://ismayc.github.io/periodic-table-data.csv", 
+  destfile = "periodic-table-data.csv")
+periodic_table <- read.csv("periodic-table-data.csv", 
+  stringsAsFactors = FALSE)
+```
+
+We will be discussing both **strings** and **factors** in the data structures section (Section \@ref(datastructures)) and why this additional parameter `stringsAsFactors` set to `FALSE` is recommended.
+
+It's good practice to check out the data after you have loaded it in:
+
+```{r eval=FALSE}
+View(periodic_table)
+```
+
+
+### Loading data from an R package
+
+This dataset about the periodic table is also loaded into an R package I created called `chemistr`.  Currently, this package exists on GitHub instead of CRAN ([the Comprehensive R Archive Network](https://cran.r-project.org/)) so instead of just running `install.packages("chemistr")`, you'll need to install another package first that contains the function we need to install an R package from GitHub.  We'll first download the `devtools` package from a CRAN repository hosted by RStudio and install it:
+
+```{r results='hide', eval=FALSE}
+install.packages("devtools", repos = "http://cran.rstudio.org")
+```
+
+Next we will download and install the `chemistr` package from my GitHub account using the `install_github` function in the `devtools` package.  (This is where the `::` come in.)
+
+```{r chemistr, results='hide', message=FALSE, warning=FALSE}
+devtools::install_github("ismayc/chemistr")
+```
+
+We could have also loaded all of the `devtools` package in and then ran `install_github` without needing the `::`.  This is a common error in failing to load in a package first and then asking R to run a function inside that package.  R will complain about not knowing where to find it and this is most commonly remedied by ensuring the `library` function is run before calling the function.  We can see this error below in the GIF:
+
+```{r chemistr2}
+
+```
+
+
+Lastly, we can load the data set into R by using the `data` function:
+
+```{r}
+data(periodic_table, package = "chemistr")
+```
+
+As before after reading in the CSV, we can quickly view the data frame in spreadsheet-like form:
+
+```{r eval=FALSE}
+View(periodic_table)
+```
+
+
+## Data Structures {#datastructures}
+
+- vectors
+- lists
+- data frames
+- matrices
+- factors
+
+
+
+## Vectorized operations
+
+## Indexing and Subsetting
+
+## Functions
+
+- default arguments)
 
 ## Mean, median, standard deviation, five-number summary, distribution
 
-## Additional content to cover
-
-+ data structures (vectors, lists, data frames, matrices)
-+ Vectorized operations
-+ indexing/subsetting
-+ functions (default arguments)
 + Case matters in R!
 + Why do some arguments require quotations and others don't?
 
 ## R Markdown templates
-
-
-**Last updated:**
-
-```{r time_rmdanal, echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```
