@@ -67,7 +67,7 @@ As you can see they are almost identical.  This makes working between the two di
 
 A good habit to get into whenever you start a new project with R code is to create a new RStudio project to go along with it.  RStudio project files have the extension `.Rproj` and store metadata that goes along with the documents you've saved and information about the R environment you are working in. More information about RStudio projects is available from RStudio, Inc. [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
-If you are sharing homework or lab assignments with your instructor, for example, it might make sense to create an RStudio project, share it with your instructor, and then create new folders for each lab.  We will follow this example below.
+If you are sharing homework or lab assignments with your instructor using RStudio Server, for example, it might make sense to create an RStudio project, share it with your instructor, and then create new folders for each lab.  We will follow this example below.
 
 The GIF below shows you how to create a new RStudio project called `initial` and also your first R Markdown file.  Note that you also may see a description about what version of R is running on your initial login like shown in the GIF below in the Console pane.
 

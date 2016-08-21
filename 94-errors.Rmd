@@ -1,9 +1,25 @@
 # Deciphering Common R Errors {#errors}
 
-This chapter will be updated with GIFs as common errors are reported to me throughout the year.
-
-For references on errors and some solutions in the meantime, check out the following two links by Noam Ross and David Smith:
+This chapter will be updated with GIFs as common errors are reported to me throughout the 2016-2017 academic year.  For references on errors and some solutions in the meantime, check out the following two links by Noam Ross and David Smith:
 
 https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md
 
 http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html
+
+## `Error: could not find function`
+
+This error usually occurs when a package has not been loaded into R via `library`.  R does not know
+where to find the specified function.  It's a good habit to use the `library` functions on all of the packages you will be using in the top R chunk in your R Markdown file, which is usually given the chunk name `setup`.
+
+## `Error: object find function`
+
+## Misspellings
+
+## Unmatched paranthesis
+
+
+## General guidelines
+
+Don't be intimidated by R errors.  Oftentimes, you will find that you are able to understand what they mean by carefully reading over them.  When you can't, carefully look over your R Markdown file again.  You might also want to clear out all of your R environment and start at the top by running the chunks.  Remember to only include what you deem your reader will need to follow your analysis.
+
+Even people that have worked with R and programmed for years still use Google and support websites like Stack Overflow asking for help with their R errors or when they aren't sure how to do something in R.  I think you'll be pleasantly surprised at just how much support is out there.
