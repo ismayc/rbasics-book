@@ -7,7 +7,6 @@ files <- list.files("_book",
            include.dirs = TRUE)
 files <- files[3:length(files)]
 file.copy(from = files, 
-        # to = "/Users/Chester/Desktop/temp",
           to = "../rbasics-book", 
           overwrite = TRUE, 
           recursive = TRUE, 

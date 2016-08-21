@@ -1,22 +1,42 @@
 # Deciphering Common R Errors {#errors}
 
-This chapter will be updated with GIFs as common errors are reported to me throughout the 2016-2017 academic year.  For references on errors and some solutions in the meantime, check out the following two links by Noam Ross and David Smith:
-
-https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md
-
-http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html
+This chapter will be updated with GIFs as common errors are reported to me throughout the 2016-2017 academic year.  For references on errors and some solutions in the meantime, check out the following two links by Noam Ross [here](https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md) and David Smith [here](http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html).
 
 ## `Error: could not find function`
 
 This error usually occurs when a package has not been loaded into R via `library`.  R does not know
 where to find the specified function.  It's a good habit to use the `library` functions on all of the packages you will be using in the top R chunk in your R Markdown file, which is usually given the chunk name `setup`.
 
-## `Error: object find function`
+## `Error: object not found`
+
+This error usually refers to your R Markdown document having a chunk that refers to an object that has not been defined in an R chunk at or before that chunk.  You'll frequently see this when you've forgotten to copy code from your R Console sandbox back into a chunk in R Markdown.
 
 ## Misspellings
 
-## Unmatched paranthesis
+One of the most frustrating errors you can do in R is by misspelling the name of an object or function.  R is not forgiving on this and it won't try to automatically figure out what you are referring to.  You'll usually be able to quite easily figure out that you made a typo because you'll receive an `object not found` error.
 
+Remember that R is also case-sensitive so if you called an object `Name` and then try to call it `name` later on without `name` being defined, you'll receive an error.
+
+## Unmatched parenthesis
+
+Another common error is forgetting/neglecting to finish a call to a function with a closing `)`.  An example of this follows:
+
+```{r eval=FALSE}
+mean(x = c(1, 5, 10, 52)
+```
+
+```
+Error in parse(text = x, srcfile = src) : 
+  <text>:2:0: unexpected end of input
+1: mean(x = c(1, 5, 10, 52)
+   ^
+Calls: <Anonymous> ... evaluate -> parse_all -> parse_all.character -> parse
+Execution halted
+
+Exited with status 1.
+```
+
+There needs to be one more parenthesis added at the end of your call to `mean`.
 
 ## General guidelines
 

@@ -14,7 +14,8 @@ and I's online, free, open-source book on using modern data analysis techniques
 and visualization with R, RStudio, and R Markdown.  More details on that project
 will be coming soon.
 
-Additionally, Garrett Grolemund's "Hands-On Programming with R" [@handson2014] is an excellent resource and goes into more depth than I do here as to how to work with more
+Additionally, Garrett Grolemund's "Hands-On Programming with R" [@handson2014] is
+an excellent resource and goes into more depth than I do here as to how to work with more
 complicated objects in R.  It also discusses concepts in a project-based framework
 that is entertaining and easy-to-read.
 

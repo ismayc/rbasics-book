@@ -37,7 +37,7 @@ It is worth noting that you can't just install RStudio Desktop without installin
 - [here](http://www.reed.edu/data-at-reed/software/R/r_studio.html) for the Mac and
 - [here](http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html) for a PC.
 
-Unless you plan to create PDF documents (which requires a multiple gigabyte download of $\LaTeX$) you can skip some of the later steps of the installation.  It is recommended that you select **HTML** as the Default Output Format for R Markdown.  You'll see more about this in Chapter \@ref(rmarkdown).
+Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX) you can skip some of the later steps of the installation.  It is recommended that you select **HTML** as the Default Output Format for R Markdown.  You'll see more about this in Chapter \@ref(rmarkdown).
 
 ## Working in RStudio Server
 
@@ -72,7 +72,8 @@ If you are sharing homework or lab assignments with your instructor using RStudi
 The GIF below shows you how to create a new RStudio project called `initial` and also your first R Markdown file.  Note that you also may see a description about what version of R is running on your initial login like shown in the GIF below in the Console pane.
 
 ```{r projrmd, echo=FALSE, fig.cap="Create a new RStudio project and an R Markdown file"}
-knitr::include_graphics("gifs/proj_rmd.gif")
+#knitr::include_graphics("gifs/proj_rmd.gif")
+gif_link("gifs/proj_rmd.gif")
 ```
 
 We have our **first_rmarkdown.Rmd** file set up.  
@@ -84,10 +85,11 @@ You will now see an example of how to share this project with another user.  Thi
 RStudio Server comes in a couple different formats and you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature.  You can find more information from RStudio, Inc. on this [here](https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro).  Below is an example GIF of sharing this **initial.Rproj** project file with another user of the RStudio Server.
 
 ```{r shareproj, echo=FALSE, fig.cap="Share an RStudio project on RStudio Server Pro"}
-knitr::include_graphics("gifs/share_proj.gif")
+#knitr::include_graphics("gifs/share_proj.gif")
+gif_link("gifs/share_proj.gif")
 ```
 
-Both myself and `bottk` can now work together on this project.  We can save files to the common folder where **initial.Rproj** resides and type our commentary and code into **first_rmarkdown.Rmd** or other files.
+Both myself and `bottk` can now work together on this project.  We can type our commentary and code into  **first_rmarkdown.Rmd** or other files and save files to the common folder where **initial.Rproj** resides.
 
 In Chapter \@ref(rmarkdown), you'll see why it is recommended you work in R Markdown files and you'll also begin to see some examples of how R works with R Markdown.
 
@@ -102,7 +104,8 @@ Likely the pane where you will spend a majority of your time is in the top left.
 Note that the tab that gives the filename will change its color from black to <font color="red">red</font> and an asterisk will appear after the filename.  This is to remind you that the file is not saved.  You'll need to get into the habit of saving files frequently. You can have multiple tabs open and view different files in this pane.  You'll also see that you can `View` datasets in this pane in Chapter \@ref(rmarkdown).
 
 ```{r codeeditor, echo=FALSE, fig.cap="Editing an R Markdown file in RStudio"}
-knitr::include_graphics("gifs/top_left_pane.gif")
+#knitr::include_graphics
+gif_link("gifs/top_left_pane.gif")
 ```
 
 It may not be clear what these additions are really doing just yet.  You'll be pressing the **Knit HTML** button near the top of the pane to put all of your text, code, and its output together.  We aren't quite there just yet though!
@@ -112,7 +115,8 @@ It may not be clear what these additions are really doing just yet.  You'll be p
 The next pane includes by default an **Environment** tab and a **History** tab.  To get a sense of what these tabs provide we'll need to also use the bottom left pane and the **Console** tab.  I'll show you how to create multiple objects in R using the **Console**.  Initially you will see that the **Environment** tab tells us that the "Environment is empty."  If you click on the **History** tab, you should also see a blank screen with a few icons.  We won't go over using all of these buttons here, but you are encouraged to hover over them and click on them to get a sense for what they do.  As I enter code into the **Console** watch to see how the **Environment** and **History** tabs change.
 
 ```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input"}
-knitr::include_graphics("gifs/env_history.gif")
+#knitr::include_graphics
+gif_link("gifs/env_history.gif")
 ```
 
 You can think of the **Console** as a place to play around.  It is your R sandbox.  You can test your code to make sure it is working and then copy that text into your **Rmd** file into a chunk after you are satisfied with it.  We'll see more examples of this in the chapters to come.
@@ -126,10 +130,11 @@ A powerful feature of the R language has been introduced in the `sum_1_2 <- sum(
 You'll frequently use the **Console** as a way to check your work or thoughts on how to solve a problem using R.  Before RStudio came around, most users of R just had a window like the **Console** provides where they entered their commands and then looked at the results in different windows.  We will see that the **Console** and the **Code Editor/View Window** will allow us to store all of our code in a file and then "run" that code through the **Console** to check that it works.  The example GIF below shows how this may be done.
 
 ```{r consolecode, echo=FALSE, fig.cap="Showing the Console interacting with an R Markdown document R chunk"}
-knitr::include_graphics("gifs/console_code.gif")
+#knitr::include_graphics
+gif_link("gifs/console_code.gif")
 ```
 
-**_Rules for naming objects_**
+`r noindentbold("Rules for naming objects")`
 
 It is good practice to get in the habit of naming variables corresponding to what they actually represent.  If you are dividing two different sums of numbers, you might want to choose a name like `ratio_of_sums` to refer to that object.  R has a couple restrictions on what can be included in the name of R objects:
 
@@ -139,7 +144,8 @@ It is good practice to get in the habit of naming variables corresponding to wha
 Another important property of R is that is case-sensitive.  You'll see what this means in the GIF below that also includes examples of invalid names of objects.  Note that we will continue to work inside the R chunk as we did in the last GIF.  You'll see that these code chunks provide a nice way to keep track of our important analyses.
 
 ```{r nameobjs, echo=FALSE, fig.cap="Invalid object names and case sensitivity in R"}
-knitr::include_graphics("gifs/naming_objects.gif")
+#knitr::include_graphics
+gif_link("gifs/naming_objects.gif")
 ```
 
 You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error.  It won't catch all errors, but this can be helpful.  Not also that `Name`, `name`, and `nAme` refer to three different values.
@@ -153,31 +159,33 @@ It's also a good idea to not call objects the names of functions that are built 
 Of course, you won't know what all of the names of built-in functions are until you practice, but it is something to think about.  If you are ever wondering if a function is built-in or is in a package you have included, you can use the `?` function in the **Console** to check.  Some examples are shown below as a GIF.
 
 ```{r helpfunc, echo=FALSE, fig.cap="Using the ? function to look up help on an R function"}
-knitr::include_graphics("gifs/help_func.gif")
+#knitr::include_graphics
+gif_link("gifs/help_func.gif")
 ```
 
 ### The bottom right pane
 
 The bottom right pane in RStudio contains the most tabs by default and is a useful place to view a variety of miscellaneous information about your RStudio project and its files.
 
-**Files**
+`r noindentbold("Files")`
 
 The leftmost tab here shows the file and folder structure.  This shows you where the files are stored, what they are called, and any folders that may exist in your project folder.  This can be thought of as similar to going to **My Computer** on a PC or opening **Finder** on a PC.  Similarly, this gives the file and directory structure either on the cloud for RStudio Server or on your local machine for RStudio Desktop.
 
-**Plots / Viewer**
+`r noindentbold("Plots / Viewer")`
 
 You'll see clearer examples of what the **Plots** and **Viewer** tabs provide in Chapter \@ref(rmarkdown).  As you likely guessed **Plots** will show you the resulting graphs/figures that your R code has generated.  The **Viewer** tab can show you the resulting HTML file created from an R Markdown **Knit**.
 
-**Packages**
+`r noindentbold("Packages")`
 
 You can get a sense for what packages have been downloaded to your computer/your cloud server by clicking on the **Packages** tab.  You can also see which packages are loaded into the current working environment by looking to see if a check-mark exists next to the package name.  Note that you may not have all of the packages loaded onto your machine that I do below in the GIF.  That's OK.  This is just an example of what you may expect.
 
 ```{r packagetab, echo=FALSE, fig.cap="Installed packages and whether or not they are loaded currently"}
-knitr::include_graphics("gifs/package_tab.gif")
+#knitr::include_graphics
+gif_link("gifs/package_tab.gif")
 ```
 
 You'll also notice a **Description** of the package as well as the **Version** number here.  Packages are frequently updated and improved so this is a way to check to see if you have the most up-to-date version of a package.  Remember that this is likely taken care of for you if you are on an RStudio Server installation.  If you are on RStudio Desktop, you might find the **Install** and **Update** buttons useful for downloading new packages or updating currently installed ones.
 
-**Help**
+`r noindentbold("Help")`
 
 We also saw an example of using the **Help** tab when we invoked the `?` function. This will show you documentation on R functions, datasets, and packages.  If you see code that you aren't really sure about, it is often a good go-to to enter a question mark followed by the name and see if the built-in documentation can help you out.

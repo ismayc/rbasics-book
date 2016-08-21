@@ -2,6 +2,7 @@
 title: "Getting used to R, RStudio, and R Markdown"
 author: "Chester Ismay"
 date: "`r Sys.Date()`"
+knit: bookdown::render_book
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [bib/books.bib, bib/packages.bib, bib/articles.bib]
@@ -11,24 +12,45 @@ github-repo: ismayc/rbasics
 description: "An introduction into using R, RStudio, and R Markdown for new users"
 ---
 
-```{r set-options, include=FALSE}
+```{r setup, include=FALSE}
 options(width = 72)
-knitr::opts_chunk$set(tidy = FALSE, fig.align = "center")
+knitr::opts_chunk$set(tidy = FALSE, fig.align = "center", out.width = '\\textwidth')
 # automatically create a bib database for R packages
 knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown','ggplot2'
 ), 'bib/packages.bib')
 if(file.exists("rbasics.Rmd")) file.remove("rbasics.Rmd")
 if(file.exists("rbasics.html")) file.remove("rbasics.html")
+
+gif_link <- function(path, latex = knitr:::is_latex_output()){
+  webpage <- "https://raw.githubusercontent.com/ismayc/rbasics-book/gh-pages/"
+  if(latex){
+    knitr::asis_output(paste0('\\vspace{0.1in}',
+                              '\\begin{center}', 
+                              '\\footnotesize{\\url{', webpage, path, '}}',
+                              '\\end{center}',
+                              '\\vspace{0.1in}'))
+  } else{
+    knitr::include_graphics(path)
+  }
+}
+
+noindentbold <- function(text, latex = knitr:::is_latex_output()){
+  if(latex){
+    paste0('\\vspace*{0.2in}\\noindent\\textbf{', text, '}\\vspace*{0.1in}')
+  } else{
+    paste0('**', text, '**')
+  }
+}
+
 ```
+
 
 # Introduction {#intro}
 
-<!--
-In the HTML version of this book, you can find different formats for the book by clicking on the save icon `r knitr::include_graphics("screenshots/save_icon.png")` in the top pane of this book website. HTML is the preferred format but the ePub format is also available.  Since there are animated GIFs included and PDFs don't handle GIFs natively, PDF format is not provided.
--->
+In the HTML version of this book, you can alo download the PDF version of the book by clicking on PDF button in the top toolbar of the page.  HTML is the preferred format but the PDF format may be preferred for some readers.  Links to the different GIFs directly found in the HTML version are provided in the PDF version.
 
-This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research.  A review of many of the common R errors encountered (and what they mean in laymen's terms) will also provided be provided. (These will be updated over the next academic year.)  Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.  Pull requests on GitHub for typos or improvements are also welcome and you can easily do so by clicking on the Edit button near Search at the top of this page.
+This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research.  A review of many of the common R errors encountered (and what they mean in layman's terms) will also provided be provided. (These will be updated over the next academic year.)  Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.  Pull requests on GitHub for typos or improvements are also welcome and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.
 
 This book will evolve and be updated as needed based on feedback.  You can always check the date below to see when the book was last updated.
 

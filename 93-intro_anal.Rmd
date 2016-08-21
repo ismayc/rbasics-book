@@ -56,8 +56,7 @@ identified from the name of your file, but be concise.
     change the case of the first letter of the word to bring attention.  Here are a few
     examples of file names.  You can be the judge as to what is most appealing to you:
 
-    `barplot_weight_height.Rmd` vs `barplotWeightHeight.Rmd` vs (the worst) 
-    `barplotweightheight.Rmd`
+    `barplot_weight_height.Rmd` vs `barplotWeightHeight.Rmd` vs `barplotweightheight.Rmd`
 
     Whatever you choose for style, be consistent and think about other users as you
     name your files.  If you were passed a smorgasbord of files that is a mess to
@@ -76,15 +75,18 @@ It is worthy to note that many of the functions here such as `table` and concept
 ### Loading data from a file
 
 One of the most common ways you'll want to work with data is by importing it from a
-file.  A common file format that works nicely with R is the CSV (comma-seperated values)
+file.  A common file format that works nicely with R is the CSV (comma-separated values)
 file.  The following R commands first download the CSV file from the internet on my
 webpage into the `periodic-table-data.csv` file on your computer, then reads in the
 CSV stored, and then gives the name `periodic_table` to the data frame that stores
 these values in R:
 
-```{r load_elements}
+```{r download, eval=FALSE}
 download.file(url = "http://ismayc.github.io/periodic-table-data.csv", 
   destfile = "periodic-table-data.csv")
+```
+
+```{r save_df}
 periodic_table <- read.csv("periodic-table-data.csv",
                            stringsAsFactors = FALSE)
 ```
@@ -99,15 +101,16 @@ It's good practice to check out the data after you have loaded it in:
 View(periodic_table)
 ```
 
-The GIF below walks through downloading the CSV file and loading it into the
-`periodic_table` data frame object.  In addition, it shows another way to view
-dataframes that is built into RStudio without having to run the `View` function.
+The GIF below walks through downloading the CSV file and loading it into the data 
+frame object named `periodic_table`.  In addition, it shows another way to view
+data frames that is built into RStudio without having to run the `View` function.
 Note that a new R Markdown file is created here as well called `chemistry_example.Rmd`.
 We are writing the commands directly into R chunks here, but you may find it nicer to
 play around in your R Console sandbox first.
 
 ```{r loadchemdata, echo=FALSE, fig.cap="Viewing the periodic table data frame"}
-knitr::include_graphics("gifs/chemistr_load.gif")
+#knitr::include_graphics
+gif_link("gifs/chemistr_load.gif")
 ```
 
 
@@ -120,9 +123,9 @@ This makes sense since R is a statistical computing language at its core, so
 handling spreadsheet-like data is something it should be good at.  The `periodic_table`
 data set is stored as a data frame.  As you can see there are many different types
 of variables in this data set.  We can get a glimpse as to the types and some of the
-values of the variables by using the `str` function:
+values of the variables by using the `str` function in the R Console:
 
-```{r}
+```{r eval=FALSE}
 str(periodic_table)
 ```
 
@@ -140,12 +143,10 @@ variable it is.  For this `periodic_table` data set, we have four types:  `int`,
 
 Data frames are most commonly just many vectors put together into a single object.  Our
 `periodic_table` data frame has each row correspond to a chemical element and each
-column correspond to a different measurement or characteristic of that element.
+column correspond to a different measurement or characteristic of that element. There 
+are many different ways to create a vector that stands on its own outside of a data frame. `r if(knitr:::is_latex_output()) "\\newline\\vspace*{0.1in}"`
 
-There are many different ways to create a vector that stands on its own outside of a
-data frame.
-
-**Using the `c` function**
+`r noindentbold("Using the c function")`
 
 If you would like to list out many entries and put them into a vector object, you can
 do so via the `c` function. If you enter `?c` in the R Console, you can gain information
@@ -187,9 +188,9 @@ class(ages_numeric)
 
 There is not a huge difference in how these values are stored from a user's perspective,
 but it is a good habit to specify what class your variables are whenever possible to help
-with collaboration and documentation.
+with collaboration and documentation. `r if(knitr:::is_latex_output()) "\\newline"`
 
-**Using the `seq` function**
+`r noindentbold("Using the seq function")`
 
 The most likely way you will enter character values into a vector is via the `c` function.
 Numeric values can be entered in a couple different ways.  You saw the first way using the 
@@ -217,7 +218,7 @@ dec_frac_seq
 class(dec_frac_seq)
 ```
 
-**Using the `:` operator**
+`r noindentbold("Using the : operator")`
 
 A short-cut version of the `seq` version can be achieved using the `:` operator.  If we are
 increasing values by 1 (or -1), we can use the `:` operator to build our vector:
@@ -229,7 +230,7 @@ dec_seq <- 5:-5
 dec_seq
 ```
 
-**Combining vectors into data frames**
+`r noindentbold("Combining vectors into data frames")`
 
 If you aren't reading in data from a file and you have some vectors of information
 you'd like combined into a single data frame, you can use the `data.frame` function
@@ -267,7 +268,7 @@ table(periodic_table$block)
 
 We see here a count of the number of elements that appear in each block.  But as I said, the ordering is off.  You may remember the `$` as appearing before the variable names in the `str` function.  That wasn't a coincidence.  To access specific variables inside a data frame we can do so by entering the name of the data frame followed by `$` and lastly by the name of the variable.  (Note here that spaces in variable names will not work.  You'll learn that the hard way as I have more than likely.)
 
-To convert `block` into a factor, we use the aptly named `factor` function:
+To convert `block` into a factor, we use the aptly named `factor` function.  Note that this is "converting" by assigning the result of `factor` back to `block` in `periodic_table`.
 
 ```{r factor}
 periodic_table$block <- factor(periodic_table$block,
@@ -292,12 +293,171 @@ Like that, we have ages that are five more than where we started.  This extends 
 
 ## Indexing and subsetting {#index-sub}
 
-So we have a big data frame of information about the periodic table, but what if we wanted to extract smaller pieces of the data frame.  You already saw that to focus on any specific variable we can use the `$` operator.
+So we have a big data frame of information about the periodic table, but what if we wanted to extract smaller pieces of the data frame?  You already saw that to focus on any specific variable we can use the `$` operator.
+
+### Using `[ ]` with a vector/variable
+
+Recall the use of `[ ]` when a vector was printed to help us better understand where we are in printing a large vector.  We will use this same tool to select the tenth to the twentieth elements of the `periodic_table$name` variable:
+
+```{r}
+periodic_table$name[10:20]
+```
+
+Similarly if we'd only like to select a few elements from our `friend_names` vector, we can specify the entries directly:
+
+```{r}
+friend_names[c(1, 3)]
+```
+
+We can also use `-` to select everything but the elements listed after it:
+
+```{r}
+friend_names[-c(2, 4)]
+```
 
 
+### Using `[ , ]` with a data frame
 
+We have now seen how to select specific elements of a vector or a variable but what if we wanted a subset of the values in the larger data frame across both rows (observations) and columns (variables).  We can use `[ , ]` where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns.  Let's pick rows 40 to 50 and columns 1, 2, and 4 from `periodic_table`:
+
+```{r}
+periodic_table[41:50, c(1, 2, 4)]
+```
+
+### Using logicals
+
+As you've seen we can specify directly which elements we'd like to select based on the integer values of the indices of the data frame.  Another way to select elements is by using a logical vector:
+
+```{r}
+friend_names[c(TRUE, FALSE, TRUE, FALSE)]
+```
+
+This can be extended to choose specific elements from a data frame based on the values in the "cells" of the data frame.  A logical vector like the one above (`c(TRUE, FALSE, TRUE, FALSE)`) can be generated based on our entries:
+
+```{r}
+friend_names == "Bertha"
+```
+
+We see that only the first element is set to `TRUE` as we suspected since `"Bertha"` is the first entry in the vector.  We, thus, have another way of subsetting to choose only those names that are `"Bertha"` or `"Alice"`:
+
+```{r}
+friend_names[friend_names %in% c("Bertha", "Alice")]
+```
+
+The `%in%` operator looks element-wise in the `friend_names` vector and then tries to match each entry with the entries in `c("Bertha", "Alice")`.
+
+Now we can think about how to subset an entire data frame using the same sort of creation of two logical vectors (one for rows and one for columns):
+
+```{r}
+periodic_table[ (periodic_table$name %in% c("Hydrogen", "Oxygen") ), 
+                c("atomic_weight", "state_at_stp")]
+```
+
+The extra parentheses around `periodic_table$name %in% c("Hydrogen", "Oxygen")` are a good habit to get into as they ensure everything before the comma is used to select specific rows matching that condition.  For the columns, we can specify a vector of the column names to focus on only those variables.  The resulting table here gives the `atomic_weight` and `state_at_stp` for `"Hydrogen"` and then for `"Oxygen"`.
+
+There are many more complicated ways to subset a data frame and one can use the `subset` function built into R, but in my experience it is even easier to use the `filter` and `select` function in the `dplyr` package whenever you want to do anything more complicated than what we have done here.
 
 ## Functions
 
-- default arguments
-- Why do some arguments require quotations and others don't?
+We've been using **functions** throughout this entire chapter and you might not have even noticed it.  The `seq` command we saw earlier is a function.  It expects a few arguments:  `from`, `to`, `by`, and a few others that we didn't specify.  How do I know this and why didn't we specify them?
+
+Recall that you can look up the help documentation on any function by entering `?` and the function name in the R console.  If we do this for `seq` with `?seq`, we are given some examples of what to expect under the **Usage** section.  R allows for function arguments to take on default values and that's what we see:
+
+```{r eval=FALSE}
+seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),
+    length.out = NULL, along.with = NULL, ...)
+```
+
+By default, the sequence will both start and end at 1 (a not very interesting sequence).  The `length.out`
+and `along.with` arguments are specified to `NULL` by default.  `NULL` represents an empty object in R, so they are essentially ignored unless the person using the `seq` function specifies values for them.  The `...` argument is beyond the scope of this book but you can read more about it and other useful tips about writing function at the NiceRCode page [here](http://nicercode.github.io/guides/functions/).
+
+Not all functions have all default arguments like `seq`.  The `mean` function is one such example:
+
+```{r eval=FALSE}
+mean()
+```
+
+```
+Error in mean.default() : argument "x" is missing, with no default
+Calls: <Anonymous> ... withVisible -> eval -> eval -> mean -> mean.default
+Execution halted
+
+Exited with status 1.
+```
+
+Notice that an error is given here, where one is not given if you don't specify the arguments to `seq`:
+
+```{r}
+seq()
+```
+
+To fix the error, we'll need to specify which vector/object we'd like to compute the mean of.  Recall the `ages_numeric` vector.  We can pass that into the `mean` function:
+
+```{r}
+ages_numeric
+mean(x = ages_numeric)
+```
+
+We can also skip specifying the name of the argument if you follow the same order as what is given in **Usage** in the documentation:
+
+```{r}
+mean(ages_numeric)
+```
+
+We can see that R expects the arguments to be `x`, then `trim`, and then `na.rm`.  What happens if we try to specify `TRUE` for `na.rm` without specifically saying `na.rm = TRUE`?
+
+```{r eval=FALSE}
+mean(ages_numeric, TRUE)
+```
+
+```
+Error in mean.default(ages_numeric, TRUE) : 
+  'trim' must be numeric of length one
+Calls: <Anonymous> ... withVisible -> eval -> eval -> mean -> mean.default
+Execution halted
+
+Exited with status 1.
+```
+
+Since `trim` comes before `na.rm` in the list if we don't specify our name it will think the second argument is for `trim`.  `trim` expects a fraction between 0 and 0.5 though so R barks at us that it doesn't understand.  It usually is good practice for beginners to enter the name of the argument and then an equals sign and then the value you'd like the argument to take on.  Something like what follows is clean and helps with readability:
+
+```{r}
+mean(x = ages_numeric, na.rm = TRUE)
+```
+
+`r noindentbold("Why do some arguments require quotations and others don't?")`
+
+As you begin to explore help documentation for different functions, you'll begin to notice that some arguments
+require quotations around them while others (like those for `mean` don't).  This brings us back to the discussion earlier about strings, logicals, and numeric/integer classes.
+
+An example of a function requiring a character string (or vector) is the `install.packages` function, which is at the heart of R's ability to expand on its built-in functionality by importing **packages** that include functions, templates, and data and are written by users of R.  If you run `?install.packages` you'll see that the first argument `pkgs` is expected to be a character vector.  You'll therefore need to enter the packages you'd like to download and install inside quotes.  
+
+Two useful packages that I recommend you install and download are `"ggplot2"` and `"dplyr"`.  (Hopefully your instructor/server administrator has already done so for you if you are using an RStudio Server.)  This function has a large number of arguments with all but `pkgs` set by default.  We'll pick a couple here to specify instead
+of using the defaults:
+
+```{r eval=FALSE}
+install.packages(pkgs = c("ggplot2","dplyr"),
+                 repos = "http://cran.rstudio.org",
+                 dependencies = TRUE,
+                 quiet = TRUE)
+```
+
+You'll notice looking through the help via `?install.packages` that what type of argument is expected is given:
+
+- `pkgs` expects a character vector
+- `repos` expects a character vector
+- `dependencies` expects a logical value (`TRUE` or `FALSE`)
+- `quiet` expects a logical value
+
+After you've downloaded the packages, you'll need to load the package into your R environment using the
+`library` function:
+
+```{r eval=FALSE}
+library("ggplot2")
+library("dplyr")
+```
+
+
+## Closing thoughts
+
+There are plenty more advanced analyses to be done with R.  This chapter serves as a way to get you started with R without digging in too much.  I encourage you to review this chapter frequently as you learn to use R.  Quiz yourself on what a specific command does and see if you are correct.  Breaking R is a pretty hard thing to do.  Play around and try to figure out error messages on your own first for 15 minutes or so.  If you are still not sure what is going on, check out some of the help with errors in the next chapter.
