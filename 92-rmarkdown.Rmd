@@ -294,6 +294,8 @@ gif_link("screenshots/cheatsheets.png")
 
 Near the top of your R Markdown editor window sits one of the more useful tools for writing documents:  the spell-check button.  It is the green check-mark with "ABC" above it:  
 
+`r if(knitr:::is_html_output()) knitr::include_graphics("images/spellcheck.png")`
+
 ```{r echo=FALSE, out.width='0.3\\textwidth'}
 knitr::include_graphics("images/spellcheck.png")
 ```
