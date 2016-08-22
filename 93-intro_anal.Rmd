@@ -109,7 +109,6 @@ We are writing the commands directly into R chunks here, but you may find it nic
 play around in your R Console sandbox first.
 
 ```{r loadchemdata, echo=FALSE, fig.cap="Viewing the periodic table data frame"}
-#knitr::include_graphics
 gif_link("gifs/chemistr_load.gif")
 ```
 

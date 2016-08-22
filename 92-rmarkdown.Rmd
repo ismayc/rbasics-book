@@ -15,7 +15,6 @@ One R Markdown file can generate a variety of different formats and all of this 
 We now shift back to the R Markdown file called **first_rmarkdown.Rmd** created in Chapter \@ref(rstudiobasics).  We know that we left some errors in the creation of variables there, and while it might seem strange to show you errors, it is good exposure for someone new to this to see what errors one might see initially.  We are going to see what happens when we click the **Knit HTML** button with these errors.  Then we will clean up the code and see what the resulting file looks like from the **Knit**.
 
 ```{r rmderrors, echo=FALSE, fig.cap="Errors in an R Markdown file"}
-#knitr::include_graphics
 gif_link("gifs/rmd_errors.gif")
 ```
 
@@ -28,7 +27,6 @@ You can also see that the text appears as commentary before and after the R code
 **Important note**: Remember that all of the R code you want to run needs to be stored in a chunk (in the right order) for your analysis to be reproducible AND for you not to receive errors when you **Knit**.  It is easy to do a lot of work in the R **Console** and then forget to add that work into a chunk in your **Rmd** file.  This is probably the number one error you will see when you first begin working in RStudio.  An example of this error is below in a GIF file.
 
 ```{r forgetcode, echo=FALSE, fig.cap="Forgetting to copy from Console to R chunk"}
-#knitr::include_graphics
 gif_link("gifs/forget_copy.gif")
 ```
 
@@ -58,7 +56,6 @@ There are many other fields that can be customized in the YAML header.  The impo
 ### Headers
 
 ```{r headers, echo=FALSE, fig.cap="Headers start with hashtags"}
-#knitr::include_graphics
 gif_link("gifs/headers.gif")
 ```
 
@@ -71,7 +68,6 @@ Whenever you see a hash-tag in the text of your R Markdown document, you now kno
 This is one of the nice features of R Markdown.  You can simply look at the plain text and know what it will produce in the knitted document.  We can also add different styles of emphasis to words, phrases, or sentences by surrounding them in matching symbols.  Below are some examples.
 
 ```{r emphasis, echo=FALSE, fig.cap="Different emphasis styles in Markdown"}
-#knitr::include_graphics
 gif_link("gifs/emphasis.gif")
 ```
 
@@ -82,7 +78,6 @@ You are beginning to see how easy it is to customize your output.  We'll next di
 To add a link to a URL, you simply enclose the text you'd like displayed in the resulting HTML file inside `[ ]` and then the link itself inside `( )` right next to each other with no space in between.
 
 ```{r links, echo=FALSE, fig.cap="Links to webpages"}
-#knitr::include_graphics
 gif_link("gifs/links.gif")
 ```
 
@@ -90,8 +85,7 @@ gif_link("gifs/links.gif")
 
 The GIF below shows the process of creating both ordered and unordered lists.
 
-```{r lists, echo=FALSE, fig.cap="Links to webpages"}
-#knitr::include_graphics
+```{r lists, echo=FALSE, fig.cap="Ordered and unordered lists"}
 gif_link("gifs/lists.gif")
 ```
 
@@ -218,7 +212,6 @@ Note that spaces in front of these backticks will produce
 In our **first_rmarkdown.Rmd** file, let's explore an example of recognizing and creating our own R chunks:
 
 ```{r rchunks, echo=FALSE, fig.cap="Creating and identifying R chunks"}
-#knitr::include_graphics
 gif_link("gifs/rchunks.gif")
 ```
 
@@ -231,14 +224,12 @@ This example introduces you to two different ways to create a vector of values. 
 We've seen that we can add R code and have that run in an R chunk of code enclosed by three backticks.  We may want to do a simple calculation on the fly inside of the text of our document though.
 
 ```{r inliner, echo=FALSE, fig.cap="R code running in the text"}
-#knitr::include_graphics
 gif_link("gifs/inliner.gif")
 ```
 
 Another crafty approach is to have the text produced in our document to automatically update based on the results of R code.  To see an example of this, we will select a number at random from our `count20` vector.  If it is greater than or equal to 10, we will say so.  If it isn't, we will say so.
 
 ```{r inliner2, echo=FALSE, fig.cap="Update text corresponding to R value"}
-#knitr::include_graphics
 gif_link("gifs/inliner2.gif")
 ```
 
@@ -259,14 +250,12 @@ The most common R chunk options you'll likely work with are `echo`, `eval`, and 
 - `include` specifies whether the code AND its output should be included in the resulting knitted document.  If it is set to `FALSE` the code is run but no remnant of the code or its output will be in the resulting document.
 
 ```{r chunkops, echo=FALSE, fig.cap="Common R chunk options"}
-#knitr::include_graphics
 gif_link("gifs/chunkops.gif")
 ```
 
 Since we specified that `eval=FALSE` and that was where we declared the `one_value` variable we now obtain an error.  You can also include multiple chunk options by separating them by a comma.
 
 ```{r chunkops2, echo=FALSE, fig.cap="Common R chunk options - Part 2"}
-#knitr::include_graphics
 gif_link("gifs/chunkops2.gif")
 ```
 
@@ -286,7 +275,6 @@ The chunk options can really beautify your documents and customize them exactly 
 RStudio includes really nice cheatsheets that can act as great references to many of the common tasks you will do inside of RStudio.  You can get nice PDF versions of the files by going to **Help -> Cheatsheets** inside RStudio.
 
 ```{r cheatsheets, echo=FALSE, fig.cap="RStudio Cheatsheets Screenshot"}
-#knitr::include_graphics
 gif_link("screenshots/cheatsheets.png")
 ```
 
