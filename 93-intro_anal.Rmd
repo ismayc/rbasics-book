@@ -113,6 +113,10 @@ play around in your R Console sandbox first.
 gif_link("gifs/chemistr_load.gif")
 ```
 
+I encourage you to take the R chunks that follow in this chapter, type/copy them into
+an R Markdown file that has loaded the `periodic_table` data set, and watch that your
+resulting output will match the output that I have presented for you here in this book.
+This book was written in R Markdown after all!
 
 ## Data structures
 
