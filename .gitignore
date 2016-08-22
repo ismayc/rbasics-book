@@ -8,3 +8,5 @@ placeholder.html
 _book/*
 _bookdown_files/*
 periodic-table-data.csv
+to_deploy.R
+rsconnect/*

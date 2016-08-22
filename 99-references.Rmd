@@ -1,15 +1,1 @@
 `r if(knitr:::is_html_output()) '# References'`
-
-```{r include=FALSE}
-files <- list.files("_book",
-           all.files = TRUE,
-           full.names = TRUE,
-           include.dirs = TRUE)
-files <- files[3:length(files)]
-file.copy(from = files, 
-          to = "../rbasics-book", 
-          overwrite = TRUE, 
-          recursive = TRUE, 
-          copy.mode = TRUE)
-```
-
