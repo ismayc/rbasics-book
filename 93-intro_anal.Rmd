@@ -34,7 +34,7 @@ to follow:
 
     This rule can be broken if you only have one or two of each type.  It can be the
     case that too many folders can waste your time when a useful search for the
-    appropriate file may be able to find your find faster than digging through a 
+    appropriate file may be able to find your file faster than digging through a 
     complex hierarchy of directories.
 
 2. Name your files consistently so that what the file contains can be easily 
