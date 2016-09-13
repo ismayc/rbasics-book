@@ -12,11 +12,12 @@ bookdown::gitbook:
         <li><a href="https://github.com/ismayc/rbasics/issues" target="blank">Create a GitHub Issue</a></li>
         <li><a href="mailto:chester.ismay@gmail.com" target="blank">Email Chester</a></li>
     edit:
-      link: https://github.com/ismayc/rbasics/edit/master/%s
+      link: https://github.com/ismayc/rbasics-book/edit/master/%s
 bookdown::pdf_book:
   base_format: tufte::tufte_book
   includes:
     in_header: preamble.tex
+  template: tufte-handout.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: true

@@ -253,7 +253,7 @@ The most common R chunk options you'll likely work with are `echo`, `eval`, and 
 gif_link("gifs/chunkops.gif")
 ```
 
-Since we specified that `eval=FALSE` and that was where we declared the `one_value` variable we now obtain an error.  You can also include multiple chunk options by separating them by a comma.
+Since we specified that `eval=FALSE` and that was where we declared the `one_value` variable we now obtain an error.  You can include multiple chunk options by separating with a comma.
 
 ```{r chunkops2, echo=FALSE, fig.cap="Common R chunk options - Part 2"}
 gif_link("gifs/chunkops2.gif")
