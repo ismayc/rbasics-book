@@ -81,7 +81,7 @@ webpage into the `periodic-table-data.csv` file on your computer, then reads in 
 CSV stored, and then gives the name `periodic_table` to the data frame that stores
 these values in R:
 
-```{r download, eval=FALSE}
+```{r download}
 download.file(url = "http://ismayc.github.io/periodic-table-data.csv", 
   destfile = "periodic-table-data.csv")
 ```
