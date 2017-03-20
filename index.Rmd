@@ -57,8 +57,4 @@ This book will evolve and be updated as needed based on feedback.  You can alway
 It is recommended that you have R version 3.3.0 or later, RStudio Desktop version 0.99 or higher, and `rmarkdown` R package version 1.0 or higher.  This is to make sure that the screenshots and GIF recordings match up with the behavior on your machine/set-up.  Additionally, you may find that GIFs don't load sometimes.  I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have troubles with others.
 
 
-**Book was last updated:**
-
-```{r echo=FALSE}
-paste("By", Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))
-```
+Book was last updated by `r paste(Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`

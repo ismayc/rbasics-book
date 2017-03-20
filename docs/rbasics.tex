@@ -112,7 +112,7 @@
 \title{Getting used to R, RStudio, and R Markdown}
 
 \author{Chester Ismay}
-\date{2016-09-13}
+\date{2017-03-20}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -182,6 +182,17 @@
   marginparwidth=8pc % width of margin notes
 }
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 \begin{document}
 
 %\let\allcaps=\relax
@@ -204,17 +215,15 @@ version are provided in the PDF version.
 
 This resource is designed to provide new users to R, RStudio, and R
 Markdown with the introductory steps needed to begin their own
-reproducible research. A review of many of the common R errors
-encountered (and what they mean in layman's terms) will also provided be
-provided. (These will be updated over the next academic year.) Many
-screenshots and GIFs will be included, but if further clarification is
-needed on these or any other aspect of the book, please create a GitHub
-issue \href{https://github.com/ismayc/rbasics-book/issues}{here} or
-email \href{mailto:chester.ismay@gmail.com}{me} with a reference to the
+reproducible research. Many screenshots and GIFs will be included, but
+if further clarification is needed on these or any other aspect of the
+book, please create a GitHub issue
+\href{https://github.com/ismayc/rbasics-book/issues}{here} or email
+\href{mailto:chester.ismay@gmail.com}{me} with a reference to the
 error/area where more guidance is necessary. Pull requests on GitHub for
-typos or improvements are also welcome and you can easily do so by
-clicking on the Edit button near Search at the top of the HTML version
-of the book.
+typos or improvements are preferred and you can easily do so by clicking
+on the Edit button near Search at the top of the HTML version of the
+book.
 
 This book will evolve and be updated as needed based on feedback. You
 can always check the date below to see when the book was last updated.
@@ -227,11 +236,7 @@ Additionally, you may find that GIFs don't load sometimes. I haven't had
 any problems using Google Chrome and recommend that as your browser to
 view this book if you have troubles with others.
 
-\textbf{Book was last updated:}
-
-\begin{verbatim}
-## [1] "By cismay on Tuesday, September 13, 2016 18:58:05 PDT"
-\end{verbatim}
+Book was last updated by cismay on Monday, March 20, 2017 09:32:12 PDT
 
 \chapter{Why R?}\label{whyR}
 
