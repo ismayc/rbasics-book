@@ -24,5 +24,6 @@ bookdown::pdf_book:
   fig_width: 7
   fig_height: 4
   highlight: tango
+  pandoc_args: --top-level-division=chapter
 #bookdown::epub_book: default
 #bookdown::word_document2: default
