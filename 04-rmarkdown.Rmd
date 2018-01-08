@@ -15,7 +15,8 @@ One R Markdown file can generate a variety of different formats and all of this 
 We now shift back to the R Markdown file called **first_rmarkdown.Rmd** created in Chapter \@ref(rstudiobasics).  We know that we left some errors in the creation of variables there, and while it might seem strange to show you errors, it is good exposure for someone new to this to see what errors one might see initially.  We are going to see what happens when we click the **Knit HTML** button with these errors.  Then we will clean up the code and see what the resulting file looks like from the **Knit**.
 
 ```{r rmderrors, echo=FALSE, fig.cap="Errors in an R Markdown file"}
-gif_link("gifs/rmd_errors.gif")
+#gif_link("gifs/rmd_errors.gif")
+embed_my_youtube("UCpPthpvq-0")
 ```
 
 When you initially created an R Markdown file, a basic template with some code and text was inputted for you.  This is to give you a sense of how to create your own R Markdown file with your own R code and your own commentary.  We modified some of that code here.  I decided to remove all of the lines in the `cars` named chunk of code even though the errors did not occur in the declaration of the objects that had names stored in them.  We see that an HTML file is produced in the **Viewer** pane because **View in Pane** was selected.  
@@ -24,10 +25,11 @@ As you look over the **Including Plots** text you may be surprised to see that t
 
 You can also see that the text appears as commentary before and after the R code.  You'll understand in a bit why the text "Including Plots" is so much larger than the other text.
 
-**Important note**: Remember that all of the R code you want to run needs to be stored in a chunk (in the right order) for your analysis to be reproducible AND for you not to receive errors when you **Knit**.  It is easy to do a lot of work in the R **Console** and then forget to add that work into a chunk in your **Rmd** file.  This is probably the number one error you will see when you first begin working in RStudio.  An example of this error is below in a GIF file.
+**Important note**: Remember that all of the R code you want to run needs to be stored in a chunk (in the right order) for your analysis to be reproducible AND for you not to receive errors when you **Knit**.  It is easy to do a lot of work in the R **Console** and then forget to add that work into a chunk in your **Rmd** file.  This is probably the number one error you will see when you first begin working in RStudio.  An example of this error is below in a video.
 
 ```{r forgetcode, echo=FALSE, fig.cap="Forgetting to copy from Console to R chunk"}
-gif_link("gifs/forget_copy.gif")
+#gif_link("gifs/forget_copy.gif")
+embed_my_youtube("MfXf7OVweVA")
 ```
 
 The `object not found` errors are the most frequently encountered errors and along with misspellings and not completing R code segments provide the vast majority of issues with R.  You'll see a further breakdown of this in Chapter \@ref(errors).
@@ -56,7 +58,8 @@ There are many other fields that can be customized in the YAML header.  The impo
 ### Headers
 
 ```{r headers, echo=FALSE, fig.cap="Headers start with hashtags"}
-gif_link("gifs/headers.gif")
+#gif_link("gifs/headers.gif")
+embed_my_youtube("AXfhCJgbpCE")
 ```
 
 As you can see above, you can create a lot of different sized headers by simply adding one or more `#` in front of the text you'd like to denote the header.
@@ -68,7 +71,8 @@ Whenever you see a hash-tag in the text of your R Markdown document, you now kno
 This is one of the nice features of R Markdown.  You can simply look at the plain text and know what it will produce in the knitted document.  We can also add different styles of emphasis to words, phrases, or sentences by surrounding them in matching symbols.  Below are some examples.
 
 ```{r emphasis, echo=FALSE, fig.cap="Different emphasis styles in Markdown"}
-gif_link("gifs/emphasis.gif")
+#gif_link("gifs/emphasis.gif")
+embed_my_youtube("SHVtxehEYsY")
 ```
 
 You are beginning to see how easy it is to customize your output.  We'll next discuss ways to add links to URLs, create ordered and unordered lists, and other frequently used Markdown features.
@@ -78,15 +82,17 @@ You are beginning to see how easy it is to customize your output.  We'll next di
 To add a link to a URL, you simply enclose the text you'd like displayed in the resulting HTML file inside `[ ]` and then the link itself inside `( )` right next to each other with no space in between.
 
 ```{r links, echo=FALSE, fig.cap="Links to webpages"}
-gif_link("gifs/links.gif")
+#gif_link("gifs/links.gif")
+embed_my_youtube("2GBZgNtKwts")
 ```
 
 ### Lists
 
-The GIF below shows the process of creating both ordered and unordered lists.
+The screencast below shows the process of creating both ordered and unordered lists.
 
 ```{r lists, echo=FALSE, fig.cap="Ordered and unordered lists"}
-gif_link("gifs/lists.gif")
+#gif_link("gifs/lists.gif")
+embed_my_youtube("BlVjGGcYHsk")
 ```
 
 Note that only numbers are needed as we saw by numbering "Warm up food" with a "1."  We can also combine unordered and ordered lists by indenting the text two spaces.  
@@ -212,7 +218,8 @@ Note that spaces in front of these backticks will produce
 In our **first_rmarkdown.Rmd** file, let's explore an example of recognizing and creating our own R chunks:
 
 ```{r rchunks, echo=FALSE, fig.cap="Creating and identifying R chunks"}
-gif_link("gifs/rchunks.gif")
+#gif_link("gifs/rchunks.gif")
+embed_my_youtube("NuMrDN2MpIg")
 ```
 
 This example introduces you to two different ways to create a vector of values.  You'll see further discussion of this in Chapter \@ref(rmdanal).  You can see that the code is automatically run when we pressed the **Knit HTML** button with its output in the knitted file.  
@@ -224,13 +231,15 @@ This example introduces you to two different ways to create a vector of values. 
 We've seen that we can add R code and have that run in an R chunk of code enclosed by three backticks.  We may want to do a simple calculation on the fly inside of the text of our document though.
 
 ```{r inliner, echo=FALSE, fig.cap="R code running in the text"}
-gif_link("gifs/inliner.gif")
+#gif_link("gifs/inliner.gif")
+embed_my_youtube("jhKyLgBqyrY")
 ```
 
 Another crafty approach is to have the text produced in our document to automatically update based on the results of R code.  To see an example of this, we will select a number at random from our `count20` vector.  If it is greater than or equal to 10, we will say so.  If it isn't, we will say so.
 
 ```{r inliner2, echo=FALSE, fig.cap="Update text corresponding to R value"}
-gif_link("gifs/inliner2.gif")
+#gif_link("gifs/inliner2.gif")
+embed_my_youtube("rDCza8Vka6w")
 ```
 
 You also see that an error was made in that I didn't include the third argument to `ifelse` in quotation marks.  When I fixed the code and pressed **Knit HTML** again the error went away.
@@ -250,13 +259,15 @@ The most common R chunk options you'll likely work with are `echo`, `eval`, and 
 - `include` specifies whether the code AND its output should be included in the resulting knitted document.  If it is set to `FALSE` the code is run but no remnant of the code or its output will be in the resulting document.
 
 ```{r chunkops, echo=FALSE, fig.cap="Common R chunk options"}
-gif_link("gifs/chunkops.gif")
+#gif_link("gifs/chunkops.gif")
+embed_my_youtube("3p4z8cGyocY")
 ```
 
 Since we specified that `eval=FALSE` and that was where we declared the `one_value` variable we now obtain an error.  You can include multiple chunk options by separating with a comma.
 
 ```{r chunkops2, echo=FALSE, fig.cap="Common R chunk options - Part 2"}
-gif_link("gifs/chunkops2.gif")
+#gif_link("gifs/chunkops2.gif")
+embed_my_youtube("46N738U3q7k")
 ```
 
 

@@ -108,7 +108,7 @@ It's good practice to check out the data after you have loaded it in:
 View(periodic_table)
 ```
 
-The GIF below walks through downloading the CSV file and loading it into the data 
+The video below walks through downloading the CSV file and loading it into the data 
 frame object named `periodic_table`.  In addition, it shows another way to view
 data frames that is built into RStudio without having to run the `View` function.
 Note that a new R Markdown file is created here as well called `chemistry_example.Rmd`.
@@ -116,7 +116,8 @@ We are writing the commands directly into R chunks here, but you may find it nic
 play around in your R Console sandbox first.
 
 ```{r loadchemdata, echo=FALSE, fig.cap="Viewing the periodic table data frame"}
-gif_link("gifs/chemistr_load.gif")
+#gif_link("gifs/chemistr_load.gif")
+embed_my_youtube("QHv0I2Ph660")
 ```
 
 I encourage you to take the R chunks that follow in this chapter, type/copy them into

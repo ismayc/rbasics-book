@@ -1,6 +1,6 @@
 # Deciphering Common R Errors {#errors}
 
-This chapter will be updated with GIFs as common errors are reported to me throughout the 2016-2017 academic year.  For references on errors and some solutions in the meantime, check out the following two links by Noam Ross [here](https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md) and David Smith [here](http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html).
+For references on errors, check out the following two links by Noam Ross [here](https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md) and David Smith [here](http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html).
 
 ## `Error: could not find function`
 
@@ -36,10 +36,14 @@ Execution halted
 Exited with status 1.
 ```
 
-There needs to be one more parenthesis added at the end of your call to `mean`.
+There needs to be one more parenthesis added at the end of your call to `mean`:
+
+```{r eval=FALSE}
+mean(x = c(1, 5, 10, 52))
+```
 
 ## General guidelines
 
-Don't be intimidated by R errors.  Oftentimes, you will find that you are able to understand what they mean by carefully reading over them.  When you can't, carefully look over your R Markdown file again.  You might also want to clear out all of your R environment and start at the top by running the chunks.  Remember to only include what you deem your reader will need to follow your analysis.
+Try your best to not be intimidated by R errors.  Oftentimes, you will find that you are able to understand what they mean by carefully reading over them.  When you can't, carefully look over your R Markdown file again.  You might also want to clear out all of your R environment and start at the top by running the chunks.  Remember to only include what you deem your reader will need to follow your analysis.
 
 Even people that have worked with R and programmed for years still use Google and support websites like Stack Overflow asking for help with their R errors or when they aren't sure how to do something in R.  I think you'll be pleasantly surprised at just how much support is out there.

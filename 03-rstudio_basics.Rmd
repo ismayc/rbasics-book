@@ -18,7 +18,7 @@ In 2007, it was still largely esoteric and tricky language used by statisticians
 
 I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies.  Packages are created by users of R to increase the functionality of the base R installation.  Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler.  From the Wikipedia page referenced earlier, as of January 2016, there were around 7800 additional R packages available on common R repositories.^[You'll see how to download these packages via `install.packages("dplyr")` and load them into your current R working environment via `library("dplyr")`, for example, in Chapter \@ref(rmdanal).]
 
-Another great development is the graphical user interface called RStudio and the package developed by the those that work for RStudio, Inc. called `rmarkdown`.  We will discuss `rmarkdown` (also referred to as R Markdown) in a Chapter \@ref(rmarkdown), and will now focus on discussing RStudio.
+Another great development is the graphical user interface called RStudio and the package developed by the those that work for RStudio, Inc. called `rmarkdown`.  We will discuss `rmarkdown` (also referred to as R Markdown) in Chapter \@ref(rmarkdown), and will now focus on discussing RStudio.
 
 ## What is RStudio?
 
@@ -69,10 +69,11 @@ A good habit to get into whenever you start a new project with R code is to crea
 
 If you are sharing homework or lab assignments with your instructor using RStudio Server, for example, it might make sense to create an RStudio project, share it with your instructor, and then create new folders for each lab.  We will follow this example below.
 
-The GIF below shows you how to create a new RStudio project called `initial` and also your first R Markdown file.  Note that you also may see a description about what version of R is running on your initial login like shown in the GIF below in the Console pane.
+The video below shows you how to create a new RStudio project called `initial` and also your first R Markdown file.  Note that you also may see a description about what version of R is running on your initial login like shown in the screencast below in the Console pane.
 
 ```{r projrmd, echo=FALSE, fig.cap="Create a new RStudio project and an R Markdown file"}
-gif_link("gifs/proj_rmd.gif")
+# gif_link("gifs/proj_rmd.gif")
+embed_my_youtube("6YcacPihHuI")
 ```
 
 We have our **first_rmarkdown.Rmd** file set up.  
@@ -81,10 +82,11 @@ We have our **first_rmarkdown.Rmd** file set up.
 
 You will now see an example of how to share this project with another user.  This will enable you and collaborators (other students, your instructor, etc.) to work on the **Rmd** file at the same time.  This is similar to working on a Google Doc at the same time as someone else.
 
-RStudio Server comes in a couple different formats and you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature.  You can find more information from RStudio, Inc. on this [here](https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro).  Below is an example GIF of sharing this **initial.Rproj** project file with another user of the RStudio Server.
+RStudio Server comes in a couple different formats and you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature.  You can find more information from RStudio, Inc. on this [here](https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro).  Below is an example video of sharing this **initial.Rproj** project file with another user of the RStudio Server.
 
 ```{r shareproj, echo=FALSE, fig.cap="Share an RStudio project on RStudio Server Pro"}
-gif_link("gifs/share_proj.gif")
+#gif_link("gifs/share_proj.gif")
+embed_my_youtube("PeL9Du4J6iM")
 ```
 
 Both myself and `bottk` can now work together on this project.  We can type our commentary and code into  **first_rmarkdown.Rmd** or other files and save files to the common folder where **initial.Rproj** resides.
@@ -97,12 +99,13 @@ You may be initially a little overwhelmed by all the different panes and tabs th
 
 ### Code Editor / View Window
 
-Likely the pane where you will spend a majority of your time is in the top left.  When you first login this pane isn't there, but it was created when we made the **first_rmarkdown.Rmd**.  This pane serves as a place to view the contents of files and objects in R.  In the GIF below, you can see that we can change the text in this file and then save the file.  
+Likely the pane where you will spend a majority of your time is in the top left.  When you first login this pane isn't there, but it was created when we made the **first_rmarkdown.Rmd**.  This pane serves as a place to view the contents of files and objects in R.  In the screencast below, you can see that we can change the text in this file and then save the file.  
 
 Note that the tab that gives the filename will change its color from black to <font color="red">red</font> and an asterisk will appear after the filename.  This is to remind you that the file is not saved.  You'll need to get into the habit of saving files frequently. You can have multiple tabs open and view different files in this pane.  You'll also see that you can `View` datasets in this pane in Chapter \@ref(rmarkdown).
 
 ```{r codeeditor, echo=FALSE, fig.cap="Editing an R Markdown file in RStudio"}
-gif_link("gifs/top_left_pane.gif")
+#gif_link("gifs/top_left_pane.gif")
+embed_my_youtube("fdJROYexFf0")
 ```
 
 It may not be clear what these additions are really doing just yet.  You'll be pressing the **Knit HTML** button near the top of the pane to put all of your text, code, and its output together.  We aren't quite there just yet though!
@@ -112,7 +115,8 @@ It may not be clear what these additions are really doing just yet.  You'll be p
 The next pane includes by default an **Environment** tab and a **History** tab.  To get a sense of what these tabs provide we'll need to also use the bottom left pane and the **Console** tab.  I'll show you how to create multiple objects in R using the **Console**.  Initially you will see that the **Environment** tab tells us that the "Environment is empty."  If you click on the **History** tab, you should also see a blank screen with a few icons.  We won't go over using all of these buttons here, but you are encouraged to hover over them and click on them to get a sense for what they do.  As I enter code into the **Console** watch to see how the **Environment** and **History** tabs change.
 
 ```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input"}
-gif_link("gifs/env_history.gif")
+#gif_link("gifs/env_history.gif")
+embed_my_youtube("hfH8DXFovt0")
 ```
 
 You can think of the **Console** as a place to play around.  It is your R sandbox.  You can test your code to make sure it is working and then copy that text into your **Rmd** file into a chunk after you are satisfied with it.  We'll see more examples of this in the chapters to come.
@@ -123,10 +127,11 @@ A powerful feature of the R language has been introduced in the `sum_1_2 <- sum(
 
 ### Console
 
-You'll frequently use the **Console** as a way to check your work or thoughts on how to solve a problem using R.  Before RStudio came around, most users of R just had a window like the **Console** provides where they entered their commands and then looked at the results in different windows.  We will see that the **Console** and the **Code Editor/View Window** will allow us to store all of our code in a file and then "run" that code through the **Console** to check that it works.  The example GIF below shows how this may be done.
+You'll frequently use the **Console** as a way to check your work or thoughts on how to solve a problem using R.  Before RStudio came around, most users of R just had a window like the **Console** provides where they entered their commands and then looked at the results in different windows.  We will see that the **Console** and the **Code Editor/View Window** will allow us to store all of our code in a file and then "run" that code through the **Console** to check that it works.  The example video below shows how this may be done.
 
 ```{r consolecode, echo=FALSE, fig.cap="Showing the Console interacting with an R Markdown document R chunk"}
-gif_link("gifs/console_code.gif")
+#gif_link("gifs/console_code.gif")
+embed_my_youtube("RPF6gGyeJmg")
 ```
 
 `r noindentbold("Rules for naming objects")`
@@ -136,10 +141,11 @@ It is good practice to get in the habit of naming variables corresponding to wha
 1. Object names cannot begin with a number.
 2. Object names cannot contain symbols used for mathematics or to denote other operations native to R.  These symbols include `$`, `@`, `!`, `^`, `+`, `-`, `/`, and `*`.
 
-Another important property of R is that is case-sensitive.  You'll see what this means in the GIF below that also includes examples of invalid names of objects.  Note that we will continue to work inside the R chunk as we did in the last GIF.  You'll see that these code chunks provide a nice way to keep track of our important analyses.
+Another important property of R is that is case-sensitive.  You'll see what this means in the video below that also includes examples of invalid names of objects.  Note that we will continue to work inside the R chunk as we did in the last video.  You'll see that these code chunks provide a nice way to keep track of our important analyses.
 
 ```{r nameobjs, echo=FALSE, fig.cap="Invalid object names and case sensitivity in R"}
-gif_link("gifs/naming_objects.gif")
+#gif_link("gifs/naming_objects.gif")
+embed_my_youtube("GcWKm13Q1Uc")
 ```
 
 You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error.  It won't catch all errors, but this can be helpful.  Not also that `Name`, `name`, and `nAme` refer to three different values.
@@ -150,10 +156,11 @@ It's also a good idea to not call objects the names of functions that are built 
 
 ### The `help` function (`?`)
 
-Of course, you won't know what all of the names of built-in functions are until you practice, but it is something to think about.  If you are ever wondering if a function is built-in or is in a package you have included, you can use the `?` function in the **Console** to check.  Some examples are shown below as a GIF.
+Of course, you won't know what all of the names of built-in functions are until you practice, but it is something to think about.  If you are ever wondering if a function is built-in or is in a package you have included, you can use the `?` function in the **Console** to check.  Some examples are shown below as a screencast.
 
 ```{r helpfunc, echo=FALSE, fig.cap="Using the ? function to look up help on an R function"}
-gif_link("gifs/help_func.gif")
+#gif_link("gifs/help_func.gif")
+embed_my_youtube("M1TJrL-ss7A")
 ```
 
 ### The bottom right pane
@@ -170,10 +177,11 @@ You'll see clearer examples of what the **Plots** and **Viewer** tabs provide in
 
 `r noindentbold("Packages")`
 
-You can get a sense for what packages have been downloaded to your computer/your cloud server by clicking on the **Packages** tab.  You can also see which packages are loaded into the current working environment by looking to see if a check-mark exists next to the package name.  Note that you may not have all of the packages loaded onto your machine that I do below in the GIF.  That's OK.  This is just an example of what you may expect.
+You can get a sense for what packages have been downloaded to your computer/your cloud server by clicking on the **Packages** tab.  You can also see which packages are loaded into the current working environment by looking to see if a check-mark exists next to the package name.  Note that you may not have all of the packages loaded onto your machine that I do below in the video.  That's OK.  This is just an example of what you may expect.
 
 ```{r packagetab, echo=FALSE, fig.cap="Installed packages and whether or not they are loaded currently"}
-gif_link("gifs/package_tab.gif")
+#gif_link("gifs/package_tab.gif")
+embed_my_youtube("Zm54FdyqRsc")
 ```
 
 You'll also notice a **Description** of the package as well as the **Version** number here.  Packages are frequently updated and improved so this is a way to check to see if you have the most up-to-date version of a package.  Remember that this is likely taken care of for you if you are on an RStudio Server installation.  If you are on RStudio Desktop, you might find the **Install** and **Update** buttons useful for downloading new packages or updating currently installed ones.
