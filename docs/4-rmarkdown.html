@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Chester Ismay">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2018-01-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -201,22 +201,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="fixerrors" class="section level2">
 <h2><span class="header-section-number">4.1</span> Fixing Errors in an R Markdown file</h2>
 <p>We now shift back to the R Markdown file called <strong>first_rmarkdown.Rmd</strong> created in Chapter <a href="3-rstudiobasics.html#rstudiobasics">3</a>. We know that we left some errors in the creation of variables there, and while it might seem strange to show you errors, it is good exposure for someone new to this to see what errors one might see initially. We are going to see what happens when we click the <strong>Knit HTML</strong> button with these errors. Then we will clean up the code and see what the resulting file looks like from the <strong>Knit</strong>.</p>
-<div class="figure" style="text-align: center"><span id="fig:rmderrors"></span>
-<img src="gifs/rmd_errors.gif" alt="Errors in an R Markdown file" width="\textwidth" />
-<p class="caption">
-Figure 4.1: Errors in an R Markdown file
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/UCpPthpvq-0" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>When you initially created an R Markdown file, a basic template with some code and text was inputted for you. This is to give you a sense of how to create your own R Markdown file with your own R code and your own commentary. We modified some of that code here. I decided to remove all of the lines in the <code>cars</code> named chunk of code even though the errors did not occur in the declaration of the objects that had names stored in them. We see that an HTML file is produced in the <strong>Viewer</strong> pane because <strong>View in Pane</strong> was selected.</p>
 <p>As you look over the <strong>Including Plots</strong> text you may be surprised to see that there is no plot provided in the R Markdown file, but in the HTML file there is a scatter-plot showing temperature and pressure varying. This is something alluded to earlier. R Markdown runs the code stored in R chunks and then places that output into the HTML (or PDF or DOCX, etc.) format.</p>
 <p>You can also see that the text appears as commentary before and after the R code. You’ll understand in a bit why the text “Including Plots” is so much larger than the other text.</p>
-<p><strong>Important note</strong>: Remember that all of the R code you want to run needs to be stored in a chunk (in the right order) for your analysis to be reproducible AND for you not to receive errors when you <strong>Knit</strong>. It is easy to do a lot of work in the R <strong>Console</strong> and then forget to add that work into a chunk in your <strong>Rmd</strong> file. This is probably the number one error you will see when you first begin working in RStudio. An example of this error is below in a GIF file.</p>
-<div class="figure" style="text-align: center"><span id="fig:forgetcode"></span>
-<img src="gifs/forget_copy.gif" alt="Forgetting to copy from Console to R chunk" width="\textwidth" />
-<p class="caption">
-Figure 4.2: Forgetting to copy from Console to R chunk
-</p>
-</div>
+<p><strong>Important note</strong>: Remember that all of the R code you want to run needs to be stored in a chunk (in the right order) for your analysis to be reproducible AND for you not to receive errors when you <strong>Knit</strong>. It is easy to do a lot of work in the R <strong>Console</strong> and then forget to add that work into a chunk in your <strong>Rmd</strong> file. This is probably the number one error you will see when you first begin working in RStudio. An example of this error is below in a video.</p>
+<iframe src="https://www.youtube.com/embed/MfXf7OVweVA" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>The <code>object not found</code> errors are the most frequently encountered errors and along with misspellings and not completing R code segments provide the vast majority of issues with R. You’ll see a further breakdown of this in Chapter <a href="6-errors.html#errors">6</a>.</p>
 </div>
 <div id="the-components-of-an-r-markdown-file" class="section level2">
@@ -229,53 +219,33 @@ Figure 4.2: Forgetting to copy from Console to R chunk
 </blockquote>
 <p>Essentially, the YAML stores the metadata needed for the document. You can see an example of a YAML header from our <strong>first_rmarkdown.Rmd</strong> file:</p>
 <div class="sourceCode"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
-<span class="fu">title:</span> <span class="st">&quot;First RMarkdown&quot;</span>
-<span class="fu">author:</span> <span class="st">&quot;Chester Ismay&quot;</span>
-<span class="fu">output:</span> html_document
+<span class="fu">title:</span><span class="at"> </span><span class="st">&quot;First RMarkdown&quot;</span>
+<span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Chester Ismay&quot;</span>
+<span class="fu">output:</span><span class="at"> html_document</span>
 <span class="ot">---</span></code></pre></div>
 <p>There are many other fields that can be customized in the YAML header. The important thing to notice here are the three hyphens that begin and end the YAML header. Indentation also plays a role with YAML so be careful with your alignment of text.</p>
 </div>
 <div id="headers" class="section level3">
 <h3><span class="header-section-number">4.2.2</span> Headers</h3>
-<div class="figure" style="text-align: center"><span id="fig:headers"></span>
-<img src="gifs/headers.gif" alt="Headers start with hashtags" width="\textwidth" />
-<p class="caption">
-Figure 4.3: Headers start with hashtags
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/AXfhCJgbpCE" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>As you can see above, you can create a lot of different sized headers by simply adding one or more <code>#</code> in front of the text you’d like to denote the header.</p>
 </div>
 <div id="emphasis" class="section level3">
 <h3><span class="header-section-number">4.2.3</span> Emphasis</h3>
 <p>Whenever you see a hash-tag in the text of your R Markdown document, you now know that this will correspond to bolded larger text<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> that denotes the start of a section of your document.</p>
 <p>This is one of the nice features of R Markdown. You can simply look at the plain text and know what it will produce in the knitted document. We can also add different styles of emphasis to words, phrases, or sentences by surrounding them in matching symbols. Below are some examples.</p>
-<div class="figure" style="text-align: center"><span id="fig:emphasis"></span>
-<img src="gifs/emphasis.gif" alt="Different emphasis styles in Markdown" width="\textwidth" />
-<p class="caption">
-Figure 4.4: Different emphasis styles in Markdown
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/SHVtxehEYsY" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>You are beginning to see how easy it is to customize your output. We’ll next discuss ways to add links to URLs, create ordered and unordered lists, and other frequently used Markdown features.</p>
 </div>
 <div id="links" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Links</h3>
 <p>To add a link to a URL, you simply enclose the text you’d like displayed in the resulting HTML file inside <code>[ ]</code> and then the link itself inside <code>( )</code> right next to each other with no space in between.</p>
-<div class="figure" style="text-align: center"><span id="fig:links"></span>
-<img src="gifs/links.gif" alt="Links to webpages" width="\textwidth" />
-<p class="caption">
-Figure 4.5: Links to webpages
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/2GBZgNtKwts" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <div id="lists" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Lists</h3>
-<p>The GIF below shows the process of creating both ordered and unordered lists.</p>
-<div class="figure" style="text-align: center"><span id="fig:lists"></span>
-<img src="gifs/lists.gif" alt="Ordered and unordered lists" width="\textwidth" />
-<p class="caption">
-Figure 4.6: Ordered and unordered lists
-</p>
-</div>
+<p>The screencast below shows the process of creating both ordered and unordered lists.</p>
+<iframe src="https://www.youtube.com/embed/BlVjGGcYHsk" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>Note that only numbers are needed as we saw by numbering “Warm up food” with a “1.” We can also combine unordered and ordered lists by indenting the text two spaces.</p>
 <p>In many of the examples that follow, you will see the actual text you’d type into your R Markdown document highlighted with a gray background and also the results of that text immediately below it.</p>
 <div class="sourceCode"><pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Wake up</span>
@@ -288,9 +258,9 @@ Figure 4.6: Ordered and unordered lists
 <span class="fl">  ii. Grind beans</span>
 <span class="fl">3. Make breakfast</span>
 
-<span class="fl">  We can have a paragraph (or two) here describing how we could go about making</span>
-<span class="fl">  breakfast.  If we indent the paragraph a few spaces and create a newline, it </span>
-<span class="fl">  will indent below the item.</span></code></pre></div>
+  We can have a paragraph (or two) here describing how we could go about making
+  breakfast.  If we indent the paragraph a few spaces and create a newline, it 
+  will indent below the item.</code></pre></div>
 <ol style="list-style-type: decimal">
 <li>Wake up
 <ul>
@@ -361,31 +331,16 @@ I'd like to save this text for later and don't want to delete it yet.
 </ul>
 <p>Note that spaces in front of these backticks will produce</p>
 <p>In our <strong>first_rmarkdown.Rmd</strong> file, let’s explore an example of recognizing and creating our own R chunks:</p>
-<div class="figure" style="text-align: center"><span id="fig:rchunks"></span>
-<img src="gifs/rchunks.gif" alt="Creating and identifying R chunks" width="\textwidth" />
-<p class="caption">
-Figure 4.7: Creating and identifying R chunks
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/NuMrDN2MpIg" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>This example introduces you to two different ways to create a vector of values. You’ll see further discussion of this in Chapter <a href="5-rmdanal.html#rmdanal">5</a>. You can see that the code is automatically run when we pressed the <strong>Knit HTML</strong> button with its output in the knitted file.</p>
 <p><strong>Important note</strong>: Any other potential R chunks after this chunk will have access to the three variables created here: <code>count20</code>, <code>count100_by_5</code>, and <code>prod</code>. Any chunks before the <code>mult_vectors</code> named chunk <strong><em>WILL NOT</em></strong> have access to these variables yet. You can read the document like a book, so it is important to add objects and work with them in appropriate order. You’ll receive errors from R if you don’t.</p>
 </div>
 <div id="inline-r-code" class="section level3">
 <h3><span class="header-section-number">4.2.8</span> Inline R code</h3>
 <p>We’ve seen that we can add R code and have that run in an R chunk of code enclosed by three backticks. We may want to do a simple calculation on the fly inside of the text of our document though.</p>
-<div class="figure" style="text-align: center"><span id="fig:inliner"></span>
-<img src="gifs/inliner.gif" alt="R code running in the text" width="\textwidth" />
-<p class="caption">
-Figure 4.8: R code running in the text
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/jhKyLgBqyrY" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>Another crafty approach is to have the text produced in our document to automatically update based on the results of R code. To see an example of this, we will select a number at random from our <code>count20</code> vector. If it is greater than or equal to 10, we will say so. If it isn’t, we will say so.</p>
-<div class="figure" style="text-align: center"><span id="fig:inliner2"></span>
-<img src="gifs/inliner2.gif" alt="Update text corresponding to R value" width="\textwidth" />
-<p class="caption">
-Figure 4.9: Update text corresponding to R value
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/rDCza8Vka6w" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>You also see that an error was made in that I didn’t include the third argument to <code>ifelse</code> in quotation marks. When I fixed the code and pressed <strong>Knit HTML</strong> again the error went away.</p>
 </div>
 <div id="code-highlighting" class="section level3">
@@ -401,19 +356,9 @@ Figure 4.9: Update text corresponding to R value
 <li><p><code>eval</code> specifies whether the code should be evaluated or just displayed without its output</p></li>
 <li><p><code>include</code> specifies whether the code AND its output should be included in the resulting knitted document. If it is set to <code>FALSE</code> the code is run but no remnant of the code or its output will be in the resulting document.</p></li>
 </ul>
-<div class="figure" style="text-align: center"><span id="fig:chunkops"></span>
-<img src="gifs/chunkops.gif" alt="Common R chunk options" width="\textwidth" />
-<p class="caption">
-Figure 4.10: Common R chunk options
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/3p4z8cGyocY" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>Since we specified that <code>eval=FALSE</code> and that was where we declared the <code>one_value</code> variable we now obtain an error. You can include multiple chunk options by separating with a comma.</p>
-<div class="figure" style="text-align: center"><span id="fig:chunkops2"></span>
-<img src="gifs/chunkops2.gif" alt="Common R chunk options - Part 2" width="\textwidth" />
-<p class="caption">
-Figure 4.11: Common R chunk options - Part 2
-</p>
-</div>
+<iframe src="https://www.youtube.com/embed/46N738U3q7k" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <div id="general-guidelines-for-writing-r-markdown-files" class="section level2">
 <h2><span class="header-section-number">4.4</span> General Guidelines for Writing R Markdown Files</h2>
@@ -428,7 +373,7 @@ Figure 4.11: Common R chunk options - Part 2
 <div class="figure" style="text-align: center"><span id="fig:cheatsheets"></span>
 <img src="screenshots/cheatsheets.png" alt="RStudio Cheatsheets Screenshot" width="\textwidth" />
 <p class="caption">
-Figure 4.12: RStudio Cheatsheets Screenshot
+Figure 4.1: RStudio Cheatsheets Screenshot
 </p>
 </div>
 </div>
@@ -470,7 +415,7 @@ Figure 4.12: RStudio Cheatsheets Screenshot
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -488,7 +433,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ismayc/rbasics-book/edit/master/92-rmarkdown.Rmd",
+"link": "https://github.com/ismayc/rbasics-book/edit/master/04-rmarkdown.Rmd",
 "text": "Edit"
 },
 "download": ["rbasics.pdf"],
@@ -505,7 +450,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

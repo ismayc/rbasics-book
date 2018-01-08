@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Chester Ismay">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2018-01-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -196,7 +196,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="errors" class="section level1">
 <h1><span class="header-section-number">6</span> Deciphering Common R Errors</h1>
-<p>This chapter will be updated with GIFs as common errors are reported to me throughout the 2016-2017 academic year. For references on errors and some solutions in the meantime, check out the following two links by Noam Ross <a href="https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md">here</a> and David Smith <a href="http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html">here</a>.</p>
+<p>For references on errors, check out the following two links by Noam Ross <a href="https://github.com/noamross/zero-dependency-problems/blob/master/misc/stack-overflow-common-r-errors.md">here</a> and David Smith <a href="http://blog.revolutionanalytics.com/2015/03/the-most-common-r-error-messages.html">here</a>.</p>
 <div id="error-could-not-find-function" class="section level2">
 <h2><span class="header-section-number">6.1</span> <code>Error: could not find function</code></h2>
 <p>This error usually occurs when a package has not been loaded into R via <code>library</code>. R does not know where to find the specified function. It’s a good habit to use the <code>library</code> functions on all of the packages you will be using in the top R chunk in your R Markdown file, which is usually given the chunk name <code>setup</code>.</p>
@@ -222,11 +222,12 @@ Calls: &lt;Anonymous&gt; ... evaluate -&gt; parse_all -&gt; parse_all.character 
 Execution halted
 
 Exited with status 1.</code></pre>
-<p>There needs to be one more parenthesis added at the end of your call to <code>mean</code>.</p>
+<p>There needs to be one more parenthesis added at the end of your call to <code>mean</code>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">x =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">52</span>))</code></pre></div>
 </div>
 <div id="general-guidelines" class="section level2">
 <h2><span class="header-section-number">6.5</span> General guidelines</h2>
-<p>Don’t be intimidated by R errors. Oftentimes, you will find that you are able to understand what they mean by carefully reading over them. When you can’t, carefully look over your R Markdown file again. You might also want to clear out all of your R environment and start at the top by running the chunks. Remember to only include what you deem your reader will need to follow your analysis.</p>
+<p>Try your best to not be intimidated by R errors. Oftentimes, you will find that you are able to understand what they mean by carefully reading over them. When you can’t, carefully look over your R Markdown file again. You might also want to clear out all of your R environment and start at the top by running the chunks. Remember to only include what you deem your reader will need to follow your analysis.</p>
 <p>Even people that have worked with R and programmed for years still use Google and support websites like Stack Overflow asking for help with their R errors or when they aren’t sure how to do something in R. I think you’ll be pleasantly surprised at just how much support is out there.</p>
 
 </div>
@@ -248,7 +249,7 @@ Exited with status 1.</code></pre>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -266,7 +267,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ismayc/rbasics-book/edit/master/94-errors.Rmd",
+"link": "https://github.com/ismayc/rbasics-book/edit/master/06-errors.Rmd",
 "text": "Edit"
 },
 "download": ["rbasics.pdf"],
@@ -283,7 +284,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

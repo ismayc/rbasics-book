@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Chester Ismay">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2018-01-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -232,13 +232,8 @@ Remember to think about your future self whenever you can, especially with progr
 <p>We will be discussing both <strong>strings</strong> and <strong>factors</strong> in the data structures section (Section <a href="5-rmdanal.html#data-structures">5.3</a>) and why this additional parameter <code>stringsAsFactors</code> set to <code>FALSE</code> is recommended.</p>
 <p>It’s good practice to check out the data after you have loaded it in:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(periodic_table)</code></pre></div>
-<p>The GIF below walks through downloading the CSV file and loading it into the data frame object named <code>periodic_table</code>. In addition, it shows another way to view data frames that is built into RStudio without having to run the <code>View</code> function. Note that a new R Markdown file is created here as well called <code>chemistry_example.Rmd</code>. We are writing the commands directly into R chunks here, but you may find it nicer to play around in your R Console sandbox first.</p>
-<div class="figure" style="text-align: center"><span id="fig:loadchemdata"></span>
-<img src="gifs/chemistr_load.gif" alt="Viewing the periodic table data frame" width="\textwidth" />
-<p class="caption">
-Figure 5.1: Viewing the periodic table data frame
-</p>
-</div>
+<p>The video below walks through downloading the CSV file and loading it into the data frame object named <code>periodic_table</code>. In addition, it shows another way to view data frames that is built into RStudio without having to run the <code>View</code> function. Note that a new R Markdown file is created here as well called <code>chemistry_example.Rmd</code>. We are writing the commands directly into R chunks here, but you may find it nicer to play around in your R Console sandbox first.</p>
+<iframe src="https://www.youtube.com/embed/QHv0I2Ph660" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>I encourage you to take the R chunks that follow in this chapter, type/copy them into an R Markdown file that has loaded the <code>periodic_table</code> data set, and watch that your resulting output will match the output that I have presented for you here in this book. This book was written in R Markdown after all!</p>
 </div>
 </div>
@@ -281,16 +276,16 @@ friend_ages</code></pre></div>
 <p>There is not a huge difference in how these values are stored from a user’s perspective, but it is a good habit to specify what class your variables are whenever possible to help with collaboration and documentation.</p>
 <p><strong>Using the seq function</strong></p>
 <p>The most likely way you will enter character values into a vector is via the <code>c</code> function. Numeric values can be entered in a couple different ways. You saw the first way using the <code>c</code> function above. Since numbers have an ordering to them, we can also specify a sequence of numbers with some starting value, ending value, and how much we’d like to increment each step in the sequence:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sequence_by_2 &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> 0L, <span class="dt">to =</span> 100L, <span class="dt">by =</span> 2L)
-sequence_by_2</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sequence_by_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> 0L, <span class="dt">to =</span> 100L, <span class="dt">by =</span> 2L)
+sequence_by_<span class="dv">2</span></code></pre></div>
 <pre><code>##  [1]   0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32
 ## [18]  34  36  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66
 ## [35]  68  70  72  74  76  78  80  82  84  86  88  90  92  94  96  98 100</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sequence_by_2)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sequence_by_<span class="dv">2</span>)</code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p>You now might have a better sense to what the numbers in the <code>[ ]</code> before the output refer to. This is done to help you keep track of where you are in the printing of the output. So the first element denoted by <code>[1]</code> is 0, the 18<sup>th</sup> entry (<code>[18]</code>) is 34, and the 35<sup>th</sup> entry (<code>[35]</code>) is 68. This will serve as a nice introduction into indexing and subsetting in Section <a href="5-rmdanal.html#index-sub">5.5</a>.</p>
 <p>We can also set the sequence to go by a negative number or a decimal value. We will do both in the next example.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_frac_seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">10</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">by =</span> -<span class="fl">0.2</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_frac_seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">10</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="op">-</span><span class="fl">0.2</span>)
 dec_frac_seq</code></pre></div>
 <pre><code>##  [1] 10.0  9.8  9.6  9.4  9.2  9.0  8.8  8.6  8.4  8.2  8.0  7.8  7.6
 ## [14]  7.4  7.2  7.0  6.8  6.6  6.4  6.2  6.0  5.8  5.6  5.4  5.2  5.0
@@ -299,10 +294,10 @@ dec_frac_seq</code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p><strong>Using the : operator</strong></p>
 <p>A short-cut version of the <code>seq</code> version can be achieved using the <code>:</code> operator. If we are increasing values by 1 (or -1), we can use the <code>:</code> operator to build our vector:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inc_seq &lt;-<span class="st"> </span><span class="dv">98</span>:<span class="dv">112</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inc_seq &lt;-<span class="st"> </span><span class="dv">98</span><span class="op">:</span><span class="dv">112</span>
 inc_seq</code></pre></div>
 <pre><code>##  [1]  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_seq &lt;-<span class="st"> </span><span class="dv">5</span>:-<span class="dv">5</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_seq &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">:-</span><span class="dv">5</span>
 dec_seq</code></pre></div>
 <pre><code>##  [1]  5  4  3  2  1  0 -1 -2 -3 -4 -5</code></pre>
 <p><strong>Combining vectors into data frames</strong></p>
@@ -323,15 +318,15 @@ friends</code></pre></div>
 <p>If we have a strings vector/variable that has some sort of natural ordering to it, it frequently makes sense to convert that vector/variable into a <strong>factor</strong>. The factor will convert the strings to integers to keep track of which order you’d prefer and also keep track of the original string values as well.</p>
 <p>Looking over our <code>periodic_table</code> data frame again via <code>View(periodic_table)</code>, you can see some good candidates for shifting from <code>chr</code> to <code>Factor</code>. If you remember your chemistry, you’ll know that the natural ordering of the <code>block</code> variable is <code>&quot;s&quot;</code>, <code>&quot;p&quot;</code>, <code>&quot;d&quot;</code>, and <code>&quot;f&quot;</code>.</p>
 <p>By default, R will organize character strings in alphabetical order. To see this, we’ll introduce two new features: the <code>table</code> function and the <code>$</code> operator.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table$block)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre></div>
 <pre><code>## 
 ##  d  f  p  s 
 ## 40 28 36 14</code></pre>
 <p>We see here a count of the number of elements that appear in each block. But as I said, the ordering is off. You may remember the <code>$</code> as appearing before the variable names in the <code>str</code> function. That wasn’t a coincidence. To access specific variables inside a data frame we can do so by entering the name of the data frame followed by <code>$</code> and lastly by the name of the variable. (Note here that spaces in variable names will not work. You’ll learn that the hard way as I have more than likely.)</p>
 <p>To convert <code>block</code> into a factor, we use the aptly named <code>factor</code> function. Note that this is “converting” by assigning the result of <code>factor</code> back to <code>block</code> in <code>periodic_table</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table$block &lt;-<span class="st"> </span><span class="kw">factor</span>(periodic_table$block,
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>block &lt;-<span class="st"> </span><span class="kw">factor</span>(periodic_table<span class="op">$</span>block,
                                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;s&quot;</span>, <span class="st">&quot;p&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;f&quot;</span>))</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table$block)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre></div>
 <pre><code>## 
 ##  s  p  d  f 
 ## 14 36 40 28</code></pre>
@@ -341,7 +336,7 @@ friends</code></pre></div>
 <div id="vectorized-operations" class="section level2">
 <h2><span class="header-section-number">5.4</span> Vectorized operations</h2>
 <p>R can work extremely quickly when handed a vector or a collection of vectors like a data frame. Instead of walking through each element to perform an operation that we might need to do in other older programming languages, we can do something like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">five_years_older &lt;-<span class="st"> </span>ages_numeric +<span class="st"> </span>5L
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">five_years_older &lt;-<span class="st"> </span>ages_numeric <span class="op">+</span><span class="st"> </span>5L
 five_years_older</code></pre></div>
 <pre><code>## [1] 30 42 27 35</code></pre>
 <p>Like that, we have ages that are five more than where we started. This extends to adding two vectors together<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
@@ -352,7 +347,7 @@ five_years_older</code></pre></div>
 <div id="using-with-a-vectorvariable" class="section level3">
 <h3><span class="header-section-number">5.5.1</span> Using <code>[ ]</code> with a vector/variable</h3>
 <p>Recall the use of <code>[ ]</code> when a vector was printed to help us better understand where we are in printing a large vector. We will use this same tool to select the tenth to the twentieth elements of the <code>periodic_table$name</code> variable:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table$name[<span class="dv">10</span>:<span class="dv">20</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>name[<span class="dv">10</span><span class="op">:</span><span class="dv">20</span>]</code></pre></div>
 <pre><code>##  [1] &quot;Neon&quot;       &quot;Sodium&quot;     &quot;Magnesium&quot;  &quot;Aluminium&quot;  &quot;Silicon&quot;   
 ##  [6] &quot;Phosphorus&quot; &quot;Sulfur&quot;     &quot;Chlorine&quot;   &quot;Argon&quot;      &quot;Potassium&quot; 
 ## [11] &quot;Calcium&quot;</code></pre>
@@ -360,13 +355,13 @@ five_years_older</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</code></pre></div>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>We can also use <code>-</code> to select everything but the elements listed after it:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[-<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 </div>
 <div id="using-with-a-data-frame" class="section level3">
 <h3><span class="header-section-number">5.5.2</span> Using <code>[ , ]</code> with a data frame</h3>
 <p>We have now seen how to select specific elements of a vector or a variable but what if we wanted a subset of the values in the larger data frame across both rows (observations) and columns (variables). We can use <code>[ , ]</code> where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let’s pick rows 40 to 50 and columns 1, 2, and 4 from <code>periodic_table</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[<span class="dv">41</span>:<span class="dv">50</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[<span class="dv">41</span><span class="op">:</span><span class="dv">50</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
 <pre><code>##    atomic_number symbol
 ## 41            41     Nb
 ## 42            42     Mo
@@ -396,14 +391,14 @@ five_years_older</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]</code></pre></div>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>This can be extended to choose specific elements from a data frame based on the values in the “cells” of the data frame. A logical vector like the one above (<code>c(TRUE, FALSE, TRUE, FALSE)</code>) can be generated based on our entries:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names ==<span class="st"> &quot;Bertha&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names <span class="op">==</span><span class="st"> &quot;Bertha&quot;</span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
 <p>We see that only the first element is set to <code>TRUE</code> as we suspected since <code>&quot;Bertha&quot;</code> is the first entry in the vector. We, thus, have another way of subsetting to choose only those names that are <code>&quot;Bertha&quot;</code> or <code>&quot;Alice&quot;</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[friend_names %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Alice&quot;</span>)]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[friend_names <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Alice&quot;</span>)]</code></pre></div>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>The <code>%in%</code> operator looks element-wise in the <code>friend_names</code> vector and then tries to match each entry with the entries in <code>c(&quot;Bertha&quot;, &quot;Alice&quot;)</code>.</p>
 <p>Now we can think about how to subset an entire data frame using the same sort of creation of two logical vectors (one for rows and one for columns):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[ (periodic_table$name %in%<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hydrogen&quot;</span>, <span class="st">&quot;Oxygen&quot;</span>) ), 
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[ (periodic_table<span class="op">$</span>name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hydrogen&quot;</span>, <span class="st">&quot;Oxygen&quot;</span>) ), 
                 <span class="kw">c</span>(<span class="st">&quot;atomic_weight&quot;</span>, <span class="st">&quot;state_at_stp&quot;</span>)]</code></pre></div>
 <pre><code>##   atomic_weight state_at_stp
 ## 1      1.008235          Gas
@@ -416,7 +411,7 @@ five_years_older</code></pre></div>
 <h2><span class="header-section-number">5.6</span> Functions</h2>
 <p>We’ve been using <strong>functions</strong> throughout this entire chapter and you might not have even noticed it. The <code>seq</code> command we saw earlier is a function. It expects a few arguments: <code>from</code>, <code>to</code>, <code>by</code>, and a few others that we didn’t specify. How do I know this and why didn’t we specify them?</p>
 <p>Recall that you can look up the help documentation on any function by entering <code>?</code> and the function name in the R console. If we do this for <code>seq</code> with <code>?seq</code>, we are given some examples of what to expect under the <strong>Usage</strong> section. R allows for function arguments to take on default values and that’s what we see:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> ((to -<span class="st"> </span>from)/(length.out -<span class="st"> </span><span class="dv">1</span>)),
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> ((to <span class="op">-</span><span class="st"> </span>from)<span class="op">/</span>(length.out <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)),
     <span class="dt">length.out =</span> <span class="ot">NULL</span>, <span class="dt">along.with =</span> <span class="ot">NULL</span>, ...)</code></pre></div>
 <p>By default, the sequence will both start and end at 1 (a not very interesting sequence). The <code>length.out</code> and <code>along.with</code> arguments are specified to <code>NULL</code> by default. <code>NULL</code> represents an empty object in R, so they are essentially ignored unless the person using the <code>seq</code> function specifies values for them. The <code>...</code> argument is beyond the scope of this book but you can read more about it and other useful tips about writing function at the NiceRCode page <a href="http://nicercode.github.io/guides/functions/">here</a>.</p>
 <p>Not all functions have all default arguments like <code>seq</code>. The <code>mean</code> function is one such example:</p>
@@ -496,7 +491,7 @@ Exited with status 1.</code></pre>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -514,7 +509,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ismayc/rbasics-book/edit/master/93-intro_anal.Rmd",
+"link": "https://github.com/ismayc/rbasics-book/edit/master/05-intro_anal.Rmd",
 "text": "Edit"
 },
 "download": ["rbasics.pdf"],
@@ -531,7 +526,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);

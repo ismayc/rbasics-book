@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.3.9 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Chester Ismay">
 
 
-<meta name="date" content="2017-03-20">
+<meta name="date" content="2018-01-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -197,15 +197,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="header">
 <h1 class="title">Getting used to R, RStudio, and R Markdown</h1>
 <h4 class="author"><em>Chester Ismay</em></h4>
-<h4 class="date"><em>2017-03-20</em></h4>
+<h4 class="date"><em>2018-01-07</em></h4>
 </div>
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
-<p>In the HTML version of this book, you can also download the PDF version of the book by clicking on PDF button in the top toolbar of the page. HTML is the preferred format but the PDF format may be preferred for some readers. Links to the different GIFs directly found in the HTML version are provided in the PDF version.</p>
-<p>This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research. Many screenshots and GIFs will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue <a href="https://github.com/ismayc/rbasics-book/issues">here</a> or email <a href="mailto:chester.ismay@gmail.com">me</a> with a reference to the error/area where more guidance is necessary. Pull requests on GitHub for typos or improvements are preferred and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.</p>
+<p>In the HTML version of this book, you can also download the PDF version of the book by clicking on PDF button in the top toolbar of the page. HTML is the preferred format but the PDF format may be preferred for some readers. Links to the different YouTube videos directly found in the HTML version are provided in the PDF version. You can also download the video files directly <a href="https://github.com/ismayc/rbasics-book/tree/master/mp4">here</a>. Note that no audio is attached to these screencast videos.</p>
+<p>This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research. Many screenshots and screencasts (with no audio) will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue <a href="https://github.com/ismayc/rbasics-book/issues">here</a> or email <a href="mailto:chester.ismay@gmail.com">me</a> with a reference to the error/area where more guidance is necessary. <a href="https://code.tutsplus.com/courses/git-basics-github-pull-requests">Pull requests</a> on GitHub for typos or improvements are preferred and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.</p>
 <p>This book will evolve and be updated as needed based on feedback. You can always check the date below to see when the book was last updated.</p>
-<p>It is recommended that you have R version 3.3.0 or later, RStudio Desktop version 0.99 or higher, and <code>rmarkdown</code> R package version 1.0 or higher. This is to make sure that the screenshots and GIF recordings match up with the behavior on your machine/set-up. Additionally, you may find that GIFs don’t load sometimes. I haven’t had any problems using Google Chrome and recommend that as your browser to view this book if you have troubles with others.</p>
-<p>This book was last updated by cismay on Monday, March 20, 2017 11:35:47 PDT.</p>
+<p>It is recommended that you have R version 3.3.0 or later, RStudio Desktop version 1.0 or higher, and <code>rmarkdown</code> R package version 1.0 or higher. This is to make sure that the screenshots and GIF recordings match up with the behavior on your machine/set-up. Additionally, you may find that GIFs don’t load sometimes. I haven’t had any problems using Google Chrome and recommend that as your browser to view this book if you have troubles with others.</p>
+<p>This book was last updated by Chester on Sunday, January 07, 2018 17:11:12 PST.</p>
 
 </div>
             </section>
@@ -225,7 +225,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
@@ -260,7 +260,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(script.src))
       script.src  = script.src.replace(/^https?:/, '');
     document.getElementsByTagName("head")[0].appendChild(script);
