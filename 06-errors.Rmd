@@ -4,39 +4,38 @@ For references on errors, check out the following two links by Noam Ross [here](
 
 ## `Error: could not find function`
 
-This error usually occurs when a package has not been loaded into R via `library`.  R does not know
-where to find the specified function.  It's a good habit to use the `library` functions on all of the packages you will be using in the top R chunk in your R Markdown file, which is usually given the chunk name `setup`.
+This error usually occurs when a package has not been loaded into R via `library`, so R does not know where to find the specified function. It's a good habit to use the `library` functions on all of the packages you will be using in the top R chunk in your R Markdown file, which is usually given the chunk name `setup`.
 
 ## `Error: object not found`
 
-This error usually refers to your R Markdown document having a chunk that refers to an object that has not been defined in an R chunk at or before that chunk.  You'll frequently see this when you've forgotten to copy code from your R Console sandbox back into a chunk in R Markdown.
+This error usually occurs when your R Markdown document refers to an object that has not been defined in an R chunk at or before that chunk. You'll frequently see this when you've forgotten to copy code from your R Console sandbox back into a chunk in R Markdown.
 
 ## Misspellings
 
-One of the most frustrating errors you can do in R is by misspelling the name of an object or function.  R is not forgiving on this and it won't try to automatically figure out what you are referring to.  You'll usually be able to quite easily figure out that you made a typo because you'll receive an `object not found` error.
+One of the most frustrating errors you can encounter in R is when you misspell the name of an object or function. R is not forgiving on this, and it won't try to automatically figure out what you are referring to. You'll usually be able to quite easily figure out that you made a typo because you'll receive an `object not found` error.
 
-Remember that R is also case-sensitive so if you called an object `Name` and then try to call it `name` later on without `name` being defined, you'll receive an error.
+Remember that R is also case-sensitive, so if you called an object `Name` and then try to call it `name` later on without `name` being defined, you'll receive an error.
 
 ## Unmatched parenthesis
 
-Another common error is forgetting/neglecting to finish a call to a function with a closing `)`.  An example of this follows:
+Another common error is forgetting or neglecting to finish a call to a function with a closing `)`. An example of this follows:
 
 ```{r eval=FALSE}
 mean(x = c(1, 5, 10, 52)
 ```
 
 ```
-Error in parse(text = x, srcfile = src) : 
-  <text>:2:0: unexpected end of input
+Error in parse(text = x, srcfile = src) :
+ <text>:2:0: unexpected end of input
 1: mean(x = c(1, 5, 10, 52)
-   ^
+  ^
 Calls: <Anonymous> ... evaluate -> parse_all -> parse_all.character -> parse
 Execution halted
 
 Exited with status 1.
 ```
 
-There needs to be one more parenthesis added at the end of your call to `mean`:
+In this case, there needs to be one more parenthesis added at the end of your call to `mean`:
 
 ```{r eval=FALSE}
 mean(x = c(1, 5, 10, 52))
@@ -44,6 +43,6 @@ mean(x = c(1, 5, 10, 52))
 
 ## General guidelines
 
-Try your best to not be intimidated by R errors.  Oftentimes, you will find that you are able to understand what they mean by carefully reading over them.  When you can't, carefully look over your R Markdown file again.  You might also want to clear out all of your R environment and start at the top by running the chunks.  Remember to only include what you deem your reader will need to follow your analysis.
+Try your best to not be intimidated by R errors. Oftentimes, you will find that you are able to understand what they mean by carefully reading over them. When you can't, carefully look over your R Markdown file again. You might also want to clear out all of your R environment and start at the top by running the chunks. Remember to only include what you deem your reader will need to follow your analysis.
 
-Even people that have worked with R and programmed for years still use Google and support websites like Stack Overflow asking for help with their R errors or when they aren't sure how to do something in R.  I think you'll be pleasantly surprised at just how much support is out there.
+Even people who have worked with R and programmed for years still use Google and support websites like Stack Overflow to ask for help with their R errors or when they aren't sure how to do something in R. I think you'll be pleasantly surprised at just how much support is available.
