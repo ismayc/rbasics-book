@@ -1,6 +1,6 @@
 ---
 title: "Getting used to R, RStudio, and R Markdown"
-author: "Chester Ismay"
+author: ["Chester Ismay", "Patrick C. Kennedy"]
 date: "`r Sys.Date()`"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
@@ -74,4 +74,4 @@ This book will evolve and be updated as needed based on reader feedback. You can
 
 I strongly recommend that you use R version 3.3.0 or higher, RStudio Desktop version 1.0 or higher, and `rmarkdown` R package version 1.0 or higher. This will ensure that your setup matches the screenshots and recordings, making it easier to follow along. Additionally, you may find that videos don't load sometimes. I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have trouble with other browsers.
 
-This book was last updated by `r paste(Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`.
+This book was last updated by `r paste(Sys.getenv("LOGNAME"), "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`.

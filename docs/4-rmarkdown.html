@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.11 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -23,9 +23,10 @@
   
 
 <meta name="author" content="Chester Ismay">
+<meta name="author" content="Patrick C. Kennedy">
 
 
-<meta name="date" content="2018-05-22">
+<meta name="date" content="2018-05-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -247,11 +248,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 standard for all programming languages.</p>
 </blockquote>
 <p>Essentially, the YAML header stores the metadata needed for the document. You can see an example of a YAML header from our <strong>first_rmarkdown.Rmd</strong> file:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ot">---</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="fu">title:</span><span class="at"> </span><span class="st">&quot;First RMarkdown&quot;</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Chester Ismay&quot;</span></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="fu">output:</span><span class="at"> html_document</span></a>
-<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="ot">---</span></a></code></pre></div>
+<pre class="sourceCode yaml"><code class="sourceCode yaml"><span class="ot">---</span>
+<span class="fu">title:</span><span class="at"> </span><span class="st">&quot;First RMarkdown&quot;</span>
+<span class="fu">author:</span><span class="at"> </span><span class="st">&quot;Chester Ismay&quot;</span>
+<span class="fu">output:</span><span class="at"> html_document</span>
+<span class="ot">---</span></code></pre>
 <p>There are many other fields that can be customized in the YAML header. The important thing to notice here are the three hyphens that begin and end the YAML header. Indentation also has meaning in YAML, so take care when aligning text.</p>
 </div>
 <div id="headers" class="section level3">
@@ -277,19 +278,19 @@ standard for all programming languages.</p>
 <iframe src="https://www.youtube.com/embed/BlVjGGcYHsk" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>Note that only numbers are needed as we saw by numbering “Warm up food” with a “1.” We can also combine unordered and ordered lists by indenting the text two spaces.</p>
 <p>In many of the examples that follow, you will see the actual text you’d type into your R Markdown document highlighted with a gray background and also the results of that text immediately below it.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb2-1" data-line-number="1">1. <span class="fl">Wake up</span></a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="fl">  - Get out of bed</span></a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="fl">1. Warm up food</span></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="fl">  - Open kitchen door</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="fl">  - Get plate out of cupboard</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="fl">2. Make coffee</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="fl">  i. Warm up water</span></a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="fl">  ii. Grind beans</span></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="fl">3. Make breakfast</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11">  We can have a paragraph (or two) here describing how we could go about making</a>
-<a class="sourceLine" id="cb2-12" data-line-number="12">  breakfast. If we indent the paragraph a few spaces and create a newline, it</a>
-<a class="sourceLine" id="cb2-13" data-line-number="13">  will indent below the item.</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">1. <span class="fl">Wake up</span>
+<span class="fl">  - Get out of bed</span>
+<span class="fl">1. Warm up food</span>
+<span class="fl">  - Open kitchen door</span>
+<span class="fl">  - Get plate out of cupboard</span>
+<span class="fl">2. Make coffee</span>
+<span class="fl">  i. Warm up water</span>
+<span class="fl">  ii. Grind beans</span>
+<span class="fl">3. Make breakfast</span>
+
+  We can have a paragraph (or two) here describing how we could go about making
+  breakfast. If we indent the paragraph a few spaces and create a newline, it
+  will indent below the item.</code></pre>
 <ol style="list-style-type: decimal">
 <li>Wake up
 <ul>
@@ -313,42 +314,42 @@ standard for all programming languages.</p>
 <h3><span class="header-section-number">4.2.6</span> Miscellaneous Markdown</h3>
 <p><strong>Line breaks / white spacing</strong></p>
 <p>Line breaks in combination with white space are incredibly important in Markdown, as they frequently denote the start of a new paragraph.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb3-1" data-line-number="1">Here is an example of text with only a line break.</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">You may expect this line to appear in a new paragraph but it doesn&#39;t.</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">Here is an example of text with only a line break.
+You may expect this line to appear in a new paragraph but it doesn&#39;t.</code></pre>
 <p>Here is an example of text with only a line break.
 You may expect this line to appear in a new paragraph but it doesn’t.</p>
 <p>In order to start a new paragraph, you need to add white space between the two paragraphs:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb4-1" data-line-number="1">Here is an example of text with a line break and white space.</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3">You may expect this line to appear in a new paragraph and it does.</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">Here is an example of text with a line break and white space.
+
+You may expect this line to appear in a new paragraph and it does.</code></pre>
 <p>Here is an example of text with a line break and white space.</p>
 <p>You may expect this line to appear in a new paragraph and it does.</p>
 <p><strong>Horizontal rules</strong></p>
 <p>Another useful way to divide up different parts of your document is by including horizontal lines, which can be added by placing three asterisks (or three hyphens) next to each other:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb5-1" data-line-number="1">***</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">***</code></pre>
 <hr />
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb6-1" data-line-number="1">---</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">---</code></pre>
 <hr />
 <p><strong>Blockquotes</strong></p>
 <p>If you’d like to quote someone or produce an indented text block, you can do so by adding a <code>&gt;</code> before the passage:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb7-1" data-line-number="1">&gt;<span class="dt"> Reproducible research is the idea that data analyses, and more generally,</span></a>
-<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="dt">scientific claims, are published with their data and software code so that</span></a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="dt">others may verify the findings and build upon them. - Roger Peng</span></a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">&gt;<span class="dt"> Reproducible research is the idea that data analyses, and more generally,</span>
+<span class="dt">scientific claims, are published with their data and software code so that</span>
+<span class="dt">others may verify the findings and build upon them. - Roger Peng</span></code></pre>
 <blockquote>
 <p>Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. - Roger Peng</p>
 </blockquote>
 <p><strong>Commenting Text</strong></p>
 <p>There are times where you might want to comment out text inside an R Markdown document. Say you wrote something that you don’t really want in the resulting knitted document, but you aren’t quite sure if you should delete it completely. To create a comment, enclose the block of text in <code>&lt;!-- --&gt;</code> as seen below:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb8-1" data-line-number="1">&lt;!--</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="co">I&#39;d like to save this text for later and don&#39;t want to delete it yet.</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">--&gt;</span></a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">&lt;!--
+<span class="co">I&#39;d like to save this text for later and don&#39;t want to delete it yet.</span>
+<span class="co">--&gt;</span></code></pre>
 <!--
 I'd like to save this text for later and don't want to delete it yet.
 -->
 <p>You won’t see the commented out results here in the book.</p>
 <p><strong>Equations</strong></p>
 <p>If you’d like nice mathematical formulas in your document, you can add them between two dollar signs:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><a class="sourceLine" id="cb9-1" data-line-number="1">$y = mx + b$</a></code></pre></div>
+<pre class="sourceCode markdown"><code class="sourceCode markdown">$y = mx + b$</code></pre>
 <p><span class="math inline">\(y = mx + b\)</span></p>
 </div>
 <div id="r-chunks" class="section level3">
