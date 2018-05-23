@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.11 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -23,9 +23,10 @@
   
 
 <meta name="author" content="Chester Ismay">
+<meta name="author" content="Patrick C. Kennedy">
 
 
-<meta name="date" content="2018-01-07">
+<meta name="date" content="2018-05-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -198,41 +227,41 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1><span class="header-section-number">3</span> R and RStudio Basics</h1>
 <div id="what-is-r" class="section level2">
 <h2><span class="header-section-number">3.1</span> What is R?</h2>
-<p>In Chapter <a href="2-whyR.html#whyR">2</a>, I discussed many of the reasons why you should be doing your analyses (especially those of the data type) using R. If you skipped over that chapter in the hopes of just hopping into learning about R, I request that you to go back to it and carefully read it over. As you begin working with R, it is especially important to review that introductory chapter from time to time.</p>
+<p>In Chapter <a href="2-whyR.html#whyR">2</a>, I discussed many of the reasons why you should begin doing your analyses (especially those of the data type) using R. If you skipped over that chapter in the hopes of just diving in to learning about R, I suggest you go back and read it over carefully. As you begin building fluency in working with R, it is especially important to review that introductory chapter from time to time.</p>
 <div id="r-beginnings" class="section level3">
 <h3><span class="header-section-number">3.1.1</span> R beginnings</h3>
-<p>R was created by a group of statisticians who wanted an open-source alternative to the costly proprietary options. Being created by statisticians (instead of computer scientists) means that R has some quirky aspects to it that take a little bit of time to get used to. We’ll see that many packages have been developed to help with this and that you don’t need to have advanced degrees in Statistics to be able to work with R now.</p>
-<p>Getting back to the development of R… R was created by <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman in New Zealand at the University of Auckland. It is a spin-off of the S programming language and is named partly after the first names of its developers (as you can see in the emphasis above). The beginning ideas for creating R came in 1992 and the first version of R was released in 1994. You can find much more about the background of R and its features as well as its connections to the S language on its <a href="https://en.wikipedia.org/wiki/R_(programming_language)">Wikipedia page</a>.</p>
+<p>R was developed by a group of statisticians who wanted an open-source alternative to the costly proprietary options that were (and still are) popular. Because it was created by statisticians (instead of computer scientists), R has some quirky aspects to it that take some time to get used to. We’ll see that many packages have been developed to help with this, and these days, you don’t need an advanced degree in statistics to work with R.</p>
+<p>Getting back to the development of R… R was created by <strong>R</strong>oss Ihaka and <strong>R</strong>obert Gentleman in New Zealand at the University of Auckland. It is a spin-off of the S programming language and was named partly after the first names of its developers (as you can see from the emphasis above). The beginning ideas for creating R came in 1992, and the first version of R was released in 1994. You can find much more about the background of R, its features, and its connections to the S language on <a href="https://en.wikipedia.org/wiki/R_(programming_language)">Wikipedia</a>.</p>
 </div>
 <div id="r-packages" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> R packages</h3>
-<p>I first learned to use R while a graduate student at Northern Arizona University from <a href="http://www.stat.colostate.edu/~pturk/">Dr. Philip Turk</a> in 2007. At the time, I never thought that R could have exploded in users as we have seen since 2011. I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.</p>
-<p>In 2007, it was still largely esoteric and tricky language used by statisticians to do analyses. Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience. So what has changed since 2007 about learning R?</p>
-<p>I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies. Packages are created by users of R to increase the functionality of the base R installation. Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler. From the Wikipedia page referenced earlier, as of January 2016, there were around 7800 additional R packages available on common R repositories.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
-<p>Another great development is the graphical user interface called RStudio and the package developed by the those that work for RStudio, Inc. called <code>rmarkdown</code>. We will discuss <code>rmarkdown</code> (also referred to as R Markdown) in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>, and will now focus on discussing RStudio.</p>
+<p>I first learned to use R as a graduate student at Northern Arizona University from <a href="http://www.stat.colostate.edu/~pturk/">Dr. Philip Turk</a> in 2007. At the time, I never thought that R could have exploded in users as we have seen since 2011. I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.</p>
+<p>In 2007, R was still largely an esoteric and tricky language used by statisticians to do analyses. Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience. So what has changed since 2007 about learning R?</p>
+<p>I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies. Packages are add-ons created by users of R to increase the functionality of the base R installation. Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler. As of April 2017, <a href="https://cran.r-project.org/web/packages/index.html">more than 10,400 packages</a> were available on common R repositories.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Another great development is the graphical user interface called RStudio and a package developed by RStudio, Inc. called <code>rmarkdown</code>. We will discuss <code>rmarkdown</code> (also referred to as R Markdown) in a Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>, and will now focus on discussing RStudio.</p>
 </div>
 </div>
 <div id="what-is-rstudio" class="section level2">
 <h2><span class="header-section-number">3.2</span> What is RStudio?</h2>
-<p>RStudio is a powerful, free, open-source integrated development environment for R. It began development in 2010 and its first beta release came in February 2011. It is available in two editions: RStudio Desktop and RStudio Server. This book will focus mostly on using the RStudio Server, but both versions are nearly identical to work with.</p>
-<p>You can find instructions linked below for downloading R and RStudio on Windows and Mac machines. If you are using RStudio Server, your professor and members of your organization’s IT department have done these steps for you. On the RStudio Server you log on using a web browser to an account sitting on the cloud. There are many advantages to using the RStudio Server for the beginning user including sharing of R projects to help with feedback and error resolution. Installation of software can also cause its own headaches and this is eliminated by using the RStudio Server.</p>
+<p>RStudio is a powerful, free, open-source integrated development environment for R. Development on RStudio began in 2010, and the first beta was released in February 2011. It is available in two editions: RStudio Desktop and RStudio Server. This book will focus mostly on RStudio Server, but both versions are nearly identical to work with.</p>
+<p>Instructions for downloading and installing R and RStudio on Windows and Mac machines are linked below. If you are using RStudio Server, your professor or members of your organization’s IT department have done these steps for you. For RStudio Server, you log on using a web browser to an account on the cloud. There are many advantages to using the RStudio Server for beginning users, including sharing of R projects to help with feedback and error resolution. Installation of software can also cause its own headaches, which are eliminated by using the RStudio Server.</p>
 <p><strong>Note for advanced users</strong>: You can also install your very own RStudio Server for around $5 per month on Digital Ocean. Instructions to do so can be found from Dean Attali <a href="http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/">here</a> and on the Digital Ocean site <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server">here</a>.</p>
 <p>After you complete a few months of work with the RStudio Server, it is recommended that you download RStudio Desktop to your computer. The instructions to do so are below.</p>
 <div id="installing-r-and-rstudio-desktop" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> Installing R and RStudio Desktop</h3>
-<p>It is worth noting that you can’t just install RStudio Desktop without installing R as RStudio needs to have R installed in order to run. A step-by-step guide to installing R and RStudio Desktop with screenshots can be found</p>
+<p>It is worth noting that you can’t just install RStudio Desktop without first installing R, as RStudio needs to have R installed to run. Step-by-step guides to installing R and RStudio Desktop with screenshots are available</p>
 <ul>
-<li><a href="http://www.reed.edu/data-at-reed/software/R/r_studio.html">here</a> for the Mac and</li>
+<li><a href="http://www.reed.edu/data-at-reed/software/R/r_studio.html">here</a> for the Mac, and</li>
 <li><a href="http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html">here</a> for a PC.</li>
 </ul>
-<p>Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX) you can skip some of the later steps of the installation. It is recommended that you select <strong>HTML</strong> as the Default Output Format for R Markdown. You’ll see more about this in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>.</p>
+<p>Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX), you can skip some of the later steps of the installation. It is recommended that you select <strong>HTML</strong> as the Default Output Format for R Markdown. You’ll see more about this in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>.</p>
 </div>
 </div>
 <div id="working-in-rstudio-server" class="section level2">
 <h2><span class="header-section-number">3.3</span> Working in RStudio Server</h2>
 <div id="logging-in-and-initial-screen" class="section level3">
 <h3><span class="header-section-number">3.3.1</span> Logging in and initial screen</h3>
-<p>The RStudio Server provides a web-based way to run analyses in R. This means that you will only need an internet connection and a web browser to run your analyses. Your professor or administrator will provide you with a link to the web location of your RStudio Server. After entering the link, you’ll see a page that looks something like:</p>
+<p>The RStudio Server provides a web-based interface to run analyses in R. This means that you will only need an internet connection and a web browser to run your analyses. Your professor or administrator will provide you with a link to the web location of your RStudio Server. After entering the link, you’ll see a page that looks something like:</p>
 <div class="figure" style="text-align: center"><span id="fig:serverlogin"></span>
 <img src="screenshots/server_login.png" alt="Login page for RStudio Server" width="\textwidth" />
 <p class="caption">
@@ -246,63 +275,63 @@ Figure 3.1: Login page for RStudio Server
 Figure 3.2: Initial page for RStudio Server
 </p>
 </div>
-<p>For your own reference, a screenshot of RStudio Desktop looks like:</p>
+<p>For reference, a screenshot of RStudio Desktop looks similar:</p>
 <div class="figure" style="text-align: center"><span id="fig:initialdesktop"></span>
 <img src="screenshots/desktop_initial.png" alt="Initial page for RStudio Desktop" width="\textwidth" />
 <p class="caption">
 Figure 3.3: Initial page for RStudio Desktop
 </p>
 </div>
-<p>As you can see they are almost identical. This makes working between the two different RStudio set-ups painless. A discussion of what each of the three different RStudio panes (will soon be four panes) and their corresponding tabs will occur in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>. You’ll find that a lot of what follows also applies to RStudio Desktop (except for the Shared Projects feature), but it always recommended to create an RStudio project regardless of whether you are on the cloud or working locally.</p>
+<p>This makes switching between the two RStudio set-ups painless. A discussion of each of the different RStudio panes and their corresponding tabs is in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>. You’ll find that a lot of what follows also applies to RStudio Desktop (except for the Shared Projects feature), but it is always recommended to create an RStudio project regardless of whether you are on the cloud or working locally.</p>
 </div>
 <div id="basic-workflow-with-rstudio" class="section level3">
 <h3><span class="header-section-number">3.3.2</span> Basic Workflow with RStudio</h3>
-<p>A good habit to get into whenever you start a new project with R code is to create a new RStudio project to go along with it. RStudio project files have the extension <code>.Rproj</code> and store metadata that goes along with the documents you’ve saved and information about the R environment you are working in. More information about RStudio projects is available from RStudio, Inc. <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">here</a>.</p>
+<p>When starting a new R project, it is good practice to create a new RStudio project to go along with it. RStudio project files have the extension <code>.Rproj</code> and store metadata and information about the R environment you are working in. More information about RStudio projects is available from <a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">RStudio, Inc</a>.</p>
 <p>If you are sharing homework or lab assignments with your instructor using RStudio Server, for example, it might make sense to create an RStudio project, share it with your instructor, and then create new folders for each lab. We will follow this example below.</p>
-<p>The video below shows you how to create a new RStudio project called <code>initial</code> and also your first R Markdown file. Note that you also may see a description about what version of R is running on your initial login like shown in the screencast below in the Console pane.</p>
+<p>The video below shows you how to create a new RStudio project called <code>initial</code> and add your first R Markdown file. Note that you also may see a description about what version of R is running on your initial login, as shown in the screencast below in the Console pane.</p>
 <iframe src="https://www.youtube.com/embed/6YcacPihHuI" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p>We have our <strong>first_rmarkdown.Rmd</strong> file set up.</p>
 </div>
 <div id="sharing-projects-on-rstudio-server-pro" class="section level3">
 <h3><span class="header-section-number">3.3.3</span> Sharing Projects on RStudio Server Pro</h3>
-<p>You will now see an example of how to share this project with another user. This will enable you and collaborators (other students, your instructor, etc.) to work on the <strong>Rmd</strong> file at the same time. This is similar to working on a Google Doc at the same time as someone else.</p>
-<p>RStudio Server comes in a couple different formats and you’ll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature. You can find more information from RStudio, Inc. on this <a href="https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro">here</a>. Below is an example video of sharing this <strong>initial.Rproj</strong> project file with another user of the RStudio Server.</p>
+<p>You will now see an example of how to share this project with another user. This will enable you and collaborators (other students, your instructor, etc.) to work on the <strong>Rmd</strong> file at the same time. This is similar to working collaboratively on a Google Doc.</p>
+<p>RStudio Server is available in multiple formats, so you’ll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature. You can find more information on this process from <a href="https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro">RStudio, Inc</a>. The video below illustrates the process of sharing the <strong>initial.Rproj</strong> project file we just created with another user on the same installation of RStudio Server.</p>
 <iframe src="https://www.youtube.com/embed/PeL9Du4J6iM" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>Both myself and <code>bottk</code> can now work together on this project. We can type our commentary and code into <strong>first_rmarkdown.Rmd</strong> or other files and save files to the common folder where <strong>initial.Rproj</strong> resides.</p>
+<p>Both myself and <code>bottk</code> can now work together on this project. We can type comments and code into <strong>first_rmarkdown.Rmd</strong> or other files in the project and save files to the common folder where <strong>initial.Rproj</strong> resides.</p>
 <p>In Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>, you’ll see why it is recommended you work in R Markdown files and you’ll also begin to see some examples of how R works with R Markdown.</p>
 </div>
 </div>
 <div id="rstudio-layout" class="section level2">
 <h2><span class="header-section-number">3.4</span> RStudio Layout</h2>
-<p>You may be initially a little overwhelmed by all the different panes and tabs that are available in RStudio. You’ll soon learn to love this layout but, as with all things, it will take a little bit to get used to it. We will begin with the top left pane, proceed to the top right pane, then to the bottom left pane, and lastly to the bottom right pane. These panes can be customized but it is recommended for beginning users to keep things in this standard layout.</p>
+<p>Initially, you may be a little overwhelmed by all the different panes and tabs that are available in RStudio, but you will soon learn to appreciate this layout. We will begin with the top left pane and proceed clockwise. The layout of these panes can be customized, but it is recommended that beginning users keep the standard layout.</p>
 <div id="code-editor-view-window" class="section level3">
 <h3><span class="header-section-number">3.4.1</span> Code Editor / View Window</h3>
-<p>Likely the pane where you will spend a majority of your time is in the top left. When you first login this pane isn’t there, but it was created when we made the <strong>first_rmarkdown.Rmd</strong>. This pane serves as a place to view the contents of files and objects in R. In the screencast below, you can see that we can change the text in this file and then save the file.</p>
-<p>Note that the tab that gives the filename will change its color from black to <font color="red">red</font> and an asterisk will appear after the filename. This is to remind you that the file is not saved. You’ll need to get into the habit of saving files frequently. You can have multiple tabs open and view different files in this pane. You’ll also see that you can <code>View</code> datasets in this pane in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>.</p>
+<p>The pane in which you will likely spend a majority of your time is the pane on the top left. When you first login, this pane isn’t there, but it appeared when we made the <strong>first_rmarkdown.Rmd</strong>. This pane serves as a place to view the contents of files and objects in R. In the screencast below, you can see that we can change the text in this file and then save the file.</p>
+<p>Note that, when you edit the file, the tab with the file name changes from black to <font color="red">red</font>, and an asterisk appears after the file name, indicating that the latest changes have not been saved. You should get in the habit of saving files frequently. You can have multiple tabs open and view different files in this pane. In Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>, you’ll also see that you can <code>View</code> datasets in this pane.</p>
 <iframe src="https://www.youtube.com/embed/fdJROYexFf0" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>It may not be clear what these additions are really doing just yet. You’ll be pressing the <strong>Knit HTML</strong> button near the top of the pane to put all of your text, code, and its output together. We aren’t quite there just yet though!</p>
+<p>It may not be clear what these additions are really doing just yet. That’s ok! When finished, you’ll be pressing the <strong>Knit HTML</strong> button near the top of the pane to put all of your text, code, and its output together. We aren’t quite there just yet though!</p>
 </div>
 <div id="environment-history" class="section level3">
 <h3><span class="header-section-number">3.4.2</span> Environment / History</h3>
-<p>The next pane includes by default an <strong>Environment</strong> tab and a <strong>History</strong> tab. To get a sense of what these tabs provide we’ll need to also use the bottom left pane and the <strong>Console</strong> tab. I’ll show you how to create multiple objects in R using the <strong>Console</strong>. Initially you will see that the <strong>Environment</strong> tab tells us that the “Environment is empty.” If you click on the <strong>History</strong> tab, you should also see a blank screen with a few icons. We won’t go over using all of these buttons here, but you are encouraged to hover over them and click on them to get a sense for what they do. As I enter code into the <strong>Console</strong> watch to see how the <strong>Environment</strong> and <strong>History</strong> tabs change.</p>
+<p>By default, the top right pane includes an <strong>Environment</strong> tab and a <strong>History</strong> tab. To get a sense of what these tabs provide, we’ll need to also use the bottom left pane and the <strong>Console</strong> tab. I’ll show you how to create multiple objects in R using the <strong>Console</strong>. Initially, you will see that the <strong>Environment</strong> tab tells us that the “Environment is empty.” This means there are no objects (e.g., data) yet. If you click on the <strong>History</strong> tab, you should also see a blank screen with a few icons. We won’t go over all of these buttons here, but I encourage you to hover over them and click on them to get a sense for what they do. As I enter code into the <strong>Console</strong>, watch to see how the <strong>Environment</strong> and <strong>History</strong> tabs change.</p>
 <iframe src="https://www.youtube.com/embed/hfH8DXFovt0" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>You can think of the <strong>Console</strong> as a place to play around. It is your R sandbox. You can test your code to make sure it is working and then copy that text into your <strong>Rmd</strong> file into a chunk after you are satisfied with it. We’ll see more examples of this in the chapters to come.</p>
-<p>Note that, by default, when you enter the name of an object into the console like I did with <code>sum_1_2</code> it displays the result. You’ve also been shown what is called the assignment operator denoted by <code>&lt;-</code>. You can read this as putting the contents of the right-hand-side into an object named whatever appears on the left-hand-side. For example, <code>num1</code> is the name of an object that stores the value 7.</p>
-<p>A powerful feature of the R language has been introduced in the <code>sum_1_2 &lt;- sum(num1, num2)</code> line. <code>sum</code> is a function. Functions are denoted by their name and then a parenthesis, their arguments separated by commas, and then a closing parenthesis. You’ll see many examples of these going forward. Of course, we’ll be using R for more than just a basic calculator shown here but this should give you a good idea of what the <strong>Environment</strong> and <strong>History</strong> tabs store.</p>
+<p>You can think of the <strong>Console</strong> as a place to play around. It is your R sandbox. You can test your code to make sure it is working and then copy that text into your <strong>Rmd</strong> file once you are satisfied with it. We’ll see more examples of this in the chapters to come.</p>
+<p>Note that, by default, when you enter the name of an object into the console like I did with <code>sum_1_2</code> it displays the result. You’ve also been shown what is called the assignment operator denoted by <code>&lt;-</code>. You can read this as putting the contents of the right-hand-side into an object named whatever appears on the left-hand-side. In the example, <code>num1</code> is the name of an object that stores the value 7.</p>
+<p>A powerful feature of the R language has been introduced in the <code>sum_1_2 &lt;- sum(num1, num2)</code> line. <code>sum</code> is a function. Functions are denoted by their name and then a parenthesis, followed by one or more arguments separated by commas, and then a closing parenthesis. You’ll see many examples of these going forward. Of course, we’ll be using R for more than just a basic calculator shown here but this should give you an idea of what the <strong>Environment</strong> and <strong>History</strong> tabs store.</p>
 </div>
 <div id="console" class="section level3">
 <h3><span class="header-section-number">3.4.3</span> Console</h3>
-<p>You’ll frequently use the <strong>Console</strong> as a way to check your work or thoughts on how to solve a problem using R. Before RStudio came around, most users of R just had a window like the <strong>Console</strong> provides where they entered their commands and then looked at the results in different windows. We will see that the <strong>Console</strong> and the <strong>Code Editor/View Window</strong> will allow us to store all of our code in a file and then “run” that code through the <strong>Console</strong> to check that it works. The example video below shows how this may be done.</p>
+<p>You’ll frequently use the <strong>Console</strong> as a way to check your work or experiment with how to solve a problem using R. Before RStudio, most users of R just had a window like the <strong>Console</strong> provides where they entered their commands and then looked at the results in different windows. We will see that the <strong>Console</strong> and the <strong>Code Editor/View Window</strong> will allow us to store all of our code in a file and then “run” that code through the <strong>Console</strong> to check that it works. The example video below shows how this is done.</p>
 <iframe src="https://www.youtube.com/embed/RPF6gGyeJmg" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
 <p><strong>Rules for naming objects</strong></p>
-<p>It is good practice to get in the habit of naming variables corresponding to what they actually represent. If you are dividing two different sums of numbers, you might want to choose a name like <code>ratio_of_sums</code> to refer to that object. R has a couple restrictions on what can be included in the name of R objects:</p>
+<p>It is good practice to get in the habit of naming variables corresponding to what they actually represent. If you are dividing two different sums of numbers, you might want to choose a name like <code>ratio_of_sums</code> to refer to that object. R has a few restrictions regarding what can be included in the name of R objects:</p>
 <ol style="list-style-type: decimal">
 <li>Object names cannot begin with a number.</li>
 <li>Object names cannot contain symbols used for mathematics or to denote other operations native to R. These symbols include <code>$</code>, <code>@</code>, <code>!</code>, <code>^</code>, <code>+</code>, <code>-</code>, <code>/</code>, and <code>*</code>.</li>
 </ol>
 <p>Another important property of R is that is case-sensitive. You’ll see what this means in the video below that also includes examples of invalid names of objects. Note that we will continue to work inside the R chunk as we did in the last video. You’ll see that these code chunks provide a nice way to keep track of our important analyses.</p>
 <iframe src="https://www.youtube.com/embed/GcWKm13Q1Uc" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of the line of code with an error. It won’t catch all errors, but this can be helpful. Not also that <code>Name</code>, <code>name</code>, and <code>nAme</code> refer to three different values.</p>
+<p>You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of lines of code with common syntax errors. These checks won’t catch all errors, but this can be helpful. Note also that <code>Name</code>, <code>name</code>, and <code>nAme</code> refer to three different values.</p>
 <p>Another thing to notice is that you can store numbers into an object with a given name like we did earlier with <code>num1</code>. If we’d like to store a character string such as “Chester”, we can provide the name of the object on the left-hand-side of <code>&lt;-</code> and the string in quotation marks on the right-hand-side of <code>&lt;-</code>. There are more complex object types that you will see in Chapter <a href="5-rmdanal.html#rmdanal">5</a>, but it is always important to think about the difference between a number and a character in R.</p>
 <p>It’s also a good idea to not call objects the names of functions that are built into R. You may want to call the addition of two numbers <code>sum</code> and R will allow this, but it is <strong>HIGHLY</strong> recommended that you create more descriptive names and not choose to name objects the same as common R functions. Something like <code>sum_densities</code> is better and less likely to be the name of a function.</p>
 </div>
@@ -315,15 +344,15 @@ Figure 3.3: Initial page for RStudio Desktop
 <h3><span class="header-section-number">3.4.5</span> The bottom right pane</h3>
 <p>The bottom right pane in RStudio contains the most tabs by default and is a useful place to view a variety of miscellaneous information about your RStudio project and its files.</p>
 <p><strong>Files</strong></p>
-<p>The leftmost tab here shows the file and folder structure. This shows you where the files are stored, what they are called, and any folders that may exist in your project folder. This can be thought of as similar to going to <strong>My Computer</strong> on a PC or opening <strong>Finder</strong> on a PC. Similarly, this gives the file and directory structure either on the cloud for RStudio Server or on your local machine for RStudio Desktop.</p>
+<p>The leftmost tab here shows the file and folder structure for the current working directory. In an RStudio project, this is the folder in which the project file was saved. This shows you where the files are stored, what they are called, and any folders that may exist in your project folder. This can be thought of as similar to going to <strong>My Computer</strong> on a PC or opening <strong>Finder</strong> on a Mac. Similarly, this tab lists the file and directory structure either on the cloud for RStudio Server or on your local machine for RStudio Desktop.</p>
 <p><strong>Plots / Viewer</strong></p>
 <p>You’ll see clearer examples of what the <strong>Plots</strong> and <strong>Viewer</strong> tabs provide in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>. As you likely guessed <strong>Plots</strong> will show you the resulting graphs/figures that your R code has generated. The <strong>Viewer</strong> tab can show you the resulting HTML file created from an R Markdown <strong>Knit</strong>.</p>
 <p><strong>Packages</strong></p>
-<p>You can get a sense for what packages have been downloaded to your computer/your cloud server by clicking on the <strong>Packages</strong> tab. You can also see which packages are loaded into the current working environment by looking to see if a check-mark exists next to the package name. Note that you may not have all of the packages loaded onto your machine that I do below in the video. That’s OK. This is just an example of what you may expect.</p>
+<p>The <strong>Packages</strong> tab lists all packages installed on your computer or cloud server. You can see which packages are loaded in the current working environment by looking to see if a check-mark exists next to the package name. Note that you may not have all of the packages loaded onto your machine that I do below in the video. That’s OK. This is just an example of what you may expect.</p>
 <iframe src="https://www.youtube.com/embed/Zm54FdyqRsc" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>You’ll also notice a <strong>Description</strong> of the package as well as the <strong>Version</strong> number here. Packages are frequently updated and improved so this is a way to check to see if you have the most up-to-date version of a package. Remember that this is likely taken care of for you if you are on an RStudio Server installation. If you are on RStudio Desktop, you might find the <strong>Install</strong> and <strong>Update</strong> buttons useful for downloading new packages or updating currently installed ones.</p>
+<p>You’ll also notice a <strong>Description</strong> of the package as well as the <strong>Version</strong> number here. Packages are frequently updated and improved, so this is a way to check whether you have the most up-to-date version of a package. Remember, if you are using RStudio Server, this is likely taken care of for you. If you are using RStudio Desktop, you might find the <strong>Install</strong> and <strong>Update</strong> buttons useful for downloading new packages or updating currently installed ones.</p>
 <p><strong>Help</strong></p>
-<p>We also saw an example of using the <strong>Help</strong> tab when we invoked the <code>?</code> function. This will show you documentation on R functions, datasets, and packages. If you see code that you aren’t really sure about, it is often a good go-to to enter a question mark followed by the name and see if the built-in documentation can help you out.</p>
+<p>We also saw an example of using the <strong>Help</strong> tab when we invoked the <code>?</code> function. This will show you documentation on R functions, datasets, and packages. When (not if) you come across code and you aren’t sure what it does, it is often helpful to enter a question mark followed by the name, and see if the built-in documentation can help you out.</p>
 
 </div>
 </div>
@@ -331,7 +360,7 @@ Figure 3.3: Initial page for RStudio Desktop
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>You’ll see how to download these packages via <code>install.packages(&quot;dplyr&quot;)</code> and load them into your current R working environment via <code>library(&quot;dplyr&quot;)</code>, for example, in Chapter <a href="5-rmdanal.html#rmdanal">5</a>.<a href="3-rstudiobasics.html#fnref1">↩</a></p></li>
+<li id="fn1"><p>You’ll see how to download these packages via <code>install.packages(&quot;dplyr&quot;)</code> and load them into your current R working environment via <code>library(&quot;dplyr&quot;)</code>, for example, in Chapter <a href="5-rmdanal.html#rmdanal">5</a>.<a href="3-rstudiobasics.html#fnref1" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -358,10 +387,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -386,9 +416,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

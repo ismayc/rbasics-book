@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7.11 and GitBook 2.6.7">
 
   <meta property="og:title" content="Getting used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -23,9 +23,10 @@
   
 
 <meta name="author" content="Chester Ismay">
+<meta name="author" content="Patrick C. Kennedy">
 
 
-<meta name="date" content="2018-01-07">
+<meta name="date" content="2018-05-23">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -50,41 +51,69 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -196,54 +225,75 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="rmdanal" class="section level1">
 <h1><span class="header-section-number">5</span> Intro to R using R Markdown</h1>
-<p>In this chapter, you’ll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R. You’ll be working with a common dataset derived from something that you likely have encountered before: the periodic table from chemistry.</p>
+<p>In this chapter, you’ll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R. In doing so, you will be working with a common dataset derived from something that you likely have encountered before: the periodic table of elements from chemistry.</p>
 <div id="a-beginning-directoryfile-workflow" class="section level2">
 <h2><span class="header-section-number">5.1</span> A beginning directory/file workflow</h2>
 <blockquote>
 <p>“File organization and naming are powerful weapons against chaos.” - Jenny Bryan</p>
 </blockquote>
-<p>Something that is not frequently discussed when working with files and programming languages like R is the importance of naming your files something relevantly and having organization of your files in folders. You may be tempted to call a file <code>analysis.Rmd</code> but what happens when you need to change your analysis months from now and you’ve named many files for many different projects <code>analysis.Rmd</code> in many different folders. It’s much better to give your future self a break and commit to concise naming strategies.</p>
+<p>Something that is not frequently discussed when working with files and programming languages like R is the importance of naming your files something relevantly unique and organizing your files in folders. You may be tempted to call a file <code>analysis.Rmd</code> but what happens when you need to change your analysis months from now and you’ve named many files for many different projects <code>analysis.Rmd</code> in many different folders. It’s much better to give your future self a break and commit to concise naming strategies.</p>
 <p>You can choose a variety of ways to name files. These guidelines are what I try to follow:</p>
 <ol style="list-style-type: decimal">
-<li><p>Group similar style files into the same folder whenever possible.</p>
-<p>Try not to have one folder that contains all of the different types of files you are working with. It is much easier to find what you are looking for if you put all of your <code>data</code> files in a <code>data</code> folder, all of your <code>figure</code> files in a <code>figure</code> folder, and so on.</p>
-<p>This rule can be broken if you only have one or two of each type. It can be the case that too many folders can waste your time when a useful search for the appropriate file may be able to find your file faster than digging through a complex hierarchy of directories.</p></li>
-<li><p>Name your files consistently so that what the file contains can be easily identified from the name of your file, but be concise.</p>
-<p>Seeing <code>test1.Rmd</code> and <code>test2.Rmd</code> doesn’t tell us much about what is actually in the files. It’s OK to create a temporary file or two if you don’t think you will be using it going forward, but you should be in the habit of reviewing your work at the end of your session and naming files that we needed appropriately.<br />
-Something like <code>model_fit_sodium.Rmd</code> is so much better in the long-run.<br />
-Remember to think about your future self whenever you can, especially with programming. Be nice to yourself so that future self really appreciates past self.</p></li>
-<li><p>Use an underscore to separate elements of the file name.</p>
-<p>The underscore <code>_</code> produces a visually appealing way for us to realize there is a separation between content. You may be tempted to just use a space, but spaces cause problems in R and in other programming languages. Some folks prefer to just change the case of the first letter of the word to bring attention. Here are a few examples of file names. You can be the judge as to what is most appealing to you:</p>
-<p><code>barplot_weight_height.Rmd</code> vs <code>barplotWeightHeight.Rmd</code> vs <code>barplotweightheight.Rmd</code></p>
-<p>Whatever you choose for style, be consistent and think about other users as you name your files. If you were passed a smorgasbord of files that is a mess to deal with and hard to understand, you wouldn’t like it, right? Don’t be that person to someone else (or yourself)!</p></li>
+<li>Group similar style files into the same folder whenever possible.</li>
 </ol>
+<p>Organize files by type: Try not to have one folder that contains all of the
+different types of files you are working with. It is much easier to find what you
+are looking for if you put all of your <code>data</code> files in a <code>data</code> folder, all of
+your <code>figure</code> files in a <code>figure</code> folder, and so on.</p>
+<p>This rule can be broken if you only have one or two files of each type. In that
+case, too many folders can make it harder to find what you’re looking for, in which
+case, searching may be faster than digging through a complex hierarchy of directories.</p>
+<ol start="2" style="list-style-type: decimal">
+<li>Name files consistently so that the contents of the file can be easily
+identified from the name of your file, but be concise.</li>
+</ol>
+<p>Seeing <code>test1.Rmd</code> and <code>test2.Rmd</code> doesn’t tell us much about what is actually
+in the files. It’s OK to create a temporary file or two if you don’t think you
+will be using it going forward, but you should be in the habit of reviewing your
+work at the end of your session and renaming useful files appropriately.
+Something like <code>model_fit_sodium.Rmd</code> is so much better in the long-run.
+Remember to think about your future self whenever you can, especially with
+programming. Be nice to yourself so that future self really appreciates past self.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Use an underscore to separate elements of the file name.</li>
+</ol>
+<p>The underscore <code>_</code> produces a visually appealing way for us to realize there is
+a separation between content. You may be tempted to just use a space, but spaces
+cause problems in R and in other programming languages. Some folks prefer to just
+change the case of the first letter of the word to bring attention. Here are a few
+examples of file names. You can be the judge as to what is most appealing to you:</p>
+<p><code>barplot_weight_height.Rmd</code> vs <code>barplotWeightHeight.Rmd</code> vs <code>barplotweightheight.Rmd</code></p>
+<p>Whatever you choose for style, be consistent and think about other users as you
+name your files. If you were given a smorgasbord of files that is a mess to
+deal with and hard to understand, you wouldn’t like it, right? Don’t be that
+person to someone else (or yourself)!</p>
 </div>
 <div id="using-r-with-periodic-table-dataset" class="section level2">
 <h2><span class="header-section-number">5.2</span> Using R with periodic table dataset</h2>
-<p>We now hop into the basics of working with a dataset in R. We will also explore the ways R stores data in <strong>objects</strong>, how to access specific elements in those objects, and also how to use <strong>functions</strong>, which are one of the most useful pieces of R to help with organization and clean code.</p>
-<p>It is worthy to note that many of the functions here such as <code>table</code> and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed and in particular the <code>dplyr</code> package. It is still important to get a sense for how R stores objects and how to interact with objects in the “old-school” way. You’ll still find some times where doing it this old way actually works just as nicely as the newer modern ways…but they are becoming fewer and fewer by the day. Anyways, you’ll hopefully be well-ready to hop into some statistical analyses or data tasks after you follow along with this introduction to R.</p>
+<p>We now dive in to the basics of working with a dataset in R. We will explore the ways R stores data in <strong>objects</strong>, how to access specific elements in those objects, and how to use <strong>functions</strong>, which are one of the most useful pieces of R, to help with organization and clean code. After completing this introduction, you will be prepared to dive in to statistical analyses or data tasks of your own.</p>
+<p>It is worth noting that many of the functions described here such as <code>table</code> and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed, in particular the <code>dplyr</code> package. Nevertheless, it is still important to get a sense for how R stores objects and how to interact with objects in the “old-school” way. You’ll still find some times where doing it this way actually works just as well as the newer modern ways…but those times are becoming less frequent all the time.</p>
 <div id="loading-data-from-a-file" class="section level3">
 <h3><span class="header-section-number">5.2.1</span> Loading data from a file</h3>
-<p>One of the most common ways you’ll want to work with data is by importing it from a file. A common file format that works nicely with R is the CSV (comma-separated values) file. The following R commands first download the CSV file from the internet on my webpage into the <code>periodic-table-data.csv</code> file on your computer, then reads in the CSV stored, and then gives the name <code>periodic_table</code> to the data frame that stores these values in R:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="dt">url =</span> <span class="st">&quot;http://ismayc.github.io/periodic-table-data.csv&quot;</span>, 
-  <span class="dt">destfile =</span> <span class="st">&quot;periodic-table-data.csv&quot;</span>)</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;periodic-table-data.csv&quot;</span>,
-                           <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>One of the most common ways you’ll want to work with data is by importing it from a file. A common file format that works nicely with R is the CSV (comma-separated values) file. The following R commands download the CSV file from the internet into the <code>periodic-table-data.csv</code> file on your computer, reads in the CSV stored, and then gives the name <code>periodic_table</code> to the data frame that stores these values in R:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">download.file</span>(<span class="dt">url =</span> <span class="st">&quot;http://ismayc.github.io/periodic-table-data.csv&quot;</span>,
+ <span class="dt">destfile =</span> <span class="st">&quot;periodic-table-data.csv&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">periodic_table &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;periodic-table-data.csv&quot;</span>,
+              <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre>
 <p>We will be discussing both <strong>strings</strong> and <strong>factors</strong> in the data structures section (Section <a href="5-rmdanal.html#data-structures">5.3</a>) and why this additional parameter <code>stringsAsFactors</code> set to <code>FALSE</code> is recommended.</p>
 <p>It’s good practice to check out the data after you have loaded it in:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(periodic_table)</code></pre></div>
-<p>The video below walks through downloading the CSV file and loading it into the data frame object named <code>periodic_table</code>. In addition, it shows another way to view data frames that is built into RStudio without having to run the <code>View</code> function. Note that a new R Markdown file is created here as well called <code>chemistry_example.Rmd</code>. We are writing the commands directly into R chunks here, but you may find it nicer to play around in your R Console sandbox first.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(periodic_table)</code></pre>
+<p>The video below walks through downloading the CSV file and loading it into the data frame object named <code>periodic_table</code>. It also shows another way to view data frames that is built into RStudio without having to run the <code>View</code> function. Note that a new R Markdown file is created here as well called <code>chemistry_example.Rmd</code>. We are writing the commands directly into R chunks here, but you may find it easier to play around in your R Console sandbox first.</p>
 <iframe src="https://www.youtube.com/embed/QHv0I2Ph660" width="650" height="400" frameborder="0" allowfullscreen=""></iframe>
-<p>I encourage you to take the R chunks that follow in this chapter, type/copy them into an R Markdown file that has loaded the <code>periodic_table</code> data set, and watch that your resulting output will match the output that I have presented for you here in this book. This book was written in R Markdown after all!</p>
+<p>I encourage you to take the R chunks that follow in this chapter, type/copy them into an R Markdown file that has loaded the <code>periodic_table</code> data set, and see that your resulting output matches the output that I have presented for you here. This book was written in R Markdown after all!</p>
 </div>
 </div>
 <div id="data-structures" class="section level2">
 <h2><span class="header-section-number">5.3</span> Data structures</h2>
 <div id="data-frames" class="section level3">
 <h3><span class="header-section-number">5.3.1</span> Data frames</h3>
-<p>Data frames are by far the most common type of object you will work with in R. This makes sense since R is a statistical computing language at its core, so handling spreadsheet-like data is something it should be good at. The <code>periodic_table</code> data set is stored as a data frame. As you can see there are many different types of variables in this data set. We can get a glimpse as to the types and some of the values of the variables by using the <code>str</code> function in the R Console:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(periodic_table)</code></pre></div>
-<p>Each of the names of the variables/columns in the data frame are listed immediately after the <code>$</code>. Then on each row of the <code>str</code> function call after the <code>:</code> we see what type of variable it is. For this <code>periodic_table</code> data set, we have four types: <code>int</code>, <code>chr</code>, <code>num</code>, and <code>logi</code>:</p>
+<p>Data frames are by far the most common type of object you will work with in R. This makes sense since R is a statistical computing language at its core, so handling spreadsheet-like data is something it should be good at. The <code>periodic_table</code> data set is stored as a data frame. As you can see, this data set includes many different types of variables. We can get a sense of the types and some of the values of the variables by using the <code>str</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(periodic_table)</code></pre>
+<p>Each of the names of the variables/columns in the data frame are listed immediately after the <code>$</code>. Then on each row of the <code>str</code> function call after the <code>:</code> we see what type of variable it is. The <code>periodic_table</code> data set has four data types: <code>int</code>, <code>chr</code>, <code>num</code>, and <code>logi</code>:</p>
 <ul>
 <li><code>int</code> corresponds to integer values</li>
 <li><code>chr</code> corresponds to character string values</li>
@@ -253,59 +303,59 @@ Remember to think about your future self whenever you can, especially with progr
 </div>
 <div id="vectors" class="section level3">
 <h3><span class="header-section-number">5.3.2</span> Vectors</h3>
-<p>Data frames are most commonly just many vectors put together into a single object. Our <code>periodic_table</code> data frame has each row correspond to a chemical element and each column correspond to a different measurement or characteristic of that element. There are many different ways to create a vector that stands on its own outside of a data frame.</p>
+<p>Data frames can be thought of as many vectors of the same length put together into a single object. In the <code>periodic_table</code> data frame, each row corresponds to a chemical element and each column corresponds to a different measurement or characteristic of that element. There are many different ways to create a vector that stands on its own outside of a data frame.</p>
 <p><strong>Using the c function</strong></p>
 <p>If you would like to list out many entries and put them into a vector object, you can do so via the <code>c</code> function. If you enter <code>?c</code> in the R Console, you can gain information about it. The “c” stands for combine or concatenate.</p>
-<p>Suppose we wanted to create a way to store four names:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Herbert&quot;</span>, <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Nathaniel&quot;</span>)
-friend_names</code></pre></div>
+<p>Suppose we wanted a way to store four names:</p>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Herbert&quot;</span>, <span class="st">&quot;Alice&quot;</span>, <span class="st">&quot;Nathaniel&quot;</span>)
+friend_names</code></pre>
 <pre><code>## [1] &quot;Bertha&quot;    &quot;Herbert&quot;   &quot;Alice&quot;     &quot;Nathaniel&quot;</code></pre>
 <p>You can see when <code>friend_names</code> is outputted that there are four entries to it. This is vector is known as a <strong>strings</strong> vector since it contains character strings. You can check to see what type an object is by using the <code>class</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(friend_names)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(friend_names)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 <p>Next suppose we wanted to put the ages of our friends in another vector. We can again use the <code>c</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_ages &lt;-<span class="st"> </span><span class="kw">c</span>(25L, 37L, 22L, 30L)
-friend_ages</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">friend_ages &lt;-<span class="st"> </span><span class="kw">c</span>(25L, 37L, 22L, 30L)
+friend_ages</code></pre>
 <pre><code>## [1] 25 37 22 30</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(friend_ages)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(friend_ages)</code></pre>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p>Note the use of the <code>L</code> value here. This tells R that the numbers entered have no decimal components. If we didn’t designate the <code>L</code> we can see that the values are read in as <code>&quot;numeric&quot;</code> by default:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ages_numeric &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">37</span>, <span class="dv">22</span>, <span class="dv">30</span>)
-<span class="kw">class</span>(ages_numeric)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">ages_numeric &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">25</span>, <span class="dv">37</span>, <span class="dv">22</span>, <span class="dv">30</span>)
+<span class="kw">class</span>(ages_numeric)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<p>There is not a huge difference in how these values are stored from a user’s perspective, but it is a good habit to specify what class your variables are whenever possible to help with collaboration and documentation.</p>
+<p>From a user’s perspective, there is not a huge difference in how these values are stored, but it is still a good habit to specify what class your variables are whenever possible to help with collaboration and documentation.</p>
 <p><strong>Using the seq function</strong></p>
-<p>The most likely way you will enter character values into a vector is via the <code>c</code> function. Numeric values can be entered in a couple different ways. You saw the first way using the <code>c</code> function above. Since numbers have an ordering to them, we can also specify a sequence of numbers with some starting value, ending value, and how much we’d like to increment each step in the sequence:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sequence_by_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> 0L, <span class="dt">to =</span> 100L, <span class="dt">by =</span> 2L)
-sequence_by_<span class="dv">2</span></code></pre></div>
+<p>The most likely way you will enter character values into a vector is via the <code>c</code> function. Numeric values can be entered in a couple different ways. One is using the <code>c</code> function, as we saw above. Because numbers have a natural order, we can also specify a sequence of numbers with a starting value, an ending value, and the amount by which to increment each step in the sequence:</p>
+<pre class="sourceCode r"><code class="sourceCode r">sequence_by_<span class="dv">2</span> &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> 0L, <span class="dt">to =</span> 100L, <span class="dt">by =</span> 2L)
+sequence_by_<span class="dv">2</span></code></pre>
 <pre><code>##  [1]   0   2   4   6   8  10  12  14  16  18  20  22  24  26  28  30  32
 ## [18]  34  36  38  40  42  44  46  48  50  52  54  56  58  60  62  64  66
 ## [35]  68  70  72  74  76  78  80  82  84  86  88  90  92  94  96  98 100</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sequence_by_<span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sequence_by_<span class="dv">2</span>)</code></pre>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<p>You now might have a better sense to what the numbers in the <code>[ ]</code> before the output refer to. This is done to help you keep track of where you are in the printing of the output. So the first element denoted by <code>[1]</code> is 0, the 18<sup>th</sup> entry (<code>[18]</code>) is 34, and the 35<sup>th</sup> entry (<code>[35]</code>) is 68. This will serve as a nice introduction into indexing and subsetting in Section <a href="5-rmdanal.html#index-sub">5.5</a>.</p>
+<p>You should now have a better sense of what the numbers in the <code>[ ]</code> before the output refer to. This helps you keep track of where you are in the printing of the output. So the first element denoted by <code>[1]</code> is 0, the 18<sup>th</sup> entry (<code>[18]</code>) is 34, and the 35<sup>th</sup> entry (<code>[35]</code>) is 68. This will serve as a nice introduction into indexing and subsetting in Section <a href="5-rmdanal.html#index-sub">5.5</a>.</p>
 <p>We can also set the sequence to go by a negative number or a decimal value. We will do both in the next example.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_frac_seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">10</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="op">-</span><span class="fl">0.2</span>)
-dec_frac_seq</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">dec_frac_seq &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">10</span>, <span class="dt">to =</span> <span class="dv">3</span>, <span class="dt">by =</span> <span class="fl">-0.2</span>)
+dec_frac_seq</code></pre>
 <pre><code>##  [1] 10.0  9.8  9.6  9.4  9.2  9.0  8.8  8.6  8.4  8.2  8.0  7.8  7.6
 ## [14]  7.4  7.2  7.0  6.8  6.6  6.4  6.2  6.0  5.8  5.6  5.4  5.2  5.0
 ## [27]  4.8  4.6  4.4  4.2  4.0  3.8  3.6  3.4  3.2  3.0</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(dec_frac_seq)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(dec_frac_seq)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p><strong>Using the : operator</strong></p>
 <p>A short-cut version of the <code>seq</code> version can be achieved using the <code>:</code> operator. If we are increasing values by 1 (or -1), we can use the <code>:</code> operator to build our vector:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">inc_seq &lt;-<span class="st"> </span><span class="dv">98</span><span class="op">:</span><span class="dv">112</span>
-inc_seq</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">inc_seq &lt;-<span class="st"> </span><span class="dv">98</span><span class="op">:</span><span class="dv">112</span>
+inc_seq</code></pre>
 <pre><code>##  [1]  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dec_seq &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">:-</span><span class="dv">5</span>
-dec_seq</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">dec_seq &lt;-<span class="st"> </span><span class="dv">5</span><span class="op">:-</span><span class="dv">5</span>
+dec_seq</code></pre>
 <pre><code>##  [1]  5  4  3  2  1  0 -1 -2 -3 -4 -5</code></pre>
 <p><strong>Combining vectors into data frames</strong></p>
-<p>If you aren’t reading in data from a file and you have some vectors of information you’d like combined into a single data frame, you can use the <code>data.frame</code> function to do so:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friends &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">names =</span> friend_names, 
-                      <span class="dt">ages =</span> friend_ages,
-                      <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
-friends</code></pre></div>
+<p>If you aren’t reading in data from a file and you have some vectors of information you’d like combined into a single data frame, you can use the <code>data.frame</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r">friends &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">names =</span> friend_names,
+           <span class="dt">ages =</span> friend_ages,
+           <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+friends</code></pre>
 <pre><code>##       names ages
 ## 1    Bertha   25
 ## 2   Herbert   37
@@ -315,18 +365,18 @@ friends</code></pre></div>
 </div>
 <div id="factors" class="section level3">
 <h3><span class="header-section-number">5.3.3</span> Factors</h3>
-<p>If we have a strings vector/variable that has some sort of natural ordering to it, it frequently makes sense to convert that vector/variable into a <strong>factor</strong>. The factor will convert the strings to integers to keep track of which order you’d prefer and also keep track of the original string values as well.</p>
+<p>If we have a strings vector/variable that has some sort of natural ordering to it, it frequently makes sense to convert that vector/variable into a <strong>factor</strong>. The factor will convert the strings to integers to keep track of which order you’d prefer, and also keep track of the original string values as well.</p>
 <p>Looking over our <code>periodic_table</code> data frame again via <code>View(periodic_table)</code>, you can see some good candidates for shifting from <code>chr</code> to <code>Factor</code>. If you remember your chemistry, you’ll know that the natural ordering of the <code>block</code> variable is <code>&quot;s&quot;</code>, <code>&quot;p&quot;</code>, <code>&quot;d&quot;</code>, and <code>&quot;f&quot;</code>.</p>
 <p>By default, R will organize character strings in alphabetical order. To see this, we’ll introduce two new features: the <code>table</code> function and the <code>$</code> operator.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre>
 <pre><code>## 
 ##  d  f  p  s 
 ## 40 28 36 14</code></pre>
-<p>We see here a count of the number of elements that appear in each block. But as I said, the ordering is off. You may remember the <code>$</code> as appearing before the variable names in the <code>str</code> function. That wasn’t a coincidence. To access specific variables inside a data frame we can do so by entering the name of the data frame followed by <code>$</code> and lastly by the name of the variable. (Note here that spaces in variable names will not work. You’ll learn that the hard way as I have more than likely.)</p>
+<p>The table function provides a count of the number of elements that appear in each block. But as you can see, the ordering is off. You may remember the <code>$</code> displayed before variable names in the <code>str</code> function. That isn’t a coincidence. To access specific variables inside a data frame, we can do so by entering the name of the data frame followed by <code>$</code> and the name of the variable. (Note that spaces in variable names will not work. You’ll likely learn that the hard way, as I have.)</p>
 <p>To convert <code>block</code> into a factor, we use the aptly named <code>factor</code> function. Note that this is “converting” by assigning the result of <code>factor</code> back to <code>block</code> in <code>periodic_table</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>block &lt;-<span class="st"> </span><span class="kw">factor</span>(periodic_table<span class="op">$</span>block,
-                               <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;s&quot;</span>, <span class="st">&quot;p&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;f&quot;</span>))</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>block &lt;-<span class="st"> </span><span class="kw">factor</span>(periodic_table<span class="op">$</span>block,
+                <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;s&quot;</span>, <span class="st">&quot;p&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;f&quot;</span>))</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(periodic_table<span class="op">$</span>block)</code></pre>
 <pre><code>## 
 ##  s  p  d  f 
 ## 14 36 40 28</code></pre>
@@ -335,33 +385,33 @@ friends</code></pre></div>
 </div>
 <div id="vectorized-operations" class="section level2">
 <h2><span class="header-section-number">5.4</span> Vectorized operations</h2>
-<p>R can work extremely quickly when handed a vector or a collection of vectors like a data frame. Instead of walking through each element to perform an operation that we might need to do in other older programming languages, we can do something like this:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">five_years_older &lt;-<span class="st"> </span>ages_numeric <span class="op">+</span><span class="st"> </span>5L
-five_years_older</code></pre></div>
+<p>R can work extremely quickly when provided with a vector or a collection of vectors like a data frame. Instead of iterating through each element to perform an operation that we might need to do in other programming languages, we can do something like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r">five_years_older &lt;-<span class="st"> </span>ages_numeric <span class="op">+</span><span class="st"> </span>5L
+five_years_older</code></pre>
 <pre><code>## [1] 30 42 27 35</code></pre>
-<p>Like that, we have ages that are five more than where we started. This extends to adding two vectors together<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>.</p>
+<p>Just like that, every age is five more than where we started. This extends to adding two vectors together<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
 </div>
 <div id="index-sub" class="section level2">
 <h2><span class="header-section-number">5.5</span> Indexing and subsetting</h2>
 <p>So we have a big data frame of information about the periodic table, but what if we wanted to extract smaller pieces of the data frame? You already saw that to focus on any specific variable we can use the <code>$</code> operator.</p>
 <div id="using-with-a-vectorvariable" class="section level3">
 <h3><span class="header-section-number">5.5.1</span> Using <code>[ ]</code> with a vector/variable</h3>
-<p>Recall the use of <code>[ ]</code> when a vector was printed to help us better understand where we are in printing a large vector. We will use this same tool to select the tenth to the twentieth elements of the <code>periodic_table$name</code> variable:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>name[<span class="dv">10</span><span class="op">:</span><span class="dv">20</span>]</code></pre></div>
+<p>Recall the use of <code>[ ]</code> when a vector was printed, to help us better understand where we were in printing a large vector. We can use this same tool to select the tenth to the twentieth elements of the <code>periodic_table$name</code> variable:</p>
+<pre class="sourceCode r"><code class="sourceCode r">periodic_table<span class="op">$</span>name[<span class="dv">10</span><span class="op">:</span><span class="dv">20</span>]</code></pre>
 <pre><code>##  [1] &quot;Neon&quot;       &quot;Sodium&quot;     &quot;Magnesium&quot;  &quot;Aluminium&quot;  &quot;Silicon&quot;   
 ##  [6] &quot;Phosphorus&quot; &quot;Sulfur&quot;     &quot;Chlorine&quot;   &quot;Argon&quot;      &quot;Potassium&quot; 
 ## [11] &quot;Calcium&quot;</code></pre>
-<p>Similarly if we’d only like to select a few elements from our <code>friend_names</code> vector, we can specify the entries directly:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</code></pre></div>
+<p>Similarly, if we only want to select a few elements from our <code>friend_names</code> vector, we can specify the entries directly:</p>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)]</code></pre>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>We can also use <code>-</code> to select everything but the elements listed after it:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="op">-</span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</code></pre>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 </div>
 <div id="using-with-a-data-frame" class="section level3">
 <h3><span class="header-section-number">5.5.2</span> Using <code>[ , ]</code> with a data frame</h3>
-<p>We have now seen how to select specific elements of a vector or a variable but what if we wanted a subset of the values in the larger data frame across both rows (observations) and columns (variables). We can use <code>[ , ]</code> where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let’s pick rows 40 to 50 and columns 1, 2, and 4 from <code>periodic_table</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[<span class="dv">41</span><span class="op">:</span><span class="dv">50</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</code></pre></div>
+<p>You have now seen how to select specific elements of a vector or a variable, but what if we want a subset of the values in the full data frame across both rows (observations) and columns (variables). We can use <code>[ , ]</code> where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let’s select rows 40 to 50 and columns 1, 2, and 4 from <code>periodic_table</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">periodic_table[<span class="dv">41</span><span class="op">:</span><span class="dv">50</span>, <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>)]</code></pre>
 <pre><code>##    atomic_number symbol
 ## 41            41     Nb
 ## 42            42     Mo
@@ -387,91 +437,91 @@ five_years_older</code></pre></div>
 </div>
 <div id="using-logicals" class="section level3">
 <h3><span class="header-section-number">5.5.3</span> Using logicals</h3>
-<p>As you’ve seen we can specify directly which elements we’d like to select based on the integer values of the indices of the data frame. Another way to select elements is by using a logical vector:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]</code></pre></div>
+<p>As you’ve seen, we can specify directly which elements we’d like to select based on the integer values of the indices of the data frame. Another way to select elements is by using a logical vector:</p>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)]</code></pre>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>This can be extended to choose specific elements from a data frame based on the values in the “cells” of the data frame. A logical vector like the one above (<code>c(TRUE, FALSE, TRUE, FALSE)</code>) can be generated based on our entries:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names <span class="op">==</span><span class="st"> &quot;Bertha&quot;</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names <span class="op">==</span><span class="st"> &quot;Bertha&quot;</span></code></pre>
 <pre><code>## [1]  TRUE FALSE FALSE FALSE</code></pre>
-<p>We see that only the first element is set to <code>TRUE</code> as we suspected since <code>&quot;Bertha&quot;</code> is the first entry in the vector. We, thus, have another way of subsetting to choose only those names that are <code>&quot;Bertha&quot;</code> or <code>&quot;Alice&quot;</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friend_names[friend_names <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Alice&quot;</span>)]</code></pre></div>
+<p>We see that only the first element in this new vector is set to <code>TRUE</code> because <code>&quot;Bertha&quot;</code> is the first entry in the friend_names vector. We thus have another way of subsetting that will return only those names that are <code>&quot;Bertha&quot;</code> or <code>&quot;Alice&quot;</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r">friend_names[friend_names <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Bertha&quot;</span>, <span class="st">&quot;Alice&quot;</span>)]</code></pre>
 <pre><code>## [1] &quot;Bertha&quot; &quot;Alice&quot;</code></pre>
 <p>The <code>%in%</code> operator looks element-wise in the <code>friend_names</code> vector and then tries to match each entry with the entries in <code>c(&quot;Bertha&quot;, &quot;Alice&quot;)</code>.</p>
 <p>Now we can think about how to subset an entire data frame using the same sort of creation of two logical vectors (one for rows and one for columns):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">periodic_table[ (periodic_table<span class="op">$</span>name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hydrogen&quot;</span>, <span class="st">&quot;Oxygen&quot;</span>) ), 
-                <span class="kw">c</span>(<span class="st">&quot;atomic_weight&quot;</span>, <span class="st">&quot;state_at_stp&quot;</span>)]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">periodic_table[ (periodic_table<span class="op">$</span>name <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Hydrogen&quot;</span>, <span class="st">&quot;Oxygen&quot;</span>) ),
+        <span class="kw">c</span>(<span class="st">&quot;atomic_weight&quot;</span>, <span class="st">&quot;state_at_stp&quot;</span>)]</code></pre>
 <pre><code>##   atomic_weight state_at_stp
 ## 1      1.008235          Gas
 ## 8     15.999000          Gas</code></pre>
 <p>The extra parentheses around <code>periodic_table$name %in% c(&quot;Hydrogen&quot;, &quot;Oxygen&quot;)</code> are a good habit to get into as they ensure everything before the comma is used to select specific rows matching that condition. For the columns, we can specify a vector of the column names to focus on only those variables. The resulting table here gives the <code>atomic_weight</code> and <code>state_at_stp</code> for <code>&quot;Hydrogen&quot;</code> and then for <code>&quot;Oxygen&quot;</code>.</p>
-<p>There are many more complicated ways to subset a data frame and one can use the <code>subset</code> function built into R, but in my experience it is even easier to use the <code>filter</code> and <code>select</code> function in the <code>dplyr</code> package whenever you want to do anything more complicated than what we have done here.</p>
+<p>There are many more complicated ways to subset a data frame and one can use the <code>subset</code> function built into R, but in my experience, whenever you want to do anything more complicated than what we have done here, it is easier to use the <code>filter</code> and <code>select</code> functions in the <code>dplyr</code> package.</p>
 </div>
 </div>
 <div id="functions" class="section level2">
 <h2><span class="header-section-number">5.6</span> Functions</h2>
-<p>We’ve been using <strong>functions</strong> throughout this entire chapter and you might not have even noticed it. The <code>seq</code> command we saw earlier is a function. It expects a few arguments: <code>from</code>, <code>to</code>, <code>by</code>, and a few others that we didn’t specify. How do I know this and why didn’t we specify them?</p>
+<p>You might not have noticed, but we have been using <strong>functions</strong> throughout this entire chapter. The <code>seq</code> command we saw earlier is a function. It expects a few arguments: <code>from</code>, <code>to</code>, <code>by</code>, and a few others that we didn’t specify. How do I know this and why didn’t we specify them?</p>
 <p>Recall that you can look up the help documentation on any function by entering <code>?</code> and the function name in the R console. If we do this for <code>seq</code> with <code>?seq</code>, we are given some examples of what to expect under the <strong>Usage</strong> section. R allows for function arguments to take on default values and that’s what we see:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> ((to <span class="op">-</span><span class="st"> </span>from)<span class="op">/</span>(length.out <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)),
-    <span class="dt">length.out =</span> <span class="ot">NULL</span>, <span class="dt">along.with =</span> <span class="ot">NULL</span>, ...)</code></pre></div>
-<p>By default, the sequence will both start and end at 1 (a not very interesting sequence). The <code>length.out</code> and <code>along.with</code> arguments are specified to <code>NULL</code> by default. <code>NULL</code> represents an empty object in R, so they are essentially ignored unless the person using the <code>seq</code> function specifies values for them. The <code>...</code> argument is beyond the scope of this book but you can read more about it and other useful tips about writing function at the NiceRCode page <a href="http://nicercode.github.io/guides/functions/">here</a>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">1</span>, <span class="dt">by =</span> ((to <span class="op">-</span><span class="st"> </span>from)<span class="op">/</span>(length.out <span class="op">-</span><span class="st"> </span><span class="dv">1</span>)),
+  <span class="dt">length.out =</span> <span class="ot">NULL</span>, <span class="dt">along.with =</span> <span class="ot">NULL</span>, ...)</code></pre>
+<p>By default, the sequence will both start and end at 1 (a not very interesting sequence). The <code>length.out</code> and <code>along.with</code> arguments are set to <code>NULL</code> by default. <code>NULL</code> represents an empty object in R, so they are essentially ignored, unless you specify values for them. The <code>...</code> argument is beyond the scope of this book, but you can read more about it and other useful tips about writing function at the NiceRCode page <a href="http://nicercode.github.io/guides/functions/">here</a>.</p>
 <p>Not all functions have all default arguments like <code>seq</code>. The <code>mean</code> function is one such example:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>()</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>()</code></pre>
 <pre><code>Error in mean.default() : argument &quot;x&quot; is missing, with no default
 Calls: &lt;Anonymous&gt; ... withVisible -&gt; eval -&gt; eval -&gt; mean -&gt; mean.default
 Execution halted
 
 Exited with status 1.</code></pre>
-<p>Notice that an error is given here, where one is not given if you don’t specify the arguments to <code>seq</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>()</code></pre></div>
+<p>Notice that R returns an error here, which is not the case if you don’t specify the arguments to <code>seq</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">seq</span>()</code></pre>
 <pre><code>## [1] 1</code></pre>
-<p>To fix the error, we’ll need to specify which vector/object we’d like to compute the mean of. Recall the <code>ages_numeric</code> vector. We can pass that into the <code>mean</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ages_numeric</code></pre></div>
+<p>To fix the error, we’ll need to specify which vector or object we want to compute the mean of. Recall the <code>ages_numeric</code> vector. We can pass that into the <code>mean</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r">ages_numeric</code></pre>
 <pre><code>## [1] 25 37 22 30</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">x =</span> ages_numeric)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">x =</span> ages_numeric)</code></pre>
 <pre><code>## [1] 28.5</code></pre>
-<p>We can also skip specifying the name of the argument if you follow the same order as what is given in <strong>Usage</strong> in the documentation:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ages_numeric)</code></pre></div>
+<p>We can also skip specifying the name of the argument, as long as you follow the same order as what is given in <strong>Usage</strong> in the documentation:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ages_numeric)</code></pre>
 <pre><code>## [1] 28.5</code></pre>
 <p>We can see that R expects the arguments to be <code>x</code>, then <code>trim</code>, and then <code>na.rm</code>. What happens if we try to specify <code>TRUE</code> for <code>na.rm</code> without specifically saying <code>na.rm = TRUE</code>?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ages_numeric, <span class="ot">TRUE</span>)</code></pre></div>
-<pre><code>Error in mean.default(ages_numeric, TRUE) : 
-  &#39;trim&#39; must be numeric of length one
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(ages_numeric, <span class="ot">TRUE</span>)</code></pre>
+<pre><code>Error in mean.default(ages_numeric, TRUE) :
+ &#39;trim&#39; must be numeric of length one
 Calls: &lt;Anonymous&gt; ... withVisible -&gt; eval -&gt; eval -&gt; mean -&gt; mean.default
 Execution halted
 
 Exited with status 1.</code></pre>
-<p>Since <code>trim</code> comes before <code>na.rm</code> in the list if we don’t specify our name it will think the second argument is for <code>trim</code>. <code>trim</code> expects a fraction between 0 and 0.5 though so R barks at us that it doesn’t understand. It usually is good practice for beginners to enter the name of the argument and then an equals sign and then the value you’d like the argument to take on. Something like what follows is clean and helps with readability:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">x =</span> ages_numeric, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Because <code>trim</code> comes before <code>na.rm</code> in the list of arguments, R assumes whatever we put after the first comma is the argument for <code>trim</code>. However, <code>trim</code> expects a fraction between 0 and 0.5, so R informs us that it doesn’t understand. It usually is good practice to enter the name of the argument, an equals sign, and then the value you want the argument to take on. The following is clean and helps with readability:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(<span class="dt">x =</span> ages_numeric, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)</code></pre>
 <pre><code>## [1] 28.5</code></pre>
 <p><strong>Why do some arguments require quotations and others don’t?</strong></p>
-<p>As you begin to explore help documentation for different functions, you’ll begin to notice that some arguments require quotations around them while others (like those for <code>mean</code> don’t). This brings us back to the discussion earlier about strings, logicals, and numeric/integer classes.</p>
-<p>An example of a function requiring a character string (or vector) is the <code>install.packages</code> function, which is at the heart of R’s ability to expand on its built-in functionality by importing <strong>packages</strong> that include functions, templates, and data and are written by users of R. If you run <code>?install.packages</code> you’ll see that the first argument <code>pkgs</code> is expected to be a character vector. You’ll therefore need to enter the packages you’d like to download and install inside quotes.</p>
-<p>Two useful packages that I recommend you install and download are <code>&quot;ggplot2&quot;</code> and <code>&quot;dplyr&quot;</code>. (Hopefully your instructor/server administrator has already done so for you if you are using an RStudio Server.) This function has a large number of arguments with all but <code>pkgs</code> set by default. We’ll pick a couple here to specify instead of using the defaults:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>,<span class="st">&quot;dplyr&quot;</span>),
-                 <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.org&quot;</span>,
-                 <span class="dt">dependencies =</span> <span class="ot">TRUE</span>,
-                 <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p>You’ll notice looking through the help via <code>?install.packages</code> that what type of argument is expected is given:</p>
+<p>As you begin to explore help documentation for different functions, you’ll notice that some arguments require quotations around them, while others (like those for <code>mean</code>) don’t. This brings us back to the discussion earlier about strings, logicals, and numeric/integer classes.</p>
+<p>One example of a function that requires a character string (or vector) is the <code>install.packages</code> function, which is at the heart of R’s ability to expand on its built-in functionality by importing <strong>packages</strong> that include functions, templates, and data written by users of R. If you run <code>?install.packages</code>, you’ll see that the first argument <code>pkgs</code> is expected to be a character vector. You’ll therefore need to enter the packages you’d like to download and install inside quotes.</p>
+<p>Two useful packages that I recommend you install and download are <code>&quot;ggplot2&quot;</code> and <code>&quot;dplyr&quot;</code> (if you are using RStudio Server, hopefully your instructor or server administrator has already done so). The <code>install.packages</code> function has a large number of arguments, with all but the <code>pkgs</code>argument set by default. We’ll pick a couple here to specify instead of using the defaults:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="dt">pkgs =</span> <span class="kw">c</span>(<span class="st">&quot;ggplot2&quot;</span>,<span class="st">&quot;dplyr&quot;</span>),
+         <span class="dt">repos =</span> <span class="st">&quot;http://cran.rstudio.org&quot;</span>,
+         <span class="dt">dependencies =</span> <span class="ot">TRUE</span>,
+         <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</code></pre>
+<p>If you refer back to the help via <code>?install.packages</code>, you will see descriptions that what type of argument is expected:</p>
 <ul>
 <li><code>pkgs</code> expects a character vector</li>
 <li><code>repos</code> expects a character vector</li>
 <li><code>dependencies</code> expects a logical value (<code>TRUE</code> or <code>FALSE</code>)</li>
 <li><code>quiet</code> expects a logical value</li>
 </ul>
-<p>After you’ve downloaded the packages, you’ll need to load the package into your R environment using the <code>library</code> function:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
-<span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</code></pre></div>
+<p>After you’ve downloaded the packages, you can load the package into your R environment using the <code>library</code> function:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)
+<span class="kw">library</span>(<span class="st">&quot;dplyr&quot;</span>)</code></pre>
 </div>
 <div id="closing-thoughts" class="section level2">
 <h2><span class="header-section-number">5.7</span> Closing thoughts</h2>
-<p>There are plenty more advanced analyses to be done with R. This chapter serves as a way to get you started with R without digging in too much. I encourage you to review this chapter frequently as you learn to use R. Quiz yourself on what a specific command does and see if you are correct. Breaking R is a pretty hard thing to do. Play around and try to figure out error messages on your own first for 15 minutes or so. If you are still not sure what is going on, check out some of the help with errors in the next chapter.</p>
+<p>There are many more advanced analyses that can be done with R, but this chapter provides a way to get started with R without digging in too much. I encourage you to review this chapter frequently as you learn to use R. Quiz yourself on what a specific command does, and then check to see if you are correct. Breaking R is a pretty hard thing to do. Play around, and try to figure out error messages on your own first for 15 minutes or so. Then, if you are still not sure what is going on, check out some of the help with errors in the next chapter.</p>
 
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="3">
-<li id="fn3"><p>Vectors of the same size, of course…well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let’s ignore that for now.<a href="5-rmdanal.html#fnref3">↩</a></p></li>
+<li id="fn3"><p>Vectors of the same size, of course…well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let’s ignore that for now.<a href="5-rmdanal.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -498,10 +548,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -526,9 +577,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

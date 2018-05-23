@@ -1,27 +1,11 @@
 # Concluding Remarks {#conclusion}
 
-I hope that this book provides a nice gateway into understanding how statisticians, 
-data scientists, and many other professionals use RStudio and R Markdown to simplify
-their analyses and to ensure that their reports are computationally reproducible.
-Learning R is nowhere near as intimidating as it used to be and more and more
-industries are shifting towards free open-source tools like R and RStudio.  R Markdown
-provides an excellent way to document your analyses and share it with others in a
-variety of formats.
+My hope is that this book provides a nice introduction into understanding how statisticians, data scientists, and many other professionals use RStudio and R Markdown to simplify their analyses and ensure that their reports are computationally reproducible. Learning R is not nearly as intimidating as it once was, and more and more industries are shifting towards free open-source tools like R and RStudio. R Markdown provides an excellent way to document your analyses and share it with others in a variety of formats.
 
-Of course, this book is just the tip of the iceberg in terms of showing you what R
-can really do.  If you'd like to learn more I encourage you to check out Albert Kim
-and I's online, free, open-source book on using modern data analysis techniques
-and visualization with R, RStudio, and R Markdown.  More details on that project
-will be coming soon.
+Of course, this book is just the tip of the iceberg in terms of showing you what R can really do. If you'd like to learn more, I encourage you to check out [Modern Dive](http://www.moderndive.com/), a free, online, open-source book Albert Kim and I wrote on using modern data analysis techniques and visualization with R, RStudio, and R Markdown.
 
-Additionally, Garrett Grolemund's "Hands-On Programming with R" [@handson2014] is
-an excellent resource and goes into more depth than I do here as to how to work with more
-complicated objects in R.  It also discusses concepts in a project-based framework
-that is entertaining and easy-to-read.
+Additionally, Garrett Grolemund's "Hands-On Programming with R" [@handson2014] is an excellent resource and goes into much more depth than I do here on how to work with more complicated objects in R. It also discusses concepts in a project-based framework that is entertaining and easy-to-read.
 
-As always, feel free to send me an email at <chester.ismay@gmail.com> if you'd
-like any further clarification or if you have suggestions on improvements.  Thanks
-for taking the time to read through this and best wishes to you on your next
-steps towards reproducible, thoughtful, beautiful analyses!
+As always, feel free to send me an email at <chester.ismay@gmail.com> if you'd like any further clarification or if you have suggestions on improvements. Thanks for taking the time to read through this and best wishes to you on your next steps towards reproducible, thoughtful, beautiful analyses!
 
 `-` Chester

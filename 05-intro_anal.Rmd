@@ -1,106 +1,85 @@
+# Intro to R using R Markdown {#rmdanal}
+
 ```{r include=FALSE}
 # Not sure why alignment was shifted back to left?
 knitr::opts_chunk$set(tidy = FALSE, fig.align = "center")
 ```
 
-# Intro to R using R Markdown {#rmdanal}
-
-In this chapter, you'll see many of the ways that R stores objects and more
-details on how you can use functions to solve problems in R.  You'll be
-working with a common dataset derived from something that you likely have
-encountered before:  the periodic table from chemistry.
+In this chapter, you'll see many of the ways that R stores objects and more details on how you can use functions to solve problems in R. In doing so, you will be working with a common dataset derived from something that you likely have encountered before: the periodic table of elements from chemistry.
 
 ## A beginning directory/file workflow
 
 > "File organization and naming are powerful weapons against chaos." - Jenny Bryan
 
-Something that is not frequently discussed when working with files and programming
-languages like R is the importance of naming your files something relevantly and 
-having organization of your files in folders.  You may be tempted to call a file 
-`analysis.Rmd` but what happens when you need to change your analysis months from 
-now and you've named many files for many different projects `analysis.Rmd` in many
-different folders.  It's much better to give your future self a break and commit 
-to concise naming strategies.
+Something that is not frequently discussed when working with files and programming languages like R is the importance of naming your files something relevantly unique and organizing your files in folders. You may be tempted to call a file `analysis.Rmd` but what happens when you need to change your analysis months from now and you've named many files for many different projects `analysis.Rmd` in many different folders. It's much better to give your future self a break and commit to concise naming strategies.
 
-You can choose a variety of ways to name files.  These guidelines are what I try 
-to follow:
+You can choose a variety of ways to name files. These guidelines are what I try to follow:
 
 1. Group similar style files into the same folder whenever possible.
 
-    Try not to have one folder that contains all of the different types of files 
-    you are working with.  It is much easier to find what you are looking for if 
-    you put all of your `data` files in a `data` folder, all of your `figure` files
-    in a `figure` folder, and so on.
+  Organize files by type: Try not to have one folder that contains all of the
+  different types of files you are working with. It is much easier to find what you
+  are looking for if you put all of your `data` files in a `data` folder, all of
+  your `figure` files in a `figure` folder, and so on.
 
-    This rule can be broken if you only have one or two of each type.  It can be the
-    case that too many folders can waste your time when a useful search for the
-    appropriate file may be able to find your file faster than digging through a 
-    complex hierarchy of directories.
+  This rule can be broken if you only have one or two files of each type. In that
+  case, too many folders can make it harder to find what you're looking for, in which
+  case, searching may be faster than digging through a complex hierarchy of directories.
 
-2. Name your files consistently so that what the file contains can be easily 
+2. Name files consistently so that the contents of the file can be easily
 identified from the name of your file, but be concise.
 
-    Seeing `test1.Rmd` and `test2.Rmd` doesn't tell us much about what is actually
-    in the files.  It's OK to create a temporary file or two if you don't think you
-    will be using it going forward, but you should be in the habit of reviewing your
-    work at the end of your session and naming files that we needed appropriately.  
-    Something like `model_fit_sodium.Rmd` is so much better in the long-run.  
-    Remember to think about your future self whenever you can, especially with 
-    programming.  Be nice to yourself so that future self really appreciates past self.
+  Seeing `test1.Rmd` and `test2.Rmd` doesn't tell us much about what is actually
+  in the files. It's OK to create a temporary file or two if you don't think you
+  will be using it going forward, but you should be in the habit of reviewing your
+  work at the end of your session and renaming useful files appropriately.
+  Something like `model_fit_sodium.Rmd` is so much better in the long-run.
+  Remember to think about your future self whenever you can, especially with
+  programming. Be nice to yourself so that future self really appreciates past self.
 
 3. Use an underscore to separate elements of the file name.
 
-    The underscore `_` produces a visually appealing way for us to realize there is
-    a separation between content.  You may be tempted to just use a space, but spaces
-    cause problems in R and in other programming languages.  Some folks prefer to just
-    change the case of the first letter of the word to bring attention.  Here are a few
-    examples of file names.  You can be the judge as to what is most appealing to you:
+  The underscore `_` produces a visually appealing way for us to realize there is
+  a separation between content. You may be tempted to just use a space, but spaces
+  cause problems in R and in other programming languages. Some folks prefer to just
+  change the case of the first letter of the word to bring attention. Here are a few
+  examples of file names. You can be the judge as to what is most appealing to you:
 
-    `barplot_weight_height.Rmd` vs `barplotWeightHeight.Rmd` vs `barplotweightheight.Rmd`
+  `barplot_weight_height.Rmd` vs `barplotWeightHeight.Rmd` vs `barplotweightheight.Rmd`
 
-    Whatever you choose for style, be consistent and think about other users as you
-    name your files.  If you were passed a smorgasbord of files that is a mess to
-    deal with and hard to understand, you wouldn't like it, right?  Don't be that
-    person to someone else (or yourself)!
+  Whatever you choose for style, be consistent and think about other users as you
+  name your files. If you were given a smorgasbord of files that is a mess to
+  deal with and hard to understand, you wouldn't like it, right? Don't be that
+  person to someone else (or yourself)!
 
 ## Using R with periodic table dataset
 
-We now hop into the basics of working with a dataset in R.  We will also explore the
-ways R stores data in **objects**, how to access specific elements in those objects,
-and also how to use **functions**, which are one of the most useful pieces of R to
-help with organization and clean code.
+We now dive in to the basics of working with a dataset in R. We will explore the ways R stores data in **objects**, how to access specific elements in those objects, and how to use **functions**, which are one of the most useful pieces of R, to help with organization and clean code. After completing this introduction, you will be prepared to dive in to statistical analyses or data tasks of your own.
 
-It is worthy to note that many of the functions here such as `table` and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed and in particular the `dplyr` package.  It is still important to get a sense for how R stores objects and how to interact with objects in the "old-school" way.  You'll still find some times where doing it this old way actually works just as nicely as the newer modern ways...but they are becoming fewer and fewer by the day.  Anyways, you'll hopefully be well-ready to hop into some statistical analyses or data tasks after you follow along with this introduction to R.
+It is worth noting that many of the functions described here such as `table` and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed, in particular the `dplyr` package. Nevertheless, it is still important to get a sense for how R stores objects and how to interact with objects in the "old-school" way. You'll still find some times where doing it this way actually works just as well as the newer modern ways...but those times are becoming less frequent all the time.
 
 ### Loading data from a file
 
-One of the most common ways you'll want to work with data is by importing it from a
-file.  A common file format that works nicely with R is the CSV (comma-separated values)
-file.  The following R commands first download the CSV file from the internet on my
-webpage into the `periodic-table-data.csv` file on your computer, then reads in the
-CSV stored, and then gives the name `periodic_table` to the data frame that stores
-these values in R:
+One of the most common ways you'll want to work with data is by importing it from a file. A common file format that works nicely with R is the CSV (comma-separated values) file. The following R commands download the CSV file from the internet into the `periodic-table-data.csv` file on your computer, reads in the CSV stored, and then gives the name `periodic_table` to the data frame that stores these values in R:
 
 ```{r download, eval=FALSE}
-download.file(url = "http://ismayc.github.io/periodic-table-data.csv", 
-  destfile = "periodic-table-data.csv")
+download.file(url = "http://ismayc.github.io/periodic-table-data.csv",
+ destfile = "periodic-table-data.csv")
 ```
 
 ```{r download2, include=FALSE}
 if(!file.exists("periodic-table-data.csv")){
-  download.file(url = "http://ismayc.github.io/periodic-table-data.csv", 
-    destfile = "periodic-table-data.csv")
+ download.file(url = "http://ismayc.github.io/periodic-table-data.csv",
+  destfile = "periodic-table-data.csv")
 }
 ```
 
 ```{r save_df}
 periodic_table <- read.csv("periodic-table-data.csv",
-                           stringsAsFactors = FALSE)
+              stringsAsFactors = FALSE)
 ```
 
-We will be discussing both **strings** and **factors** in the data structures
-section (Section \@ref(data-structures)) and why this additional parameter 
-`stringsAsFactors` set to `FALSE` is recommended.
+We will be discussing both **strings** and **factors** in the data structures section (Section \@ref(data-structures)) and why this additional parameter `stringsAsFactors` set to `FALSE` is recommended.
 
 It's good practice to check out the data after you have loaded it in:
 
@@ -108,42 +87,26 @@ It's good practice to check out the data after you have loaded it in:
 View(periodic_table)
 ```
 
-The video below walks through downloading the CSV file and loading it into the data 
-frame object named `periodic_table`.  In addition, it shows another way to view
-data frames that is built into RStudio without having to run the `View` function.
-Note that a new R Markdown file is created here as well called `chemistry_example.Rmd`.
-We are writing the commands directly into R chunks here, but you may find it nicer to
-play around in your R Console sandbox first.
+The video below walks through downloading the CSV file and loading it into the data frame object named `periodic_table`. It also shows another way to view data frames that is built into RStudio without having to run the `View` function. Note that a new R Markdown file is created here as well called `chemistry_example.Rmd`. We are writing the commands directly into R chunks here, but you may find it easier to play around in your R Console sandbox first.
 
 ```{r loadchemdata, echo=FALSE, fig.cap="Viewing the periodic table data frame"}
 #gif_link("gifs/chemistr_load.gif")
 embed_my_youtube("QHv0I2Ph660")
 ```
 
-I encourage you to take the R chunks that follow in this chapter, type/copy them into
-an R Markdown file that has loaded the `periodic_table` data set, and watch that your
-resulting output will match the output that I have presented for you here in this book.
-This book was written in R Markdown after all!
+I encourage you to take the R chunks that follow in this chapter, type/copy them into an R Markdown file that has loaded the `periodic_table` data set, and see that your resulting output matches the output that I have presented for you here. This book was written in R Markdown after all!
 
 ## Data structures
 
 ### Data frames
 
-Data frames are by far the most common type of object you will work with in R.
-This makes sense since R is a statistical computing language at its core, so
-handling spreadsheet-like data is something it should be good at.  The `periodic_table`
-data set is stored as a data frame.  As you can see there are many different types
-of variables in this data set.  We can get a glimpse as to the types and some of the
-values of the variables by using the `str` function in the R Console:
+Data frames are by far the most common type of object you will work with in R. This makes sense since R is a statistical computing language at its core, so handling spreadsheet-like data is something it should be good at. The `periodic_table` data set is stored as a data frame. As you can see, this data set includes many different types of variables. We can get a sense of the types and some of the values of the variables by using the `str` function:
 
 ```{r eval=FALSE}
 str(periodic_table)
 ```
 
-Each of the names of the variables/columns in the data frame are listed immediately after
-the `$`.  Then on each row of the `str` function call after the `:` we see what type of
-variable it is.  For this `periodic_table` data set, we have four types:  `int`, `chr`,
-`num`, and `logi`:
+Each of the names of the variables/columns in the data frame are listed immediately after the `$`. Then on each row of the `str` function call after the `:` we see what type of variable it is. The `periodic_table` data set has four data types: `int`, `chr`, `num`, and `logi`:
 
 - `int` corresponds to integer values
 - `chr` corresponds to character string values
@@ -152,35 +115,26 @@ variable it is.  For this `periodic_table` data set, we have four types:  `int`,
 
 ### Vectors
 
-Data frames are most commonly just many vectors put together into a single object.  Our
-`periodic_table` data frame has each row correspond to a chemical element and each
-column correspond to a different measurement or characteristic of that element. There 
-are many different ways to create a vector that stands on its own outside of a data frame. `r if(knitr:::is_latex_output()) "\\newline\\vspace*{0.1in}"`
+Data frames can be thought of as many vectors of the same length put together into a single object. In the `periodic_table` data frame, each row corresponds to a chemical element and each column corresponds to a different measurement or characteristic of that element. There are many different ways to create a vector that stands on its own outside of a data frame. `r if(knitr:::is_latex_output()) "\\newline\\vspace*{0.1in}"`
 
 `r noindentbold("Using the c function")`
 
-If you would like to list out many entries and put them into a vector object, you can
-do so via the `c` function. If you enter `?c` in the R Console, you can gain information
-about it.  The "c" stands for combine or concatenate.
+If you would like to list out many entries and put them into a vector object, you can do so via the `c` function. If you enter `?c` in the R Console, you can gain information about it. The "c" stands for combine or concatenate.
 
-Suppose we wanted to create a way to store four names:
+Suppose we wanted a way to store four names:
 
 ```{r friendnames}
 friend_names <- c("Bertha", "Herbert", "Alice", "Nathaniel")
 friend_names
 ```
 
-You can see when `friend_names` is outputted that there are four entries
-to it.  This is vector is known as a **strings** vector since it contains
-character strings.  You can check to see what type an object is by
-using the `class` function:
+You can see when `friend_names` is outputted that there are four entries to it. This is vector is known as a **strings** vector since it contains character strings. You can check to see what type an object is by using the `class` function:
 
 ```{r}
 class(friend_names)
 ```
 
-Next suppose we wanted to put the ages of our friends in another vector.
-We can again use the `c` function:
+Next suppose we wanted to put the ages of our friends in another vector. We can again use the `c` function:
 
 ```{r ages}
 friend_ages <- c(25L, 37L, 22L, 30L)
@@ -188,26 +142,18 @@ friend_ages
 class(friend_ages)
 ```
 
-Note the use of the `L` value here.  This tells R that the numbers entered have
-no decimal components.  If we didn't designate the `L` we can see that the values
-are read in as `"numeric"` by default:
+Note the use of the `L` value here. This tells R that the numbers entered have no decimal components. If we didn't designate the `L` we can see that the values are read in as `"numeric"` by default:
 
 ```{r}
 ages_numeric <- c(25, 37, 22, 30)
 class(ages_numeric)
 ```
 
-There is not a huge difference in how these values are stored from a user's perspective,
-but it is a good habit to specify what class your variables are whenever possible to help
-with collaboration and documentation. `r if(knitr:::is_latex_output()) "\\newline"`
+From a user's perspective, there is not a huge difference in how these values are stored, but it is still a good habit to specify what class your variables are whenever possible to help with collaboration and documentation. `r if(knitr:::is_latex_output()) "\\newline"`
 
 `r noindentbold("Using the seq function")`
 
-The most likely way you will enter character values into a vector is via the `c` function.
-Numeric values can be entered in a couple different ways.  You saw the first way using the 
-`c` function above.  Since numbers have an ordering to them, we can also specify a sequence
-of numbers with some starting value, ending value, and how much we'd like to increment each
-step in the sequence:
+The most likely way you will enter character values into a vector is via the `c` function. Numeric values can be entered in a couple different ways. One is using the `c` function, as we saw above. Because numbers have a natural order, we can also specify a sequence of numbers with a starting value, an ending value, and the amount by which to increment each step in the sequence:
 
 ```{r}
 sequence_by_2 <- seq(from = 0L, to = 100L, by = 2L)
@@ -215,13 +161,9 @@ sequence_by_2
 class(sequence_by_2)
 ```
 
-You now might have a better sense to what the numbers in the `[ ]` before the output refer to.
-This is done to help you keep track of where you are in the printing of the output.  So the first
-element denoted by `[1]` is 0, the 18^th^ entry (`[18]`) is 34, and the 35^th^ entry (`[35]`) is 68.
-This will serve as a nice introduction into indexing and subsetting in Section \@ref(index-sub).
+You should now have a better sense of what the numbers in the `[ ]` before the output refer to. This helps you keep track of where you are in the printing of the output. So the first element denoted by `[1]` is 0, the 18^th^ entry (`[18]`) is 34, and the 35^th^ entry (`[35]`) is 68. This will serve as a nice introduction into indexing and subsetting in Section \@ref(index-sub).
 
-We can also set the sequence to go by a negative number or a decimal value.  We will do both in
-the next example.
+We can also set the sequence to go by a negative number or a decimal value. We will do both in the next example.
 
 ```{r}
 dec_frac_seq <- seq(from = 10, to = 3, by = -0.2)
@@ -231,8 +173,7 @@ class(dec_frac_seq)
 
 `r noindentbold("Using the : operator")`
 
-A short-cut version of the `seq` version can be achieved using the `:` operator.  If we are
-increasing values by 1 (or -1), we can use the `:` operator to build our vector:
+A short-cut version of the `seq` version can be achieved using the `:` operator. If we are increasing values by 1 (or -1), we can use the `:` operator to build our vector:
 
 ```{r}
 inc_seq <- 98:112
@@ -243,47 +184,36 @@ dec_seq
 
 `r noindentbold("Combining vectors into data frames")`
 
-If you aren't reading in data from a file and you have some vectors of information
-you'd like combined into a single data frame, you can use the `data.frame` function
-to do so:
+If you aren't reading in data from a file and you have some vectors of information you'd like combined into a single data frame, you can use the `data.frame` function:
 
 ```{r friends}
-friends <- data.frame(names = friend_names, 
-                      ages = friend_ages,
-                      stringsAsFactors = FALSE)
+friends <- data.frame(names = friend_names,
+           ages = friend_ages,
+           stringsAsFactors = FALSE)
 friends
 ```
 
-Here we have created a `names` variable in the `friends` data frame that
-corresponds to the values in the `friend_names` vector and similarly an
-`ages` variable in `friends` that corresponds to the values in `friend_ages`.
+Here we have created a `names` variable in the `friends` data frame that corresponds to the values in the `friend_names` vector and similarly an `ages` variable in `friends` that corresponds to the values in `friend_ages`.
 
 ### Factors
 
-If we have a strings vector/variable that has some sort of natural ordering to it, it
-frequently makes sense to convert that vector/variable into a **factor**.  The
-factor will convert the strings to integers to keep track of which order you'd prefer
-and also keep track of the original string values as well.
+If we have a strings vector/variable that has some sort of natural ordering to it, it frequently makes sense to convert that vector/variable into a **factor**. The factor will convert the strings to integers to keep track of which order you'd prefer, and also keep track of the original string values as well.
 
-Looking over our `periodic_table` data frame again via `View(periodic_table)`, you
-can see some good candidates for shifting from `chr` to `Factor`.  If you remember
-your chemistry, you'll know that the natural ordering of the `block` variable is
-`"s"`, `"p"`, `"d"`, and `"f"`.  
+Looking over our `periodic_table` data frame again via `View(periodic_table)`, you can see some good candidates for shifting from `chr` to `Factor`. If you remember your chemistry, you'll know that the natural ordering of the `block` variable is `"s"`, `"p"`, `"d"`, and `"f"`.
 
-By default, R will organize character strings in alphabetical order.  To see this,
-we'll introduce two new features:  the `table` function and the `$` operator.
+By default, R will organize character strings in alphabetical order. To see this, we'll introduce two new features: the `table` function and the `$` operator.
 
 ```{r}
 table(periodic_table$block)
 ```
 
-We see here a count of the number of elements that appear in each block.  But as I said, the ordering is off.  You may remember the `$` as appearing before the variable names in the `str` function.  That wasn't a coincidence.  To access specific variables inside a data frame we can do so by entering the name of the data frame followed by `$` and lastly by the name of the variable.  (Note here that spaces in variable names will not work.  You'll learn that the hard way as I have more than likely.)
+The table function provides a count of the number of elements that appear in each block. But as you can see, the ordering is off. You may remember the `$` displayed before variable names in the `str` function. That isn't a coincidence. To access specific variables inside a data frame, we can do so by entering the name of the data frame followed by `$` and the name of the variable. (Note that spaces in variable names will not work. You'll likely learn that the hard way, as I have.)
 
-To convert `block` into a factor, we use the aptly named `factor` function.  Note that this is "converting" by assigning the result of `factor` back to `block` in `periodic_table`.
+To convert `block` into a factor, we use the aptly named `factor` function. Note that this is "converting" by assigning the result of `factor` back to `block` in `periodic_table`.
 
 ```{r factor}
 periodic_table$block <- factor(periodic_table$block,
-                               levels = c("s", "p", "d", "f"))
+                levels = c("s", "p", "d", "f"))
 ```
 
 ```{r}
@@ -294,27 +224,27 @@ You'll find that this is an easy way to organize your data whenever you'd like t
 
 ## Vectorized operations
 
-R can work extremely quickly when handed a vector or a collection of vectors like a data frame.  Instead of walking through each element to perform an operation that we might need to do in other older programming languages, we can do something like this:
+R can work extremely quickly when provided with a vector or a collection of vectors like a data frame. Instead of iterating through each element to perform an operation that we might need to do in other programming languages, we can do something like this:
 
 ```{r}
 five_years_older <- ages_numeric + 5L
 five_years_older
 ```
-Like that, we have ages that are five more than where we started.  This extends to adding two vectors together^[Vectors of the same size, of course...well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let's ignore that for now.].  
+Just like that, every age is five more than where we started. This extends to adding two vectors together^[Vectors of the same size, of course...well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let's ignore that for now.].
 
 ## Indexing and subsetting {#index-sub}
 
-So we have a big data frame of information about the periodic table, but what if we wanted to extract smaller pieces of the data frame?  You already saw that to focus on any specific variable we can use the `$` operator.
+So we have a big data frame of information about the periodic table, but what if we wanted to extract smaller pieces of the data frame? You already saw that to focus on any specific variable we can use the `$` operator.
 
 ### Using `[ ]` with a vector/variable
 
-Recall the use of `[ ]` when a vector was printed to help us better understand where we are in printing a large vector.  We will use this same tool to select the tenth to the twentieth elements of the `periodic_table$name` variable:
+Recall the use of `[ ]` when a vector was printed, to help us better understand where we were in printing a large vector. We can use this same tool to select the tenth to the twentieth elements of the `periodic_table$name` variable:
 
 ```{r}
 periodic_table$name[10:20]
 ```
 
-Similarly if we'd only like to select a few elements from our `friend_names` vector, we can specify the entries directly:
+Similarly, if we only want to select a few elements from our `friend_names` vector, we can specify the entries directly:
 
 ```{r}
 friend_names[c(1, 3)]
@@ -326,10 +256,9 @@ We can also use `-` to select everything but the elements listed after it:
 friend_names[-c(2, 4)]
 ```
 
-
 ### Using `[ , ]` with a data frame
 
-We have now seen how to select specific elements of a vector or a variable but what if we wanted a subset of the values in the larger data frame across both rows (observations) and columns (variables).  We can use `[ , ]` where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns.  Let's pick rows 40 to 50 and columns 1, 2, and 4 from `periodic_table`:
+You have now seen how to select specific elements of a vector or a variable, but what if we want a subset of the values in the full data frame across both rows (observations) and columns (variables). We can use `[ , ]` where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let's select rows 40 to 50 and columns 1, 2, and 4 from `periodic_table`:
 
 ```{r}
 periodic_table[41:50, c(1, 2, 4)]
@@ -337,19 +266,19 @@ periodic_table[41:50, c(1, 2, 4)]
 
 ### Using logicals
 
-As you've seen we can specify directly which elements we'd like to select based on the integer values of the indices of the data frame.  Another way to select elements is by using a logical vector:
+As you've seen, we can specify directly which elements we'd like to select based on the integer values of the indices of the data frame. Another way to select elements is by using a logical vector:
 
 ```{r}
 friend_names[c(TRUE, FALSE, TRUE, FALSE)]
 ```
 
-This can be extended to choose specific elements from a data frame based on the values in the "cells" of the data frame.  A logical vector like the one above (`c(TRUE, FALSE, TRUE, FALSE)`) can be generated based on our entries:
+This can be extended to choose specific elements from a data frame based on the values in the "cells" of the data frame. A logical vector like the one above (`c(TRUE, FALSE, TRUE, FALSE)`) can be generated based on our entries:
 
 ```{r}
 friend_names == "Bertha"
 ```
 
-We see that only the first element is set to `TRUE` as we suspected since `"Bertha"` is the first entry in the vector.  We, thus, have another way of subsetting to choose only those names that are `"Bertha"` or `"Alice"`:
+We see that only the first element in this new vector is set to `TRUE` because `"Bertha"` is the first entry in the friend_names vector. We thus have another way of subsetting that will return only those names that are `"Bertha"` or `"Alice"`:
 
 ```{r}
 friend_names[friend_names %in% c("Bertha", "Alice")]
@@ -360,29 +289,28 @@ The `%in%` operator looks element-wise in the `friend_names` vector and then tri
 Now we can think about how to subset an entire data frame using the same sort of creation of two logical vectors (one for rows and one for columns):
 
 ```{r}
-periodic_table[ (periodic_table$name %in% c("Hydrogen", "Oxygen") ), 
-                c("atomic_weight", "state_at_stp")]
+periodic_table[ (periodic_table$name %in% c("Hydrogen", "Oxygen") ),
+        c("atomic_weight", "state_at_stp")]
 ```
 
-The extra parentheses around `periodic_table$name %in% c("Hydrogen", "Oxygen")` are a good habit to get into as they ensure everything before the comma is used to select specific rows matching that condition.  For the columns, we can specify a vector of the column names to focus on only those variables.  The resulting table here gives the `atomic_weight` and `state_at_stp` for `"Hydrogen"` and then for `"Oxygen"`.
+The extra parentheses around `periodic_table$name %in% c("Hydrogen", "Oxygen")` are a good habit to get into as they ensure everything before the comma is used to select specific rows matching that condition. For the columns, we can specify a vector of the column names to focus on only those variables. The resulting table here gives the `atomic_weight` and `state_at_stp` for `"Hydrogen"` and then for `"Oxygen"`.
 
-There are many more complicated ways to subset a data frame and one can use the `subset` function built into R, but in my experience it is even easier to use the `filter` and `select` function in the `dplyr` package whenever you want to do anything more complicated than what we have done here.
+There are many more complicated ways to subset a data frame and one can use the `subset` function built into R, but in my experience, whenever you want to do anything more complicated than what we have done here, it is easier to use the `filter` and `select` functions in the `dplyr` package.
 
 ## Functions
 
-We've been using **functions** throughout this entire chapter and you might not have even noticed it.  The `seq` command we saw earlier is a function.  It expects a few arguments:  `from`, `to`, `by`, and a few others that we didn't specify.  How do I know this and why didn't we specify them?
+You might not have noticed, but we have been using **functions** throughout this entire chapter. The `seq` command we saw earlier is a function. It expects a few arguments: `from`, `to`, `by`, and a few others that we didn't specify. How do I know this and why didn't we specify them?
 
-Recall that you can look up the help documentation on any function by entering `?` and the function name in the R console.  If we do this for `seq` with `?seq`, we are given some examples of what to expect under the **Usage** section.  R allows for function arguments to take on default values and that's what we see:
+Recall that you can look up the help documentation on any function by entering `?` and the function name in the R console. If we do this for `seq` with `?seq`, we are given some examples of what to expect under the **Usage** section. R allows for function arguments to take on default values and that's what we see:
 
 ```{r eval=FALSE}
 seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),
-    length.out = NULL, along.with = NULL, ...)
+  length.out = NULL, along.with = NULL, ...)
 ```
 
-By default, the sequence will both start and end at 1 (a not very interesting sequence).  The `length.out`
-and `along.with` arguments are specified to `NULL` by default.  `NULL` represents an empty object in R, so they are essentially ignored unless the person using the `seq` function specifies values for them.  The `...` argument is beyond the scope of this book but you can read more about it and other useful tips about writing function at the NiceRCode page [here](http://nicercode.github.io/guides/functions/).
+By default, the sequence will both start and end at 1 (a not very interesting sequence). The `length.out` and `along.with` arguments are set to `NULL` by default. `NULL` represents an empty object in R, so they are essentially ignored, unless you specify values for them. The `...` argument is beyond the scope of this book, but you can read more about it and other useful tips about writing function at the NiceRCode page [here](http://nicercode.github.io/guides/functions/).
 
-Not all functions have all default arguments like `seq`.  The `mean` function is one such example:
+Not all functions have all default arguments like `seq`. The `mean` function is one such example:
 
 ```{r eval=FALSE}
 mean()
@@ -396,41 +324,41 @@ Execution halted
 Exited with status 1.
 ```
 
-Notice that an error is given here, where one is not given if you don't specify the arguments to `seq`:
+Notice that R returns an error here, which is not the case if you don't specify the arguments to `seq`:
 
 ```{r}
 seq()
 ```
 
-To fix the error, we'll need to specify which vector/object we'd like to compute the mean of.  Recall the `ages_numeric` vector.  We can pass that into the `mean` function:
+To fix the error, we'll need to specify which vector or object we want to compute the mean of. Recall the `ages_numeric` vector. We can pass that into the `mean` function:
 
 ```{r}
 ages_numeric
 mean(x = ages_numeric)
 ```
 
-We can also skip specifying the name of the argument if you follow the same order as what is given in **Usage** in the documentation:
+We can also skip specifying the name of the argument, as long as you follow the same order as what is given in **Usage** in the documentation:
 
 ```{r}
 mean(ages_numeric)
 ```
 
-We can see that R expects the arguments to be `x`, then `trim`, and then `na.rm`.  What happens if we try to specify `TRUE` for `na.rm` without specifically saying `na.rm = TRUE`?
+We can see that R expects the arguments to be `x`, then `trim`, and then `na.rm`. What happens if we try to specify `TRUE` for `na.rm` without specifically saying `na.rm = TRUE`?
 
 ```{r eval=FALSE}
 mean(ages_numeric, TRUE)
 ```
 
 ```
-Error in mean.default(ages_numeric, TRUE) : 
-  'trim' must be numeric of length one
+Error in mean.default(ages_numeric, TRUE) :
+ 'trim' must be numeric of length one
 Calls: <Anonymous> ... withVisible -> eval -> eval -> mean -> mean.default
 Execution halted
 
 Exited with status 1.
 ```
 
-Since `trim` comes before `na.rm` in the list if we don't specify our name it will think the second argument is for `trim`.  `trim` expects a fraction between 0 and 0.5 though so R barks at us that it doesn't understand.  It usually is good practice for beginners to enter the name of the argument and then an equals sign and then the value you'd like the argument to take on.  Something like what follows is clean and helps with readability:
+Because `trim` comes before `na.rm` in the list of arguments, R assumes whatever we put after the first comma is the argument for `trim`. However, `trim` expects a fraction between 0 and 0.5, so R informs us that it doesn't understand. It usually is good practice to enter the name of the argument, an equals sign, and then the value you want the argument to take on. The following is clean and helps with readability:
 
 ```{r}
 mean(x = ages_numeric, na.rm = TRUE)
@@ -438,37 +366,33 @@ mean(x = ages_numeric, na.rm = TRUE)
 
 `r noindentbold("Why do some arguments require quotations and others don't?")`
 
-As you begin to explore help documentation for different functions, you'll begin to notice that some arguments
-require quotations around them while others (like those for `mean` don't).  This brings us back to the discussion earlier about strings, logicals, and numeric/integer classes.
+As you begin to explore help documentation for different functions, you'll notice that some arguments require quotations around them, while others (like those for `mean`) don't. This brings us back to the discussion earlier about strings, logicals, and numeric/integer classes.
 
-An example of a function requiring a character string (or vector) is the `install.packages` function, which is at the heart of R's ability to expand on its built-in functionality by importing **packages** that include functions, templates, and data and are written by users of R.  If you run `?install.packages` you'll see that the first argument `pkgs` is expected to be a character vector.  You'll therefore need to enter the packages you'd like to download and install inside quotes.  
+One example of a function that requires a character string (or vector) is the `install.packages` function, which is at the heart of R's ability to expand on its built-in functionality by importing **packages** that include functions, templates, and data written by users of R. If you run `?install.packages`, you'll see that the first argument `pkgs` is expected to be a character vector. You'll therefore need to enter the packages you'd like to download and install inside quotes.
 
-Two useful packages that I recommend you install and download are `"ggplot2"` and `"dplyr"`.  (Hopefully your instructor/server administrator has already done so for you if you are using an RStudio Server.)  This function has a large number of arguments with all but `pkgs` set by default.  We'll pick a couple here to specify instead
-of using the defaults:
+Two useful packages that I recommend you install and download are `"ggplot2"` and `"dplyr"` (if you are using RStudio Server, hopefully your instructor or server administrator has already done so). The `install.packages` function has a large number of arguments, with all but the `pkgs`argument set by default. We'll pick a couple here to specify instead of using the defaults:
 
 ```{r eval=FALSE}
 install.packages(pkgs = c("ggplot2","dplyr"),
-                 repos = "http://cran.rstudio.org",
-                 dependencies = TRUE,
-                 quiet = TRUE)
+         repos = "http://cran.rstudio.org",
+         dependencies = TRUE,
+         quiet = TRUE)
 ```
 
-You'll notice looking through the help via `?install.packages` that what type of argument is expected is given:
+If you refer back to the help via `?install.packages`, you will see descriptions that what type of argument is expected:
 
 - `pkgs` expects a character vector
 - `repos` expects a character vector
 - `dependencies` expects a logical value (`TRUE` or `FALSE`)
 - `quiet` expects a logical value
 
-After you've downloaded the packages, you'll need to load the package into your R environment using the
-`library` function:
+After you've downloaded the packages, you can load the package into your R environment using the `library` function:
 
 ```{r eval=FALSE}
 library("ggplot2")
 library("dplyr")
 ```
 
-
 ## Closing thoughts
 
-There are plenty more advanced analyses to be done with R.  This chapter serves as a way to get you started with R without digging in too much.  I encourage you to review this chapter frequently as you learn to use R.  Quiz yourself on what a specific command does and see if you are correct.  Breaking R is a pretty hard thing to do.  Play around and try to figure out error messages on your own first for 15 minutes or so.  If you are still not sure what is going on, check out some of the help with errors in the next chapter.
+There are many more advanced analyses that can be done with R, but this chapter provides a way to get started with R without digging in too much. I encourage you to review this chapter frequently as you learn to use R. Quiz yourself on what a specific command does, and then check to see if you are correct. Breaking R is a pretty hard thing to do. Play around, and try to figure out error messages on your own first for 15 minutes or so. Then, if you are still not sure what is going on, check out some of the help with errors in the next chapter.

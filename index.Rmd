@@ -1,6 +1,6 @@
---- 
+---
 title: "Getting used to R, RStudio, and R Markdown"
-author: "Chester Ismay"
+author: ["Chester Ismay", "Patrick C. Kennedy"]
 date: "`r Sys.Date()`"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
@@ -26,7 +26,7 @@ gif_link <- function(path, latex = knitr:::is_latex_output()){
   webpage <- "https://raw.githubusercontent.com/ismayc/rbasics-book/gh-pages/"
   if(latex){
     knitr::asis_output(paste0('\\vspace{0.1in}',
-                              '\\begin{center}', 
+                              '\\begin{center}',
                               '\\footnotesize{\\url{', webpage, path, '}}',
                               '\\end{center}',
                               '\\vspace{0.1in}'))
@@ -48,30 +48,30 @@ if(!require("vembedr")){
   require(vembedr)
 }
 
-embed_my_youtube <- function(id, width = 650, height = 400, 
+embed_my_youtube <- function(id, width = 650, height = 400,
                              latex = knitr:::is_latex_output(),...){
   if(latex){
     knitr::asis_output(paste0('\\vspace{0.1in}',
-                              '\\begin{center}', 
+                              '\\begin{center}',
                               '\\footnotesize{\\url{https://www.youtube.com/', id, '}}',
                               '\\end{center}',
                               '\\vspace{0.1in}'))
-  } 
+  }
   embed_youtube(id, width, height, ...)
 }
 
 ```
 
-
 # Introduction {#intro}
 
-In the HTML version of this book, you can also download the PDF version of the book by clicking on PDF button in the top toolbar of the page.  HTML is the preferred format but the PDF format may be preferred for some readers.  Links to the different YouTube videos directly found in the HTML version are provided in the PDF version. You can also download the video files directly [here](https://github.com/ismayc/rbasics-book/tree/master/mp4). Note that no audio is attached to these screencast videos.
+This book was written to give people who are new to [R](https://www.r-project.org), [RStudio](https://www.rstudio.com), and [R Markdown](http://rmarkdown.rstudio.com) the tools they need to begin making their own research reproducible. R is an open-source programming language that has seen its popularity grow tremendously in recent years, with developers adding new functionality via packages on a daily basis. RStudio is a graphical development environment that makes it easier to write and view the results of R code, and R Markdown provides an easy way to produce rich, fully-documented, reproducible analyses.
 
-This resource is designed to provide new users to R, RStudio, and R Markdown with the introductory steps needed to begin their own reproducible research.  Many screenshots and screencasts (with no audio) will be included, but if further clarification is needed on these or any other aspect of the book, please create a GitHub issue [here](https://github.com/ismayc/rbasics-book/issues) or email [me](mailto:chester.ismay@gmail.com) with a reference to the error/area where more guidance is necessary.  [Pull requests](https://code.tutsplus.com/courses/git-basics-github-pull-requests) on GitHub for typos or improvements are preferred and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.
+Screenshots and screencasts (with no audio) are used throughout to illustrate key concepts, but if you need further clarification on these or any other aspect, please create a [GitHub issue](https://github.com/ismayc/rbasics-book/issues) or [email me](mailto:chester.ismay@gmail.com) with a reference to the area where more guidance is necessary. [Pull requests](https://code.tutsplus.com/courses/git-basics-github-pull-requests) on GitHub for typos or improvements are also welcome, and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.
 
-This book will evolve and be updated as needed based on feedback.  You can always check the date below to see when the book was last updated.
+In the HTML version, you can download the book as a PDF by clicking on the PDF button in the toolbar at the top of the page. Given the heavy use of screencasts, HTML is the recommended format for most readers, but the PDF is available for those who need it. Links to the different YouTube videos directly found in the HTML version are provided in the PDF version. You can also download the video files [directly](https://github.com/ismayc/rbasics-book/tree/master/mp4). Note that no audio is attached to these screencast videos.
 
-It is recommended that you have R version 3.3.0 or later, RStudio Desktop version 1.0 or higher, and `rmarkdown` R package version 1.0 or higher.  This is to make sure that the screenshots and GIF recordings match up with the behavior on your machine/set-up.  Additionally, you may find that GIFs don't load sometimes.  I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have troubles with others.
+This book will evolve and be updated as needed based on reader feedback. You can see when the book was last updated below.
 
+I strongly recommend that you use R version 3.3.0 or higher, RStudio Desktop version 1.0 or higher, and `rmarkdown` R package version 1.0 or higher. This will ensure that your setup matches the screenshots and recordings, making it easier to follow along. Additionally, you may find that videos don't load sometimes. I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have trouble with other browsers.
 
-This book was last updated by `r paste(Sys.info()[["user"]], "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`.
+This book was last updated by `r paste(Sys.getenv("LOGNAME"), "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`.
