@@ -28,7 +28,9 @@ Instructions for downloading and installing R and RStudio on Windows and Mac mac
 
 **Note for advanced users**:  You can also install your very own RStudio Server for around $5 per month on Digital Ocean. Instructions to do so can be found from Dean Attali [here](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and on the Digital Ocean site [here](https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server).
 
-After you complete a few months of work with the RStudio Server, it is recommended that you download RStudio Desktop to your computer. The instructions to do so are below.
+Working with RStudio Server allows you to become familiar with working in RStudio without needing to navigate any issues associated with installing or running the software locally. Once you are comfortable with RStudio, it is recommended that you download RStudio Desktop to your computer, since this will give you more flexibility and independence. The instructions to do so are below.
+
+This book was written 3 years ago now and I’d like to do a full rewrite at some point, but that won’t happen this year probably. The server is valuable since installation is really hard for beginners, even with something pretty foolproof like R and RStudio where you just push the buttons for the most part.
 
 ### Installing R and RStudio Desktop
 
