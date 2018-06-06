@@ -12,7 +12,7 @@ Getting back to the development of R... R was created by **R**oss Ihaka and **R*
 
 ### R packages
 
-I first learned to use R as a graduate student at Northern Arizona University from [Dr. Philip Turk](http://www.stat.colostate.edu/~pturk/) in 2007. At the time, I never thought that R could have exploded in users as we have seen since 2011. I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.
+I first learned to use R as a graduate student at Northern Arizona University from [Dr. Philip Turk](http://www.stat.colostate.edu/~pturk/) in 2007. At the time, I never thought that R could have increased in both the number of users and the diversity of people using it; R has been on the rise as a language since 2011. I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.
 
 In 2007, R was still largely an esoteric and tricky language used by statisticians to do analyses. Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience. So what has changed since 2007 about learning R?
 
