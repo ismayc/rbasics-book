@@ -1,3 +1,15 @@
+bookdown::pdf_book:
+  base_format: tufte::tufte_book
+  includes:
+    in_header: preamble.tex
+  template: tufte-handout.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: true
+  fig_width: 7
+  fig_height: 4
+  highlight: tango
+  pandoc_args: --top-level-division=chapter
 bookdown::gitbook:
   css: style.css
   split_by: "chapter+number"
@@ -13,17 +25,5 @@ bookdown::gitbook:
         <li><a href="mailto:chester.ismay@gmail.com" target="blank">Email Chester</a></li>
     edit:
       link: https://github.com/ismayc/rbasics-book/edit/master/%s
-bookdown::pdf_book:
-  base_format: tufte::tufte_book
-  includes:
-    in_header: preamble.tex
-  template: tufte-handout.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: true
-  fig_width: 7
-  fig_height: 4
-  highlight: tango
-  pandoc_args: --top-level-division=chapter
 #bookdown::epub_book: default
 #bookdown::word_document2: default

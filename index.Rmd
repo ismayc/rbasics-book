@@ -1,6 +1,6 @@
 ---
 title: "Getting Used to R, RStudio, and R Markdown"
-author: ["Chester Ismay", "Patrick C. Kennedy"]
+author: "Chester Ismay and Patrick C. Kennedy"
 date: "`r Sys.Date()`"
 knit: bookdown::render_book
 site: bookdown::bookdown_site
@@ -43,11 +43,6 @@ noindentbold <- function(text, latex = knitr:::is_latex_output()){
   }
 }
 
-if(!require("vembedr")){
-  install.packages("pacman", repos = "https://cran.rstudio.com")
-  require(vembedr)
-}
-
 embed_my_youtube <- function(id, width = 650, height = 400,
                              latex = knitr:::is_latex_output(),...){
   if(latex){
@@ -57,7 +52,7 @@ embed_my_youtube <- function(id, width = 650, height = 400,
                               '\\end{center}',
                               '\\vspace{0.1in}'))
   }
-  embed_youtube(id, width, height, ...)
+  vembedr::embed_youtube(id, width, height, ...)
 }
 
 ```
