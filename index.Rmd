@@ -44,15 +44,17 @@ noindentbold <- function(text, latex = knitr:::is_latex_output()){
 }
 
 embed_my_youtube <- function(id, width = 650, height = 400,
-                             latex = knitr:::is_latex_output(),...){
+                             latex = knitr:::is_latex_output(), ...){
   if(latex){
     knitr::asis_output(paste0('\\vspace{0.1in}',
-                              '\\begin{center}',
-                              '\\footnotesize{\\url{https://www.youtube.com/', id, '}}',
-                              '\\end{center}',
-                              '\\vspace{0.1in}'))
+           '\\begin{center}',
+           '\\footnotesize{\\url{https://www.youtube.com/watch?v=', id, '}}',
+           '\\end{center}',
+           '\\vspace{0.1in}'))
   }
-  vembedr::embed_youtube(id, width, height, ...)
+  else {
+    vembedr::embed_youtube(id, width, height, ...)
+  }
 }
 
 ```

@@ -112,7 +112,7 @@
 \title{Getting Used to R, RStudio, and R Markdown}
 
 \author{Chester Ismay and Patrick C. Kennedy}
-\date{2019-11-12}
+\date{2021-12-30}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -207,7 +207,7 @@ This book will evolve and be updated as needed based on reader feedback. You can
 
 I strongly recommend that you use R version 3.3.0 or higher, RStudio Desktop version 1.0 or higher, and \texttt{rmarkdown} R package version 1.0 or higher. This will ensure that your setup matches the screenshots and recordings, making it easier to follow along. Additionally, you may find that videos don't load sometimes. I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have trouble with other browsers.
 
-This book was last updated by chester.ismay on Tuesday, November 12, 2019 16:08:10 MST.
+This book was last updated by chester on Thursday, December 30, 2021 20:10:10 HST.
 
 \hypertarget{whyR}{%
 \chapter{Why R?}\label{whyR}}
@@ -352,6 +352,8 @@ If you are sharing homework or lab assignments with your instructor using RStudi
 
 The video below shows you how to create a new RStudio project called \texttt{initial} and add your first R Markdown file. Note that you also may see a description about what version of R is running on your initial login, as shown in the screencast below in the Console pane.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=6YcacPihHuI}}\end{center}\vspace{0.1in}
+
 We have our \textbf{first\_rmarkdown.Rmd} file set up.
 
 \hypertarget{sharing-projects-on-rstudio-server-pro}{%
@@ -360,6 +362,8 @@ We have our \textbf{first\_rmarkdown.Rmd} file set up.
 You will now see an example of how to share this project with another user. This will enable you and collaborators (other students, your instructor, etc.) to work on the \textbf{Rmd} file at the same time. This is similar to working collaboratively on a Google Doc.
 
 RStudio Server is available in multiple formats, so you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature. You can find more information on this process from \href{https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro}{RStudio, Inc}. The video below illustrates the process of sharing the \textbf{initial.Rproj} project file we just created with another user on the same installation of RStudio Server.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=PeL9Du4J6iM}}\end{center}\vspace{0.1in}
 
 Both myself and \texttt{bottk} can now work together on this project. We can type comments and code into \textbf{first\_rmarkdown.Rmd} or other files in the project and save files to the common folder where \textbf{initial.Rproj} resides.
 
@@ -377,12 +381,16 @@ The pane in which you will likely spend a majority of your time is the pane on t
 
 Note that, when you edit the file, the tab with the file name changes from black to red, and an asterisk appears after the file name, indicating that the latest changes have not been saved. You should get in the habit of saving files frequently. You can have multiple tabs open and view different files in this pane. In Chapter \ref{rmarkdown}, you'll also see that you can \texttt{View} datasets in this pane.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=fdJROYexFf0}}\end{center}\vspace{0.1in}
+
 It may not be clear what these additions are really doing just yet. That's ok! When finished, you'll be pressing the \textbf{Knit HTML} button near the top of the pane to put all of your text, code, and its output together. We aren't quite there just yet though!
 
 \hypertarget{environment-history}{%
 \subsection{Environment / History}\label{environment-history}}
 
 By default, the top right pane includes an \textbf{Environment} tab and a \textbf{History} tab. To get a sense of what these tabs provide, we'll need to also use the bottom left pane and the \textbf{Console} tab. I'll show you how to create multiple objects in R using the \textbf{Console}. Initially, you will see that the \textbf{Environment} tab tells us that the ``Environment is empty.'' This means there are no objects (e.g., data) yet. If you click on the \textbf{History} tab, you should also see a blank screen with a few icons. We won't go over all of these buttons here, but I encourage you to hover over them and click on them to get a sense for what they do. As I enter code into the \textbf{Console}, watch to see how the \textbf{Environment} and \textbf{History} tabs change.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=hfH8DXFovt0}}\end{center}\vspace{0.1in}
 
 You can think of the \textbf{Console} as a place to play around. It is your R sandbox. You can test your code to make sure it is working and then copy that text into your \textbf{Rmd} file once you are satisfied with it. We'll see more examples of this in the chapters to come.
 
@@ -394,6 +402,8 @@ A powerful feature of the R language has been introduced in the \texttt{sum\_1\_
 \subsection{Console}\label{console}}
 
 You'll frequently use the \textbf{Console} as a way to check your work or experiment with how to solve a problem using R. Before RStudio, most users of R just had a window like the \textbf{Console} provides where they entered their commands and then looked at the results in different windows. We will see that the \textbf{Console} and the \textbf{Code Editor/View Window} will allow us to store all of our code in a file and then ``run'' that code through the \textbf{Console} to check that it works. The example video below shows how this is done.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=RPF6gGyeJmg}}\end{center}\vspace{0.1in}
 
 \vspace*{0.2in}
 
@@ -412,6 +422,8 @@ It is good practice to get in the habit of naming variables corresponding to wha
 
 Another important property of R is that is case-sensitive. You'll see what this means in the video below that also includes examples of invalid names of objects. Note that we will continue to work inside the R chunk as we did in the last video. You'll see that these code chunks provide a nice way to keep track of our important analyses.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=GcWKm13Q1Uc}}\end{center}\vspace{0.1in}
+
 You may have noticed that R will do some checks and alert you to potential errors by placing a red X to the left of lines of code with common syntax errors. These checks won't catch all errors, but this can be helpful. Note also that \texttt{Name}, \texttt{name}, and \texttt{nAme} refer to three different values.
 
 Another thing to notice is that you can store numbers into an object with a given name like we did earlier with \texttt{num1}. If we'd like to store a character string such as ``Chester'', we can provide the name of the object on the left-hand-side of \texttt{\textless{}-} and the string in quotation marks on the right-hand-side of \texttt{\textless{}-}. There are more complex object types that you will see in Chapter \ref{rmdanal}, but it is always important to think about the difference between a number and a character in R.
@@ -422,6 +434,8 @@ It's also a good idea to not call objects the names of functions that are built 
 \subsection{\texorpdfstring{The \texttt{help} function (\texttt{?})}{The help function (?)}}\label{the-help-function}}
 
 Of course, you won't know what all of the names of built-in functions are until you practice, but it is something to think about. If you are ever wondering if a function is built-in or is in a package you have included, you can use the \texttt{?} function in the \textbf{Console} to check. Some examples are shown below as a screencast.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=M1TJrL-ss7A}}\end{center}\vspace{0.1in}
 
 \hypertarget{the-bottom-right-pane}{%
 \subsection{The bottom right pane}\label{the-bottom-right-pane}}
@@ -446,6 +460,8 @@ You'll see clearer examples of what the \textbf{Plots} and \textbf{Viewer} tabs 
 
 The \textbf{Packages} tab lists all packages installed on your computer or cloud server. You can see which packages are loaded in the current working environment by looking to see if a check-mark exists next to the package name. Note that you may not have all of the packages loaded onto your machine that I do below in the video. That's OK. This is just an example of what you may expect.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=Zm54FdyqRsc}}\end{center}\vspace{0.1in}
+
 You'll also notice a \textbf{Description} of the package as well as the \textbf{Version} number here. Packages are frequently updated and improved, so this is a way to check whether you have the most up-to-date version of a package. Remember, if you are using RStudio Server, this is likely taken care of for you. If you are using RStudio Desktop, you might find the \textbf{Install} and \textbf{Update} buttons useful for downloading new packages or updating currently installed ones.
 
 \vspace*{0.2in}
@@ -466,6 +482,8 @@ One R Markdown file can generate a variety of different formats, and all of this
 
 Recall the R Markdown file (\textbf{first\_rmarkdown.Rmd}) that we created in Chapter \ref{rstudiobasics}. We know that we left some errors in the creation of variables there, and while it might seem strange to show you errors, it is good exposure for someone new to R to see a variety of the errors one might see initially. Let's see what happens when we click the \textbf{Knit HTML} button with these errors. Then, we will clean up the code and see what the resulting file looks like from the \textbf{Knit}.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=UCpPthpvq-0}}\end{center}\vspace{0.1in}
+
 When you first created this R Markdown file, a basic template was pre-populated with some code and text, to give you a sense of the kinds of things you can include in R Markdown files. We modified some of that code here. For example, I removed all of the lines in the code chunk named \texttt{cars} even though the errors did not occur in the declaration of the objects that had names stored in them. We see that an HTML file is produced in the \textbf{Viewer} pane, because \textbf{View in Pane} was selected.
 
 As you look over the \textbf{Including Plots} text, you may be surprised to see that although there was no plot provided in the R Markdown file, the HTML file includes a scatter plot of temperature and pressure. This is because R Markdown evaluates the code stored in R chunks and then includes those results in the HTML (or PDF or DOCX, etc.) output.
@@ -473,6 +491,8 @@ As you look over the \textbf{Including Plots} text, you may be surprised to see 
 You can also see that the text appears as commentary before and after the R code. You'll understand in a bit why the text ``Including Plots'' is so much larger than the other text.
 
 \textbf{Important note}: Remember that all of the R code you want to run needs to be stored in a chunk (in the correct order) for your analysis to be reproducible AND for you not to receive errors when you \textbf{Knit}. It is easy to do a lot of work in the R \textbf{Console} and then forget to add that work into a chunk in your \textbf{Rmd} file. This is probably the number one error you will see when you first begin working in RStudio. An example of this error is shown below.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=MfXf7OVweVA}}\end{center}\vspace{0.1in}
 
 The \texttt{object\ not\ found} errors are the most frequently encountered errors, and along with misspellings and incomplete R code segments, represent the vast majority of issues with R. This is covered in greater detail in Chapter \ref{errors}.
 
@@ -493,11 +513,11 @@ Essentially, the YAML header stores the metadata needed for the document. You ca
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\OtherTok{---}
-\FunctionTok{title:}\AttributeTok{ }\StringTok{"First RMarkdown"}
-\FunctionTok{author:}\AttributeTok{ }\StringTok{"Chester Ismay"}
-\FunctionTok{output:}\AttributeTok{ html_document}
-\OtherTok{---}
+\PreprocessorTok{{-}{-}{-}}
+\FunctionTok{title}\KeywordTok{:}\AttributeTok{ }\StringTok{"First RMarkdown"}
+\FunctionTok{author}\KeywordTok{:}\AttributeTok{ }\StringTok{"Chester Ismay"}
+\FunctionTok{output}\KeywordTok{:}\AttributeTok{ html\_document}
+\PreprocessorTok{{-}{-}{-}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -505,6 +525,8 @@ There are many other fields that can be customized in the YAML header. The impor
 
 \hypertarget{headers}{%
 \subsection{Headers}\label{headers}}
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=AXfhCJgbpCE}}\end{center}\vspace{0.1in}
 
 As you can see above, you can create many different sized headers by simply adding one or more \texttt{\#} in front of the text you'd like to denote the header.
 
@@ -515,6 +537,8 @@ Whenever you see a hash-tag in the text of your R Markdown document, you now kno
 
 This is one of the nice features of R Markdown. You can simply look at the plain text and know what it will produce in the knitted document. We can also add different styles of emphasis to words, phrases, or sentences by surrounding them in matching symbols. Below are some examples.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=SHVtxehEYsY}}\end{center}\vspace{0.1in}
+
 You are beginning to see how easy it is to customize your output. We'll next discuss ways to add links to URLs, create ordered and unordered lists, and use other frequently used Markdown features.
 
 \hypertarget{links}{%
@@ -522,10 +546,14 @@ You are beginning to see how easy it is to customize your output. We'll next dis
 
 To add a link to a URL, you simply enclose the text you'd like displayed in the resulting HTML file inside \texttt{{[}\ {]}} and then the link itself inside \texttt{(\ )} right next to each other with no space in between.
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=2GBZgNtKwts}}\end{center}\vspace{0.1in}
+
 \hypertarget{lists}{%
 \subsection{Lists}\label{lists}}
 
 The screencast below shows the process of creating both ordered and unordered lists.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=BlVjGGcYHsk}}\end{center}\vspace{0.1in}
 
 Note that only numbers are needed as we saw by numbering ``Warm up food'' with a ``1.'' We can also combine unordered and ordered lists by indenting the text two spaces.
 
@@ -533,15 +561,15 @@ In many of the examples that follow, you will see the actual text you'd type int
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{1. }\FloatTok{Wake up}
-\FloatTok{  - Get out of bed}
-\FloatTok{1. Warm up food}
-\FloatTok{  - Open kitchen door}
-\FloatTok{  - Get plate out of cupboard}
-\FloatTok{2. Make coffee}
-\FloatTok{  i. Warm up water}
-\FloatTok{  ii. Grind beans}
-\FloatTok{3. Make breakfast}
+\SpecialStringTok{1. }\NormalTok{Wake up}
+\SpecialStringTok{  {-} }\NormalTok{Get out of bed}
+\SpecialStringTok{1. }\NormalTok{Warm up food}
+\SpecialStringTok{  {-} }\NormalTok{Open kitchen door}
+\SpecialStringTok{  {-} }\NormalTok{Get plate out of cupboard}
+\SpecialStringTok{2. }\NormalTok{Make coffee}
+\NormalTok{  i. Warm up water}
+\NormalTok{  ii. Grind beans}
+\SpecialStringTok{3. }\NormalTok{Make breakfast}
 
 \NormalTok{  We can have a paragraph (or two) here describing how we could go about making}
 \NormalTok{  breakfast. If we indent the paragraph a few spaces and create a newline, it}
@@ -596,7 +624,7 @@ Line breaks in combination with white space are incredibly important in Markdown
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{Here is an example of text with only a line break.}
-\NormalTok{You may expect this line to appear in a new paragraph but it doesn't.}
+\NormalTok{You may expect this line to appear in a new paragraph but it doesn\textquotesingle{}t.}
 \end{Highlighting}
 \end{Shaded}
 
@@ -627,15 +655,15 @@ Another useful way to divide up different parts of your document is by including
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{---}
+\CommentTok{{-}{-}{-}}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \textbf{Blockquotes}
 
@@ -643,9 +671,9 @@ If you'd like to quote someone or produce an indented text block, you can do so 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{>}\DataTypeTok{ Reproducible research is the idea that data analyses, and more generally,}
-\DataTypeTok{scientific claims, are published with their data and software code so that}
-\DataTypeTok{others may verify the findings and build upon them. - Roger Peng}
+\AttributeTok{\textgreater{} Reproducible research is the idea that data analyses, and more generally,}
+\AttributeTok{scientific claims, are published with their data and software code so that}
+\AttributeTok{others may verify the findings and build upon them. {-} Roger Peng}
 \end{Highlighting}
 \end{Shaded}
 
@@ -659,9 +687,9 @@ There are times where you might want to comment out text inside an R Markdown do
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{<!--}
-\CommentTok{I'd like to save this text for later and don't want to delete it yet.}
-\CommentTok{-->}
+\CommentTok{\textless{}!{-}{-}}
+\CommentTok{I\textquotesingle{}d like to save this text for later and don\textquotesingle{}t want to delete it yet.}
+\CommentTok{{-}{-}\textgreater{}}
 \end{Highlighting}
 \end{Shaded}
 
@@ -700,6 +728,8 @@ Note that including spaces in front of these backticks will produce an error.
 
 In our \textbf{first\_rmarkdown.Rmd} file, let's explore an example of recognizing and creating our own R chunks:
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=NuMrDN2MpIg}}\end{center}\vspace{0.1in}
+
 This example introduces you to two different ways to create a vector of values. You'll see further discussion of this in Chapter \ref{rmdanal}. You can see that the code was automatically executed when we pressed the \textbf{Knit HTML} button, and its output was included in the knitted file.
 
 \textbf{Important note}: Any other R chunks after this one will have access to the three variables created here: \texttt{count20}, \texttt{count100\_by\_5}, and \texttt{prod}. Any chunks before the \texttt{mult\_vectors} named chunk \textbf{\emph{WILL NOT}} have access to these variables. You can read the document like a book, so it is important to add objects and work with them in the appropriate order. You'll receive errors from R if you don't.
@@ -709,7 +739,11 @@ This example introduces you to two different ways to create a vector of values. 
 
 We've seen that we can add R code and have that run in an R chunk of code enclosed by three backticks. However, what if we wanted to include the results of a simple calculation directly in the text of our document? R Markdown can do that as well:
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=jhKyLgBqyrY}}\end{center}\vspace{0.1in}
+
 Another crafty approach is to have the text produced in our document automatically update based on the results of R code. To see an example of this, we will select a number at random from our \texttt{count20} vector. If the number is greater than or equal to 10, we will say so. If it isn't, we will report that.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=rDCza8Vka6w}}\end{center}\vspace{0.1in}
 
 You also see that R gave an error when I didn't include the third argument to \texttt{ifelse} in quotation marks. However, when I fixed the code and pressed \textbf{Knit HTML} again, the error went away.
 
@@ -732,7 +766,11 @@ You can set many options on a chunk by chunk basis. The most common R chunk opti
   \texttt{include} specifies whether the code AND its output should be included in the resulting knitted document. If it is set to \texttt{FALSE} the code is run, but neither the code or its output are included in the resulting document.
 \end{itemize}
 
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=3p4z8cGyocY}}\end{center}\vspace{0.1in}
+
 Because we specified that \texttt{eval=FALSE} and that chunk was where we declared the \texttt{one\_value} variable, we now obtain an error. You can include multiple chunk options by separating each option with a comma.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=46N738U3q7k}}\end{center}\vspace{0.1in}
 
 \hypertarget{general-guidelines-for-writing-r-markdown-files}{%
 \section{General Guidelines for Writing R Markdown Files}\label{general-guidelines-for-writing-r-markdown-files}}
@@ -836,7 +874,7 @@ person to someone else (or yourself)!
 
 We now dive in to the basics of working with a dataset in R. We will explore the ways R stores data in \textbf{objects}, how to access specific elements in those objects, and how to use \textbf{functions}, which are one of the most useful pieces of R, to help with organization and clean code. After completing this introduction, you will be prepared to dive in to statistical analyses or data tasks of your own.
 
-It is worth noting that many of the functions described here such as \texttt{table} and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed, in particular the \texttt{dplyr} package. Nevertheless, it is still important to get a sense for how R stores objects and how to interact with objects in the ``old-school'' way. You'll still find some times where doing it this way actually works just as well as the newer modern ways\ldots{}but those times are becoming less frequent all the time.
+It is worth noting that many of the functions described here such as \texttt{table} and concepts like subsetting, indexing, and creating/modifying new variables can also be done using the great packages that Hadley Wickham has developed, in particular the \texttt{dplyr} package. Nevertheless, it is still important to get a sense for how R stores objects and how to interact with objects in the ``old-school'' way. You'll still find some times where doing it this way actually works just as well as the newer modern ways\ldots but those times are becoming less frequent all the time.
 
 \hypertarget{loading-data-from-a-file}{%
 \subsection{Loading data from a file}\label{loading-data-from-a-file}}
@@ -845,15 +883,15 @@ One of the most common ways you'll want to work with data is by importing it fro
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{download.file}\NormalTok{(}\DataTypeTok{url =} \StringTok{"http://ismayc.github.io/periodic-table-data.csv"}\NormalTok{,}
- \DataTypeTok{destfile =} \StringTok{"periodic-table-data.csv"}\NormalTok{)}
+\FunctionTok{download.file}\NormalTok{(}\AttributeTok{url =} \StringTok{"http://ismayc.github.io/periodic{-}table{-}data.csv"}\NormalTok{,}
+ \AttributeTok{destfile =} \StringTok{"periodic{-}table{-}data.csv"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{periodic_table <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"periodic-table-data.csv"}\NormalTok{,}
-              \DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{periodic\_table }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"periodic{-}table{-}data.csv"}\NormalTok{,}
+              \AttributeTok{stringsAsFactors =} \ConstantTok{FALSE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -863,11 +901,13 @@ It's good practice to check out the data after you have loaded it in:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{View}\NormalTok{(periodic_table)}
+\FunctionTok{View}\NormalTok{(periodic\_table)}
 \end{Highlighting}
 \end{Shaded}
 
 The video below walks through downloading the CSV file and loading it into the data frame object named \texttt{periodic\_table}. It also shows another way to view data frames that is built into RStudio without having to run the \texttt{View} function. Note that a new R Markdown file is created here as well called \texttt{chemistry\_example.Rmd}. We are writing the commands directly into R chunks here, but you may find it easier to play around in your R Console sandbox first.
+
+\vspace{0.1in}\begin{center}\footnotesize{\url{https://www.youtube.com/watch?v=QHv0I2Ph660}}\end{center}\vspace{0.1in}
 
 I encourage you to take the R chunks that follow in this chapter, type/copy them into an R Markdown file that has loaded the \texttt{periodic\_table} data set, and see that your resulting output matches the output that I have presented for you here. This book was written in R Markdown after all!
 
@@ -881,7 +921,7 @@ Data frames are by far the most common type of object you will work with in R. T
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{str}\NormalTok{(periodic_table)}
+\FunctionTok{str}\NormalTok{(periodic\_table)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -914,8 +954,8 @@ Suppose we wanted a way to store four names:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Bertha"}\NormalTok{, }\StringTok{"Herbert"}\NormalTok{, }\StringTok{"Alice"}\NormalTok{, }\StringTok{"Nathaniel"}\NormalTok{)}
-\NormalTok{friend_names}
+\NormalTok{friend\_names }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Bertha"}\NormalTok{, }\StringTok{"Herbert"}\NormalTok{, }\StringTok{"Alice"}\NormalTok{, }\StringTok{"Nathaniel"}\NormalTok{)}
+\NormalTok{friend\_names}
 \end{Highlighting}
 \end{Shaded}
 
@@ -927,7 +967,7 @@ You can see when \texttt{friend\_names} is outputted that there are four entries
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class}\NormalTok{(friend_names)}
+\FunctionTok{class}\NormalTok{(friend\_names)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -939,8 +979,8 @@ Next suppose we wanted to put the ages of our friends in another vector. We can 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_ages <-}\StringTok{ }\KeywordTok{c}\NormalTok{(25L, 37L, 22L, 30L)}
-\NormalTok{friend_ages}
+\NormalTok{friend\_ages }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(25L, 37L, 22L, 30L)}
+\NormalTok{friend\_ages}
 \end{Highlighting}
 \end{Shaded}
 
@@ -950,7 +990,7 @@ Next suppose we wanted to put the ages of our friends in another vector. We can 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class}\NormalTok{(friend_ages)}
+\FunctionTok{class}\NormalTok{(friend\_ages)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -962,8 +1002,8 @@ Note the use of the \texttt{L} value here. This tells R that the numbers entered
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ages_numeric <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{37}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{30}\NormalTok{)}
-\KeywordTok{class}\NormalTok{(ages_numeric)}
+\NormalTok{ages\_numeric }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{25}\NormalTok{, }\DecValTok{37}\NormalTok{, }\DecValTok{22}\NormalTok{, }\DecValTok{30}\NormalTok{)}
+\FunctionTok{class}\NormalTok{(ages\_numeric)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -981,8 +1021,8 @@ The most likely way you will enter character values into a vector is via the \te
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{sequence_by_}\DecValTok{2}\NormalTok{ <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =}\NormalTok{ 0L, }\DataTypeTok{to =}\NormalTok{ 100L, }\DataTypeTok{by =}\NormalTok{ 2L)}
-\NormalTok{sequence_by_}\DecValTok{2}
+\NormalTok{sequence\_by\_2 }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =}\NormalTok{ 0L, }\AttributeTok{to =}\NormalTok{ 100L, }\AttributeTok{by =}\NormalTok{ 2L)}
+\NormalTok{sequence\_by\_2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -994,7 +1034,7 @@ The most likely way you will enter character values into a vector is via the \te
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class}\NormalTok{(sequence_by_}\DecValTok{2}\NormalTok{)}
+\FunctionTok{class}\NormalTok{(sequence\_by\_2)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1008,8 +1048,8 @@ We can also set the sequence to go by a negative number or a decimal value. We w
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dec_frac_seq <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{10}\NormalTok{, }\DataTypeTok{to =} \DecValTok{3}\NormalTok{, }\DataTypeTok{by =} \FloatTok{-0.2}\NormalTok{)}
-\NormalTok{dec_frac_seq}
+\NormalTok{dec\_frac\_seq }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{10}\NormalTok{, }\AttributeTok{to =} \DecValTok{3}\NormalTok{, }\AttributeTok{by =} \SpecialCharTok{{-}}\FloatTok{0.2}\NormalTok{)}
+\NormalTok{dec\_frac\_seq}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1021,7 +1061,7 @@ We can also set the sequence to go by a negative number or a decimal value. We w
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{class}\NormalTok{(dec_frac_seq)}
+\FunctionTok{class}\NormalTok{(dec\_frac\_seq)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1037,8 +1077,8 @@ A short-cut version of the \texttt{seq} version can be achieved using the \textt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{inc_seq <-}\StringTok{ }\DecValTok{98}\OperatorTok{:}\DecValTok{112}
-\NormalTok{inc_seq}
+\NormalTok{inc\_seq }\OtherTok{\textless{}{-}} \DecValTok{98}\SpecialCharTok{:}\DecValTok{112}
+\NormalTok{inc\_seq}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1048,8 +1088,8 @@ A short-cut version of the \texttt{seq} version can be achieved using the \textt
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{dec_seq <-}\StringTok{ }\DecValTok{5}\OperatorTok{:-}\DecValTok{5}
-\NormalTok{dec_seq}
+\NormalTok{dec\_seq }\OtherTok{\textless{}{-}} \DecValTok{5}\SpecialCharTok{:{-}}\DecValTok{5}
+\NormalTok{dec\_seq}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1065,9 +1105,9 @@ If you aren't reading in data from a file and you have some vectors of informati
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friends <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{names =}\NormalTok{ friend_names,}
-           \DataTypeTok{ages =}\NormalTok{ friend_ages,}
-           \DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{friends }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}\AttributeTok{names =}\NormalTok{ friend\_names,}
+           \AttributeTok{ages =}\NormalTok{ friend\_ages,}
+           \AttributeTok{stringsAsFactors =} \ConstantTok{FALSE}\NormalTok{)}
 \NormalTok{friends}
 \end{Highlighting}
 \end{Shaded}
@@ -1093,7 +1133,7 @@ By default, R will organize character strings in alphabetical order. To see this
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{(periodic_table}\OperatorTok{$}\NormalTok{block)}
+\FunctionTok{table}\NormalTok{(periodic\_table}\SpecialCharTok{$}\NormalTok{block)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1109,14 +1149,14 @@ To convert \texttt{block} into a factor, we use the aptly named \texttt{factor} 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{periodic_table}\OperatorTok{$}\NormalTok{block <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(periodic_table}\OperatorTok{$}\NormalTok{block,}
-                \DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"s"}\NormalTok{, }\StringTok{"p"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"f"}\NormalTok{))}
+\NormalTok{periodic\_table}\SpecialCharTok{$}\NormalTok{block }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(periodic\_table}\SpecialCharTok{$}\NormalTok{block,}
+                \AttributeTok{levels =} \FunctionTok{c}\NormalTok{(}\StringTok{"s"}\NormalTok{, }\StringTok{"p"}\NormalTok{, }\StringTok{"d"}\NormalTok{, }\StringTok{"f"}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{table}\NormalTok{(periodic_table}\OperatorTok{$}\NormalTok{block)}
+\FunctionTok{table}\NormalTok{(periodic\_table}\SpecialCharTok{$}\NormalTok{block)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1135,8 +1175,8 @@ R can work extremely quickly when provided with a vector or a collection of vect
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{five_years_older <-}\StringTok{ }\NormalTok{ages_numeric }\OperatorTok{+}\StringTok{ }\NormalTok{5L}
-\NormalTok{five_years_older}
+\NormalTok{five\_years\_older }\OtherTok{\textless{}{-}}\NormalTok{ ages\_numeric }\SpecialCharTok{+}\NormalTok{ 5L}
+\NormalTok{five\_years\_older}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1144,7 +1184,7 @@ R can work extremely quickly when provided with a vector or a collection of vect
 ## [1] 30 42 27 35
 \end{verbatim}
 
-Just like that, every age is five more than where we started. This extends to adding two vectors together\footnote{Vectors of the same size, of course\ldots{}well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let's ignore that for now.}.
+Just like that, every age is five more than where we started. This extends to adding two vectors together\footnote{Vectors of the same size, of course\ldots well, actually R has a way of dealing with vectors of different sizes and not giving errors, but let's ignore that for now.}.
 
 \hypertarget{index-sub}{%
 \section{Indexing and subsetting}\label{index-sub}}
@@ -1158,7 +1198,7 @@ Recall the use of \texttt{{[}\ {]}} when a vector was printed, to help us better
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{periodic_table}\OperatorTok{$}\NormalTok{name[}\DecValTok{10}\OperatorTok{:}\DecValTok{20}\NormalTok{]}
+\NormalTok{periodic\_table}\SpecialCharTok{$}\NormalTok{name[}\DecValTok{10}\SpecialCharTok{:}\DecValTok{20}\NormalTok{]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1172,7 +1212,7 @@ Similarly, if we only want to select a few elements from our \texttt{friend\_nam
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names[}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)]}
+\NormalTok{friend\_names[}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1184,7 +1224,7 @@ We can also use \texttt{-} to select everything but the elements listed after it
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names[}\OperatorTok{-}\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{)]}
+\NormalTok{friend\_names[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1199,7 +1239,7 @@ You have now seen how to select specific elements of a vector or a variable, but
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{periodic_table[}\DecValTok{41}\OperatorTok{:}\DecValTok{50}\NormalTok{, }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{)]}
+\NormalTok{periodic\_table[}\DecValTok{41}\SpecialCharTok{:}\DecValTok{50}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1235,7 +1275,7 @@ As you've seen, we can specify directly which elements we'd like to select based
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names[}\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{)]}
+\NormalTok{friend\_names[}\FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{, }\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1247,7 +1287,7 @@ This can be extended to choose specific elements from a data frame based on the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names }\OperatorTok{==}\StringTok{ "Bertha"}
+\NormalTok{friend\_names }\SpecialCharTok{==} \StringTok{"Bertha"}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1259,7 +1299,7 @@ We see that only the first element in this new vector is set to \texttt{TRUE} be
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{friend_names[friend_names }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Bertha"}\NormalTok{, }\StringTok{"Alice"}\NormalTok{)]}
+\NormalTok{friend\_names[friend\_names }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Bertha"}\NormalTok{, }\StringTok{"Alice"}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1273,8 +1313,8 @@ Now we can think about how to subset an entire data frame using the same sort of
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{periodic_table[ (periodic_table}\OperatorTok{$}\NormalTok{name }\OperatorTok{%in%}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Hydrogen"}\NormalTok{, }\StringTok{"Oxygen"}\NormalTok{) ),}
-        \KeywordTok{c}\NormalTok{(}\StringTok{"atomic_weight"}\NormalTok{, }\StringTok{"state_at_stp"}\NormalTok{)]}
+\NormalTok{periodic\_table[ (periodic\_table}\SpecialCharTok{$}\NormalTok{name }\SpecialCharTok{\%in\%} \FunctionTok{c}\NormalTok{(}\StringTok{"Hydrogen"}\NormalTok{, }\StringTok{"Oxygen"}\NormalTok{) ),}
+        \FunctionTok{c}\NormalTok{(}\StringTok{"atomic\_weight"}\NormalTok{, }\StringTok{"state\_at\_stp"}\NormalTok{)]}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1297,8 +1337,8 @@ Recall that you can look up the help documentation on any function by entering \
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{seq}\NormalTok{(}\DataTypeTok{from =} \DecValTok{1}\NormalTok{, }\DataTypeTok{to =} \DecValTok{1}\NormalTok{, }\DataTypeTok{by =}\NormalTok{ ((to }\OperatorTok{-}\StringTok{ }\NormalTok{from)}\OperatorTok{/}\NormalTok{(length.out }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{)),}
-  \DataTypeTok{length.out =} \OtherTok{NULL}\NormalTok{, }\DataTypeTok{along.with =} \OtherTok{NULL}\NormalTok{, ...)}
+\FunctionTok{seq}\NormalTok{(}\AttributeTok{from =} \DecValTok{1}\NormalTok{, }\AttributeTok{to =} \DecValTok{1}\NormalTok{, }\AttributeTok{by =}\NormalTok{ ((to }\SpecialCharTok{{-}}\NormalTok{ from)}\SpecialCharTok{/}\NormalTok{(length.out }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{)),}
+  \AttributeTok{length.out =} \ConstantTok{NULL}\NormalTok{, }\AttributeTok{along.with =} \ConstantTok{NULL}\NormalTok{, ...)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1308,7 +1348,7 @@ Not all functions have all default arguments like \texttt{seq}. The \texttt{mean
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{()}
+\FunctionTok{mean}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1324,7 +1364,7 @@ Notice that R returns an error here, which is not the case if you don't specify 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{seq}\NormalTok{()}
+\FunctionTok{seq}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1336,7 +1376,7 @@ To fix the error, we'll need to specify which vector or object we want to comput
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{ages_numeric}
+\NormalTok{ages\_numeric}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1346,7 +1386,7 @@ To fix the error, we'll need to specify which vector or object we want to comput
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ages_numeric)}
+\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =}\NormalTok{ ages\_numeric)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1358,7 +1398,7 @@ We can also skip specifying the name of the argument, as long as you follow the 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(ages_numeric)}
+\FunctionTok{mean}\NormalTok{(ages\_numeric)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1370,7 +1410,7 @@ We can see that R expects the arguments to be \texttt{x}, then \texttt{trim}, an
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(ages_numeric, }\OtherTok{TRUE}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(ages\_numeric, }\ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1387,7 +1427,7 @@ Because \texttt{trim} comes before \texttt{na.rm} in the list of arguments, R as
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ages_numeric, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =}\NormalTok{ ages\_numeric, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1407,10 +1447,10 @@ Two useful packages that I recommend you install and download are \texttt{"ggplo
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\DataTypeTok{pkgs =} \KeywordTok{c}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{,}\StringTok{"dplyr"}\NormalTok{),}
-         \DataTypeTok{repos =} \StringTok{"http://cran.rstudio.org"}\NormalTok{,}
-         \DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{,}
-         \DataTypeTok{quiet =} \OtherTok{TRUE}\NormalTok{)}
+\FunctionTok{install.packages}\NormalTok{(}\AttributeTok{pkgs =} \FunctionTok{c}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{,}\StringTok{"dplyr"}\NormalTok{),}
+         \AttributeTok{repos =} \StringTok{"http://cran.rstudio.org"}\NormalTok{,}
+         \AttributeTok{dependencies =} \ConstantTok{TRUE}\NormalTok{,}
+         \AttributeTok{quiet =} \ConstantTok{TRUE}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1432,8 +1472,8 @@ After you've downloaded the packages, you can load the package into your R envir
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
-\KeywordTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\FunctionTok{library}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1471,7 +1511,7 @@ Another common error is forgetting or neglecting to finish a call to a function 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{52}\NormalTok{)}
+\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{52}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1490,7 +1530,7 @@ In this case, there needs to be one more parenthesis added at the end of your ca
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{mean}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{52}\NormalTok{))}
+\FunctionTok{mean}\NormalTok{(}\AttributeTok{x =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{52}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 

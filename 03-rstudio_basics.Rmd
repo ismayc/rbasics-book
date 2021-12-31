@@ -71,7 +71,7 @@ If you are sharing homework or lab assignments with your instructor using RStudi
 
 The video below shows you how to create a new RStudio project called `initial` and add your first R Markdown file. Note that you also may see a description about what version of R is running on your initial login, as shown in the screencast below in the Console pane.
 
-```{r projrmd, echo=FALSE, fig.cap="Create a new RStudio project and an R Markdown file"}
+```{r projrmd, echo=FALSE, results="asis"}
 # gif_link("gifs/proj_rmd.gif")
 embed_my_youtube("6YcacPihHuI")
 ```
@@ -84,7 +84,7 @@ You will now see an example of how to share this project with another user. This
 
 RStudio Server is available in multiple formats, so you'll need to make sure you (or your IT administrator) have installed RStudio Server Pro to use the Shared Projects feature. You can find more information on this process from [RStudio, Inc](https://support.rstudio.com/hc/en-us/articles/211659737-Sharing-Projects-in-RStudio-Server-Pro). The video below illustrates the process of sharing the **initial.Rproj** project file we just created with another user on the same installation of RStudio Server.
 
-```{r shareproj, echo=FALSE, fig.cap="Share an RStudio project on RStudio Server Pro"}
+```{r shareproj, echo=FALSE, fig.cap="Share an RStudio project on RStudio Server Pro", results="asis"}
 #gif_link("gifs/share_proj.gif")
 embed_my_youtube("PeL9Du4J6iM")
 ```
@@ -103,7 +103,7 @@ The pane in which you will likely spend a majority of your time is the pane on t
 
 Note that, when you edit the file, the tab with the file name changes from black to <font color="red">red</font>, and an asterisk appears after the file name, indicating that the latest changes have not been saved. You should get in the habit of saving files frequently. You can have multiple tabs open and view different files in this pane. In Chapter \@ref(rmarkdown), you'll also see that you can `View` datasets in this pane.
 
-```{r codeeditor, echo=FALSE, fig.cap="Editing an R Markdown file in RStudio"}
+```{r codeeditor, echo=FALSE, fig.cap="Editing an R Markdown file in RStudio", results="asis"}
 #gif_link("gifs/top_left_pane.gif")
 embed_my_youtube("fdJROYexFf0")
 ```
@@ -114,7 +114,7 @@ It may not be clear what these additions are really doing just yet. That's ok! W
 
 By default, the top right pane includes an **Environment** tab and a **History** tab. To get a sense of what these tabs provide, we'll need to also use the bottom left pane and the **Console** tab. I'll show you how to create multiple objects in R using the **Console**. Initially, you will see that the **Environment** tab tells us that the "Environment is empty." This means there are no objects (e.g., data) yet. If you click on the **History** tab, you should also see a blank screen with a few icons. We won't go over all of these buttons here, but I encourage you to hover over them and click on them to get a sense for what they do. As I enter code into the **Console**, watch to see how the **Environment** and **History** tabs change.
 
-```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input"}
+```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input", results="asis"}
 #gif_link("gifs/env_history.gif")
 embed_my_youtube("hfH8DXFovt0")
 ```
@@ -129,7 +129,7 @@ A powerful feature of the R language has been introduced in the `sum_1_2 <- sum(
 
 You'll frequently use the **Console** as a way to check your work or experiment with how to solve a problem using R. Before RStudio, most users of R just had a window like the **Console** provides where they entered their commands and then looked at the results in different windows. We will see that the **Console** and the **Code Editor/View Window** will allow us to store all of our code in a file and then "run" that code through the **Console** to check that it works. The example video below shows how this is done.
 
-```{r consolecode, echo=FALSE, fig.cap="Showing the Console interacting with an R Markdown document R chunk"}
+```{r consolecode, echo=FALSE, fig.cap="Showing the Console interacting with an R Markdown document R chunk", results="asis"}
 #gif_link("gifs/console_code.gif")
 embed_my_youtube("RPF6gGyeJmg")
 ```
@@ -143,7 +143,7 @@ It is good practice to get in the habit of naming variables corresponding to wha
 
 Another important property of R is that is case-sensitive. You'll see what this means in the video below that also includes examples of invalid names of objects. Note that we will continue to work inside the R chunk as we did in the last video. You'll see that these code chunks provide a nice way to keep track of our important analyses.
 
-```{r nameobjs, echo=FALSE, fig.cap="Invalid object names and case sensitivity in R"}
+```{r nameobjs, echo=FALSE, fig.cap="Invalid object names and case sensitivity in R", results="asis"}
 #gif_link("gifs/naming_objects.gif")
 embed_my_youtube("GcWKm13Q1Uc")
 ```
@@ -158,7 +158,7 @@ It's also a good idea to not call objects the names of functions that are built 
 
 Of course, you won't know what all of the names of built-in functions are until you practice, but it is something to think about. If you are ever wondering if a function is built-in or is in a package you have included, you can use the `?` function in the **Console** to check. Some examples are shown below as a screencast.
 
-```{r helpfunc, echo=FALSE, fig.cap="Using the ? function to look up help on an R function"}
+```{r helpfunc, echo=FALSE, fig.cap="Using the ? function to look up help on an R function", results="asis"}
 #gif_link("gifs/help_func.gif")
 embed_my_youtube("M1TJrL-ss7A")
 ```
@@ -179,7 +179,7 @@ You'll see clearer examples of what the **Plots** and **Viewer** tabs provide in
 
 The **Packages** tab lists all packages installed on your computer or cloud server. You can see which packages are loaded in the current working environment by looking to see if a check-mark exists next to the package name. Note that you may not have all of the packages loaded onto your machine that I do below in the video. That's OK. This is just an example of what you may expect.
 
-```{r packagetab, echo=FALSE, fig.cap="Installed packages and whether or not they are loaded currently"}
+```{r packagetab, echo=FALSE, fig.cap="Installed packages and whether or not they are loaded currently", results="asis"}
 #gif_link("gifs/package_tab.gif")
 embed_my_youtube("Zm54FdyqRsc")
 ```
