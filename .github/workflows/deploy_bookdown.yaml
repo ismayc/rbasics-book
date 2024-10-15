@@ -37,6 +37,10 @@ jobs:
           key: package-state-${{ runner.os }}-${{ hashFiles('**/renv.lock') }}
           restore-keys: package-state-${{ runner.os }}-
 
+      # Install ImageMagick dependencies for magick package
+      - name: Install ImageMagick dependencies
+        run: sudo apt-get update && sudo apt-get install -y libmagick++-dev
+
       # Check and install R packages if needed
       - name: Check and Install R Packages
         run: |
