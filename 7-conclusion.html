@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Concluding Remarks | Getting Used to R, RStudio, and R Markdown</title>
+  <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Concluding Remarks | Getting Used to R, RStudio, and R Markdown" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="An introduction into using R, RStudio, and R Markdown for new users" />
+  <meta name="github-repo" content="ismayc/rbasics-book" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Concluding Remarks | Getting Used to R, RStudio, and R Markdown" />
+  
+  <meta name="twitter:description" content="An introduction into using R, RStudio, and R Markdown for new users" />
+  
+
+<meta name="author" content="Chester Ismay and Patrick C. Kennedy" />
+
+
+<meta name="date" content="2024-10-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="6-errors.html"/>
+<link rel="next" href="8-references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<link href="libs/vembedr-0.1.5/css/vembedr.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="2-whyR.html"><a href="2-whyR.html"><i class="fa fa-check"></i><b>2</b> Why R?</a></li>
+<li class="chapter" data-level="3" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html"><i class="fa fa-check"></i><b>3</b> R and RStudio Basics</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#what-is-r"><i class="fa fa-check"></i><b>3.1</b> What is R?</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#r-beginnings"><i class="fa fa-check"></i><b>3.1.1</b> R beginnings</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#r-packages"><i class="fa fa-check"></i><b>3.1.2</b> R packages</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#what-is-rstudio"><i class="fa fa-check"></i><b>3.2</b> What is RStudio?</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#installing-r-and-rstudio-desktop"><i class="fa fa-check"></i><b>3.2.1</b> Installing R and RStudio Desktop</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#working-in-rstudio-server"><i class="fa fa-check"></i><b>3.3</b> Working in RStudio Server</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#logging-in-and-initial-screen"><i class="fa fa-check"></i><b>3.3.1</b> Logging in and initial screen</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#basic-workflow-with-rstudio"><i class="fa fa-check"></i><b>3.3.2</b> Basic Workflow with RStudio</a></li>
+<li class="chapter" data-level="3.3.3" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#sharing-projects-on-rstudio-server-pro"><i class="fa fa-check"></i><b>3.3.3</b> Sharing Projects on RStudio Server Pro</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#rstudio-layout"><i class="fa fa-check"></i><b>3.4</b> RStudio Layout</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#code-editor-view-window"><i class="fa fa-check"></i><b>3.4.1</b> Code Editor / View Window</a></li>
+<li class="chapter" data-level="3.4.2" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#environment-history"><i class="fa fa-check"></i><b>3.4.2</b> Environment / History</a></li>
+<li class="chapter" data-level="3.4.3" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#console"><i class="fa fa-check"></i><b>3.4.3</b> Console</a></li>
+<li class="chapter" data-level="3.4.4" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#the-help-function"><i class="fa fa-check"></i><b>3.4.4</b> The <code>help</code> function (<code>?</code>)</a></li>
+<li class="chapter" data-level="3.4.5" data-path="3-rstudiobasics.html"><a href="3-rstudiobasics.html#the-bottom-right-pane"><i class="fa fa-check"></i><b>3.4.5</b> The bottom right pane</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html"><i class="fa fa-check"></i><b>4</b> R Markdown</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#fixerrors"><i class="fa fa-check"></i><b>4.1</b> Fixing Errors in an R Markdown file</a></li>
+<li class="chapter" data-level="4.2" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#the-components-of-an-r-markdown-file"><i class="fa fa-check"></i><b>4.2</b> The Components of an R Markdown File</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#yaml"><i class="fa fa-check"></i><b>4.2.1</b> YAML</a></li>
+<li class="chapter" data-level="4.2.2" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#headers"><i class="fa fa-check"></i><b>4.2.2</b> Headers</a></li>
+<li class="chapter" data-level="4.2.3" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#emphasis"><i class="fa fa-check"></i><b>4.2.3</b> Emphasis</a></li>
+<li class="chapter" data-level="4.2.4" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#links"><i class="fa fa-check"></i><b>4.2.4</b> Links</a></li>
+<li class="chapter" data-level="4.2.5" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#lists"><i class="fa fa-check"></i><b>4.2.5</b> Lists</a></li>
+<li class="chapter" data-level="4.2.6" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#miscellaneous-markdown"><i class="fa fa-check"></i><b>4.2.6</b> Miscellaneous Markdown</a></li>
+<li class="chapter" data-level="4.2.7" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#r-chunks"><i class="fa fa-check"></i><b>4.2.7</b> R Chunks</a></li>
+<li class="chapter" data-level="4.2.8" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#inline-r-code"><i class="fa fa-check"></i><b>4.2.8</b> Inline R code</a></li>
+<li class="chapter" data-level="4.2.9" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#code-highlighting"><i class="fa fa-check"></i><b>4.2.9</b> Code Highlighting</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#r-markdown-chunk-options"><i class="fa fa-check"></i><b>4.3</b> R Markdown Chunk Options</a></li>
+<li class="chapter" data-level="4.4" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#general-guidelines-for-writing-r-markdown-files"><i class="fa fa-check"></i><b>4.4</b> General Guidelines for Writing R Markdown Files</a></li>
+<li class="chapter" data-level="4.5" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#help---cheatsheets"><i class="fa fa-check"></i><b>4.5</b> Help -&gt; Cheatsheets</a></li>
+<li class="chapter" data-level="4.6" data-path="4-rmarkdown.html"><a href="4-rmarkdown.html#spell-check"><i class="fa fa-check"></i><b>4.6</b> Spell-check</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-rmdanal.html"><a href="5-rmdanal.html"><i class="fa fa-check"></i><b>5</b> Intro to R using R Markdown</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="5-rmdanal.html"><a href="5-rmdanal.html#a-beginning-directoryfile-workflow"><i class="fa fa-check"></i><b>5.1</b> A beginning directory/file workflow</a></li>
+<li class="chapter" data-level="5.2" data-path="5-rmdanal.html"><a href="5-rmdanal.html#using-r-with-periodic-table-dataset"><i class="fa fa-check"></i><b>5.2</b> Using R with periodic table dataset</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="5-rmdanal.html"><a href="5-rmdanal.html#loading-data-from-a-file"><i class="fa fa-check"></i><b>5.2.1</b> Loading data from a file</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="5-rmdanal.html"><a href="5-rmdanal.html#data-structures"><i class="fa fa-check"></i><b>5.3</b> Data structures</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="5-rmdanal.html"><a href="5-rmdanal.html#data-frames"><i class="fa fa-check"></i><b>5.3.1</b> Data frames</a></li>
+<li class="chapter" data-level="5.3.2" data-path="5-rmdanal.html"><a href="5-rmdanal.html#vectors"><i class="fa fa-check"></i><b>5.3.2</b> Vectors</a></li>
+<li class="chapter" data-level="5.3.3" data-path="5-rmdanal.html"><a href="5-rmdanal.html#factors"><i class="fa fa-check"></i><b>5.3.3</b> Factors</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="5-rmdanal.html"><a href="5-rmdanal.html#vectorized-operations"><i class="fa fa-check"></i><b>5.4</b> Vectorized operations</a></li>
+<li class="chapter" data-level="5.5" data-path="5-rmdanal.html"><a href="5-rmdanal.html#index-sub"><i class="fa fa-check"></i><b>5.5</b> Indexing and subsetting</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="5-rmdanal.html"><a href="5-rmdanal.html#using-with-a-vectorvariable"><i class="fa fa-check"></i><b>5.5.1</b> Using <code>[ ]</code> with a vector/variable</a></li>
+<li class="chapter" data-level="5.5.2" data-path="5-rmdanal.html"><a href="5-rmdanal.html#using-with-a-data-frame"><i class="fa fa-check"></i><b>5.5.2</b> Using <code>[ , ]</code> with a data frame</a></li>
+<li class="chapter" data-level="5.5.3" data-path="5-rmdanal.html"><a href="5-rmdanal.html#using-logicals"><i class="fa fa-check"></i><b>5.5.3</b> Using logicals</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="5-rmdanal.html"><a href="5-rmdanal.html#functions"><i class="fa fa-check"></i><b>5.6</b> Functions</a></li>
+<li class="chapter" data-level="5.7" data-path="5-rmdanal.html"><a href="5-rmdanal.html#closing-thoughts"><i class="fa fa-check"></i><b>5.7</b> Closing thoughts</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-errors.html"><a href="6-errors.html"><i class="fa fa-check"></i><b>6</b> Deciphering Common R Errors</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="6-errors.html"><a href="6-errors.html#error-could-not-find-function"><i class="fa fa-check"></i><b>6.1</b> <code>Error: could not find function</code></a></li>
+<li class="chapter" data-level="6.2" data-path="6-errors.html"><a href="6-errors.html#error-object-not-found"><i class="fa fa-check"></i><b>6.2</b> <code>Error: object not found</code></a></li>
+<li class="chapter" data-level="6.3" data-path="6-errors.html"><a href="6-errors.html#misspellings"><i class="fa fa-check"></i><b>6.3</b> Misspellings</a></li>
+<li class="chapter" data-level="6.4" data-path="6-errors.html"><a href="6-errors.html#unmatched-parenthesis"><i class="fa fa-check"></i><b>6.4</b> Unmatched parenthesis</a></li>
+<li class="chapter" data-level="6.5" data-path="6-errors.html"><a href="6-errors.html#general-guidelines"><i class="fa fa-check"></i><b>6.5</b> General guidelines</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="7-conclusion.html"><a href="7-conclusion.html"><i class="fa fa-check"></i><b>7</b> Concluding Remarks</a></li>
+<li class="chapter" data-level="8" data-path="8-references.html"><a href="8-references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://github.com/ismayc/rbasics-book/issues" target="blank">Create a GitHub Issue</a></li>
+<li><a href="mailto:chester.ismay@gmail.com" target="blank">Email Chester</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Getting Used to R, RStudio, and R Markdown</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="conclusion" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Concluding Remarks<a href="7-conclusion.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>My hope is that this book provides a nice introduction into understanding how statisticians, data scientists, and many other professionals use RStudio and R Markdown to simplify their analyses and ensure that their reports are computationally reproducible. Learning R is not nearly as intimidating as it once was, and more and more industries are shifting towards free open-source tools like R and RStudio. R Markdown provides an excellent way to document your analyses and share it with others in a variety of formats.</p>
+<p>Of course, this book is just the tip of the iceberg in terms of showing you what R can really do. If you’d like to learn more, I encourage you to check out <a href="http://www.moderndive.com/">Modern Dive</a>, a free, online, open-source book Albert Kim and I wrote on using modern data analysis techniques and visualization with R, RStudio, and R Markdown. It was updated to a Second Edition in Fall 2024, and it is available at <a href="https://www.moderndive.com/v2/" class="uri">https://www.moderndive.com/v2/</a>. The Second Edition will be published by CRC Press in early 2025, and <a href="https://www.routledge.com/Statistical-Inference-via-Data-Science-A-ModernDive-into-R-and-the-Tidyverse/Ismay-Kim/p/book/9780367409821?srsltid=AfmBOoqLasBhcQVciOoGIeKfZ-kdfG2KwkcXISwn-D8_u8Zku7Z8FqKd">the First Edition was published</a> in late 2019.</p>
+<p>Additionally, Garrett Grolemund’s “Hands-On Programming with R” <span class="citation">(<a href="#ref-handson2014">Grolemund 2014</a>)</span> is an excellent resource and goes into much more depth than I do here on how to work with more complicated objects in R. It also discusses concepts in a project-based framework that is entertaining and easy-to-read.</p>
+<p>As always, feel free to send me an email at <a href="mailto:chester.ismay@gmail.com" class="email">chester.ismay@gmail.com</a> if you’d like any further clarification or if you have suggestions on improvements. Thanks for taking the time to read through this and best wishes to you on your next steps towards reproducible, thoughtful, beautiful analyses!</p>
+<p><code>-</code> Chester</p>
+
+</div>
+<h3> References<a href="8-references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-handson2014" class="csl-entry">
+Grolemund, Garrett. 2014. <em>Hands-on Programming with r</em>. O’Reilly.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="6-errors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="8-references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ismayc/rbasics-book/edit/master/07-conclusion.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["rbasics.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
