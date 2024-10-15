@@ -55,7 +55,7 @@ jobs:
                 cat("No package changes detected.\n");
               }
             } else {
-              install.packages(c("tidyverse", "bookdown"));
+              install.packages(c("tidyverse", "bookdown", "tufte"));
             }'
         env:
           GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
