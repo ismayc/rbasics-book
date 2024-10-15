@@ -61,7 +61,7 @@ embed_my_youtube <- function(id, width = 650, height = 400,
 
 # Introduction {#intro}
 
-This book was written to give people who are new to [R](https://www.r-project.org), [RStudio](https://www.rstudio.com), and [R Markdown](http://rmarkdown.rstudio.com) the tools they need to begin making their own research reproducible. R is an open-source programming language that has seen its popularity grow tremendously in recent years, with developers adding new functionality via packages on a daily basis. RStudio is a graphical development environment that makes it easier to write and view the results of R code, and R Markdown provides an easy way to produce rich, fully-documented, reproducible analyses.
+This book was written to give people who are new to [R](https://www.r-project.org), [RStudio](https://posit.co/downloads/), and [R Markdown](http://rmarkdown.rstudio.com) the tools they need to begin making their own research reproducible. R is an open-source programming language that has seen its popularity grow tremendously in recent years, with developers adding new functionality via packages on a daily basis. RStudio is a graphical development environment that makes it easier to write and view the results of R code, and R Markdown provides an easy way to produce rich, fully-documented, reproducible analyses.
 
 Screenshots and screencasts (with no audio) are used throughout to illustrate key concepts, but if you need further clarification on these or any other aspect, please create a [GitHub issue](https://github.com/ismayc/rbasics-book/issues) or [email me](mailto:chester.ismay@gmail.com) with a reference to the area where more guidance is necessary. [Pull requests](https://code.tutsplus.com/courses/git-basics-github-pull-requests) on GitHub for typos or improvements are also welcome, and you can easily do so by clicking on the Edit button near Search at the top of the HTML version of the book.
 
@@ -69,6 +69,6 @@ In the HTML version, you can download the book as a PDF by clicking on the PDF b
 
 This book will evolve and be updated as needed based on reader feedback. You can see when the book was last updated below.
 
-I strongly recommend that you use R version 3.3.0 or higher, RStudio Desktop version 1.0 or higher, and `rmarkdown` R package version 1.0 or higher. This will ensure that your setup matches the screenshots and recordings, making it easier to follow along. Additionally, you may find that videos don't load sometimes. I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have trouble with other browsers.
+I strongly recommend that you use R version 4.1 or higher, RStudio Desktop version 2024.04.0 or higher, and `rmarkdown` R package version 2.0 or higher. This will ensure that your setup matches the screenshots and recordings, making it easier to follow along. Additionally, you may find that videos don't load sometimes. I haven't had any problems using Google Chrome and recommend that as your browser to view this book if you have trouble with other browsers.
 
 This book was last updated by `r paste(Sys.getenv("LOGNAME"), "on", format(Sys.time(), "%A, %B %d, %Y %X %Z"))`.

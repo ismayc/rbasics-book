@@ -12,11 +12,11 @@ Getting back to the development of R... R was created by **R**oss Ihaka and **R*
 
 ### R packages
 
-I first learned to use R as a graduate student at Northern Arizona University from [Dr. Philip Turk](http://www.stat.colostate.edu/~pturk/) in 2007. At the time, I never thought that R could have exploded in users as we have seen since 2011. I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R.
+I first learned to use R as a graduate student at Northern Arizona University from [Dr. Philip Turk](http://www.stat.colostate.edu/~pturk/) in 2007. At the time, I never would have thought that students taking an introductory statistics course would be encouraged to learn to use R. Of course, I never imagined that R would become as popular as it has. 
 
-In 2007, R was still largely an esoteric and tricky language used by statisticians to do analyses. Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience. So what has changed since 2007 about learning R?
+In 2007, R was still largely an esoteric and tricky language used by statisticians to do analyses. Getting used to the syntax for producing plots and working with data was especially tricky for those with little to no programming experience. Since 2011, the number and diversity of people who use R has grown rapidly. So what has changed about learning R since 2007? 
 
-I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies. Packages are add-ons created by users of R to increase the functionality of the base R installation. Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler. As of April 2017, [more than 10,400 packages](https://cran.r-project.org/web/packages/index.html) were available on common R repositories.^[You'll see how to download these packages via `install.packages("dplyr")` and load them into your current R working environment via `library("dplyr")`, for example, in Chapter \@ref(rmdanal).]
+I believe one of the biggest developments has been the creation of packages to make R easier to work with for newbies. Packages are add-ons created by users of R to increase the functionality of the base R installation. Packages created by Hadley Wickham and others recently have greatly expanded the capabilities of R, while also working to make beginning with R simpler. As of April 2017, [more than 10,400 packages](https://cran.r-project.org/web/packages/index.html) (and by October 2024, 21,500 packages) were available on common R repositories.^[You'll see how to download these packages via `install.packages("dplyr")` and load them into your current R working environment via `library("dplyr")`, for example, in Chapter \@ref(rmdanal).]
 
 Another great development is the graphical user interface called RStudio and a package developed by RStudio, Inc. called `rmarkdown`. We will discuss `rmarkdown` (also referred to as R Markdown) in a Chapter \@ref(rmarkdown), and will now focus on discussing RStudio.
 
@@ -28,7 +28,7 @@ Instructions for downloading and installing R and RStudio on Windows and Mac mac
 
 **Note for advanced users**:  You can also install your very own RStudio Server for around $5 per month on Digital Ocean. Instructions to do so can be found from Dean Attali [here](http://deanattali.com/2015/05/09/setup-rstudio-shiny-server-digital-ocean/) and on the Digital Ocean site [here](https://www.digitalocean.com/community/tutorials/how-to-set-up-rstudio-on-an-ubuntu-cloud-server).
 
-After you complete a few months of work with the RStudio Server, it is recommended that you download RStudio Desktop to your computer. The instructions to do so are below.
+Working with RStudio Server allows you to become familiar with working in RStudio without needing to navigate any issues associated with installing or running the software locally. Once you are comfortable with RStudio, it is recommended that you download RStudio Desktop to your computer, since this will give you more flexibility and independence. The instructions to do so are below.
 
 ### Installing R and RStudio Desktop
 
@@ -99,7 +99,7 @@ Initially, you may be a little overwhelmed by all the different panes and tabs t
 
 ### Code Editor / View Window
 
-The pane in which you will likely spend a majority of your time is the pane on the top left. When you first login, this pane isn't there, but it appeared when we made the **first_rmarkdown.Rmd**. This pane serves as a place to view the contents of files and objects in R. In the screencast below, you can see that we can change the text in this file and then save the file.
+The pane in which you will likely spend a majority of your time is the pane on the top left. When you first login, this pane isn't there, but it appeared when we made the **first_rmarkdown.Rmd**. This pane serves as a place to view the contents of files and objects (for example, data) in R. In the screencast below, you can see that we can change the text in this file and then save the file.
 
 Note that, when you edit the file, the tab with the file name changes from black to <font color="red">red</font>, and an asterisk appears after the file name, indicating that the latest changes have not been saved. You should get in the habit of saving files frequently. You can have multiple tabs open and view different files in this pane. In Chapter \@ref(rmarkdown), you'll also see that you can `View` datasets in this pane.
 
@@ -112,7 +112,7 @@ It may not be clear what these additions are really doing just yet. That's ok! W
 
 ### Environment / History
 
-By default, the top right pane includes an **Environment** tab and a **History** tab. To get a sense of what these tabs provide, we'll need to also use the bottom left pane and the **Console** tab. I'll show you how to create multiple objects in R using the **Console**. Initially, you will see that the **Environment** tab tells us that the "Environment is empty." This means there are no objects (e.g., data) yet. If you click on the **History** tab, you should also see a blank screen with a few icons. We won't go over all of these buttons here, but I encourage you to hover over them and click on them to get a sense for what they do. As I enter code into the **Console**, watch to see how the **Environment** and **History** tabs change.
+By default, the top right pane includes an **Environment** tab and a **History** tab. To get a sense of what these tabs provide, we'll need to also use the bottom left pane and the **Console** tab. I'll show you how to create multiple objects in R using the **Console**. Initially, you will see that the **Environment** tab tells us that the "Environment is empty." This means there are no objects yet. If you click on the **History** tab, you should also see a blank screen with a few icons. We won't go over all of these buttons here, but I encourage you to hover over them and click on them to get a sense for what they do. As I enter code into the **Console**, watch to see how the **Environment** and **History** tabs change.
 
 ```{r envhistory, echo=FALSE, fig.cap="Observe the Environment and History tabs based on Console input", results="asis"}
 #gif_link("gifs/env_history.gif")
@@ -148,7 +148,7 @@ Another important property of R is that is case-sensitive. You'll see what this 
 embed_my_youtube("GcWKm13Q1Uc")
 ```
 
-You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of lines of code with common syntax errors. These checks won't catch all errors, but this can be helpful. Note also that `Name`, `name`, and `nAme` refer to three different values.
+You may have noticed that R will do some checks and alert you to potential errors by placing a <font color="red">red</font> X to the left of lines of code with common syntax errors. These checks won't catch all errors, but this can be helpful. Note also that R is case-sensitive, so that `Name`, `name`, and `nAme` refer to three different values.
 
 Another thing to notice is that you can store numbers into an object with a given name like we did earlier with `num1`. If we'd like to store a character string such as "Chester", we can provide the name of the object on the left-hand-side of `<-` and the string in quotation marks on the right-hand-side of `<-`. There are more complex object types that you will see in Chapter \@ref(rmdanal), but it is always important to think about the difference between a number and a character in R.
 

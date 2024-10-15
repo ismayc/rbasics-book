@@ -258,7 +258,7 @@ friend_names[-c(2, 4)]
 
 ### Using `[ , ]` with a data frame
 
-You have now seen how to select specific elements of a vector or a variable, but what if we want a subset of the values in the full data frame across both rows (observations) and columns (variables). We can use `[ , ]` where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let's select rows 40 to 50 and columns 1, 2, and 4 from `periodic_table`:
+You have now seen how to select specific elements of a vector or a variable, but what if we want a subset of the values in the full data frame across both rows (observations) and columns (variables). We can use `[ , ]` where the spot before the comma corresponds to rows and the spot after the comma corresponds to columns. Let's select rows 41 to 50 and columns 1, 2, and 4 from `periodic_table`:
 
 ```{r}
 periodic_table[41:50, c(1, 2, 4)]
