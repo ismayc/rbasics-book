@@ -17,7 +17,7 @@ jobs:
       EMAIL: ${{ secrets.EMAIL }}
     steps:
       # Checkout repository
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # Setup Pandoc
       - uses: r-lib/actions/setup-pandoc@v2
@@ -29,7 +29,7 @@ jobs:
 
       # Restore cached package and TinyTeX state files
       - name: Cache package state
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             installed_packages.rds
@@ -73,7 +73,7 @@ jobs:
 
       # Cache TinyTeX installation
       - name: Cache TinyTeX installation
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ~/.TinyTeX
           key: tinytex-${{ runner.os }}-${{ hashFiles('**/*.tex') }}
@@ -100,7 +100,7 @@ jobs:
 
       # Cache bookdown results
       - name: Cache bookdown results
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: _bookdown_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}
@@ -139,7 +139,7 @@ jobs:
       # Deploy HTML to GitHub Pages if on main or master branch
       - name: Deploy to GitHub pages from main/master 🚀
         if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
-        uses: JamesIves/github-pages-deploy-action@v4.6.4
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages
           folder: docs
