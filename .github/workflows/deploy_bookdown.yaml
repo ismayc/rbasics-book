@@ -41,25 +41,6 @@ jobs:
       - name: Install ImageMagick dependencies
         run: sudo apt-get update && sudo apt-get install -y libmagick++-dev
 
-      # Check and install R packages if needed
-      - name: Check and Install R Packages
-        run: |
-          R -e '
-            if (file.exists("installed_packages.rds")) {
-              saved_pkgs <- readRDS("installed_packages.rds");
-              current_pkgs <- installed.packages();
-              if (!identical(saved_pkgs[,1], current_pkgs[,1])) {
-                missing_pkgs <- setdiff(rownames(saved_pkgs), rownames(current_pkgs));
-                if (length(missing_pkgs) > 0) install.packages(missing_pkgs);
-              } else {
-                cat("No package changes detected.\n");
-              }
-            } else {
-              install.packages(c("tidyverse", "bookdown", "tufte"));
-            }'
-        env:
-          GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
-
       # Install and cache TinyTeX only if needed
       - name: Install TinyTeX if Needed
         run: |
