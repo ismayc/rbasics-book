@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 R and RStudio Basics | Getting Used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 R and RStudio Basics | Getting Used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Chester Ismay and Patrick C. Kennedy" />
 
 
-<meta name="date" content="2024-10-29" />
+<meta name="date" content="2026-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,8 +56,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -129,7 +130,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -293,12 +293,28 @@ div.csl-indent {
 <p>Working with RStudio Server allows you to become familiar with working in RStudio without needing to navigate any issues associated with installing or running the software locally. Once you are comfortable with RStudio, it is recommended that you download RStudio Desktop to your computer, since this will give you more flexibility and independence. The instructions to do so are below.</p>
 <div id="installing-r-and-rstudio-desktop" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Installing R and RStudio Desktop<a href="3-rstudiobasics.html#installing-r-and-rstudio-desktop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>It is worth noting that you can’t just install RStudio Desktop without first installing R, as RStudio needs to have R installed to run. Step-by-step guides to installing R and RStudio Desktop with screenshots are available</p>
-<ul>
-<li><a href="http://www.reed.edu/data-at-reed/software/R/r_studio.html">here</a> for the Mac, and</li>
-<li><a href="http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html">here</a> for a PC.</li>
-</ul>
-<p>Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX), you can skip some of the later steps of the installation. It is recommended that you select <strong>HTML</strong> as the Default Output Format for R Markdown. You’ll see more about this in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>.</p>
+<p>It is worth noting that you can’t just install RStudio Desktop without first installing R, as RStudio needs to have R installed to run. The steps below walk through both installations, plus two optional additions: a LaTeX distribution if you want to produce PDF documents, and the R packages used later in this book. These steps are adapted from the step-by-step guides that Reed College’s Data @ Reed group published at <code>reed.edu/data-at-reed/software/R/</code>, which are no longer online.</p>
+<p><strong>Step 1: Install R</strong></p>
+<p>Start at <a href="https://cran.r-project.org">CRAN</a>, the Comprehensive R Archive Network, and download the installer for your operating system.</p>
+<p>On a Mac, open <a href="https://cran.r-project.org/bin/macosx/">R for macOS</a> and choose the build that matches your hardware. Macs with Apple silicon (M1 and later) need the <code>arm64</code> package, while older Intel Macs need the <code>x86_64</code> package. If you aren’t sure which you have, select About This Mac from the Apple menu and read the chip or processor line. Double click the downloaded PKG file and follow the installer.</p>
+<p>On a PC, open <a href="https://cran.r-project.org/bin/windows/base/">R for Windows</a> and click the “Download R for Windows” link near the top of the page. Double click the downloaded EXE file and follow the installer.</p>
+<p>You do not need to open R after the installation finishes. RStudio will start R for you.</p>
+<p><strong>Step 2: Install RStudio Desktop</strong></p>
+<p>Go to the <a href="https://posit.co/downloads/">Posit downloads page</a> and choose the free RStudio Desktop installer listed for your operating system. RStudio is now developed by a company called Posit, which was known as RStudio, Inc. until 2022, so you will run across both names online (including in a few links later in this book).</p>
+<p>On a Mac, open the downloaded DMG file and drag the RStudio icon into your Applications folder. On a PC, double click the downloaded EXE file and follow the installer.</p>
+<p>Open RStudio once the installation completes. It locates your R installation on its own, and it prints the version of R it found in the Console pane at startup.</p>
+<p><strong>Step 3: Install LaTeX, but only if you want PDF output</strong></p>
+<p>Knitting an R Markdown file into a PDF requires a LaTeX distribution. The full distributions (MacTeX on a Mac, MiKTeX on a PC) are multiple gigabyte downloads, so unless you already use LaTeX for other work, install the much smaller TinyTeX instead. Type these two lines into the RStudio Console, pressing Enter after each:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="3-rstudiobasics.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tinytex&quot;</span>)</span>
+<span id="cb1-2"><a href="3-rstudiobasics.html#cb1-2" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<p>The download takes a few minutes and needs no further configuration. If you don’t plan to create PDFs, skip this step entirely and select <strong>HTML</strong> as the Default Output Format for R Markdown. You’ll see more about output formats in Chapter <a href="4-rmarkdown.html#rmarkdown">4</a>.</p>
+<p><strong>Step 4: Install a few useful packages</strong></p>
+<p>The examples in this book use a handful of add-on packages. Run this line in the Console to install them:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="3-rstudiobasics.html#cb2-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="st">&quot;ggplot2&quot;</span>, <span class="st">&quot;tidyr&quot;</span>, <span class="st">&quot;knitr&quot;</span>, <span class="st">&quot;rmarkdown&quot;</span>))</span></code></pre></div>
+<p>You’ll see a stream of text in the Console as each package downloads and installs, which is expected and does not signal a problem unless it ends in an error. You only need to install a package once on a given machine, but you’ll load it in each new R session with <code>library</code>, as described in Chapter <a href="5-rmdanal.html#rmdanal">5</a>.</p>
+<p><strong>Step 5: Test the installation</strong></p>
+<p>To check that the pieces work together, create a small R Markdown document. Select File &gt; New File &gt; R Markdown from the RStudio menu. In the dialog that appears, choose Document on the left, enter a title, and pick the Default Output Format. Choose PDF if you completed Step 3 and want to confirm your LaTeX installation, and otherwise choose HTML.</p>
+<p>RStudio creates a file containing sample text and code. Click the Knit button near the top of the editor pane and save the file when prompted. RStudio then produces a finished document in the same folder as the Rmd file. If that document opens, then R, RStudio, and (if you chose PDF) LaTeX are all installed correctly. Chapter <a href="4-rmarkdown.html#rmarkdown">4</a> explains what each of the pieces in that file does.</p>
 </div>
 </div>
 <div id="working-in-rstudio-server" class="section level2 hasAnchor" number="3.3">
@@ -459,43 +475,43 @@ Figure 3.3: Initial page for RStudio Desktop
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/ismayc/rbasics-book/edit/master/03-rstudio_basics.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["rbasics.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"scroll_highlight": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ismayc/rbasics-book/edit/master/03-rstudio_basics.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["rbasics.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "scroll_highlight": true
+  }
 });
 });
 </script>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 R Markdown | Getting Used to R, RStudio, and R Markdown</title>
   <meta name="description" content="An introduction into using R, RStudio, and R Markdown for new users" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 R Markdown | Getting Used to R, RStudio, and R Markdown" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Chester Ismay and Patrick C. Kennedy" />
 
 
-<meta name="date" content="2024-10-29" />
+<meta name="date" content="2026-08-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,8 +56,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -129,7 +130,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -300,11 +300,11 @@ div.csl-indent {
 standard for all programming languages.</p>
 </blockquote>
 <p>Essentially, the YAML header stores the metadata needed for the document. You can see an example of a YAML header from our <strong>first_rmarkdown.Rmd</strong> file:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb1-1"><a href="4-rmarkdown.html#cb1-1" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="4-rmarkdown.html#cb1-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;First RMarkdown&quot;</span></span>
-<span id="cb1-3"><a href="4-rmarkdown.html#cb1-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chester Ismay&quot;</span></span>
-<span id="cb1-4"><a href="4-rmarkdown.html#cb1-4" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
-<span id="cb1-5"><a href="4-rmarkdown.html#cb1-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="4-rmarkdown.html#cb3-1" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="4-rmarkdown.html#cb3-2" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;First RMarkdown&quot;</span></span>
+<span id="cb3-3"><a href="4-rmarkdown.html#cb3-3" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;Chester Ismay&quot;</span></span>
+<span id="cb3-4"><a href="4-rmarkdown.html#cb3-4" tabindex="-1"></a><span class="fu">output</span><span class="kw">:</span><span class="at"> html_document</span></span>
+<span id="cb3-5"><a href="4-rmarkdown.html#cb3-5" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div>
 <p>There are many other fields that can be customized in the YAML header. The important thing to notice here are the three hyphens that begin and end the YAML header. Indentation also has meaning in YAML, so take care when aligning text.</p>
 </div>
 <div id="headers" class="section level3 hasAnchor" number="4.2.2">
@@ -346,19 +346,19 @@ standard for all programming languages.</p>
 </div>
 <p>Note that only numbers are needed as we saw by numbering “Warm up food” with a “1.” We can also combine unordered and ordered lists by indenting the text two spaces.</p>
 <p>In many of the examples that follow, you will see the actual text you’d type into your R Markdown document highlighted with a gray background and also the results of that text immediately below it.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="4-rmarkdown.html#cb2-1" tabindex="-1"></a><span class="ss">1. </span>Wake up</span>
-<span id="cb2-2"><a href="4-rmarkdown.html#cb2-2" tabindex="-1"></a><span class="ss">  - </span>Get out of bed</span>
-<span id="cb2-3"><a href="4-rmarkdown.html#cb2-3" tabindex="-1"></a><span class="ss">1. </span>Warm up food</span>
-<span id="cb2-4"><a href="4-rmarkdown.html#cb2-4" tabindex="-1"></a><span class="ss">  - </span>Open kitchen door</span>
-<span id="cb2-5"><a href="4-rmarkdown.html#cb2-5" tabindex="-1"></a><span class="ss">  - </span>Get plate out of cupboard</span>
-<span id="cb2-6"><a href="4-rmarkdown.html#cb2-6" tabindex="-1"></a><span class="ss">2. </span>Make coffee</span>
-<span id="cb2-7"><a href="4-rmarkdown.html#cb2-7" tabindex="-1"></a>  i. Warm up water</span>
-<span id="cb2-8"><a href="4-rmarkdown.html#cb2-8" tabindex="-1"></a>  ii. Grind beans</span>
-<span id="cb2-9"><a href="4-rmarkdown.html#cb2-9" tabindex="-1"></a><span class="ss">3. </span>Make breakfast</span>
-<span id="cb2-10"><a href="4-rmarkdown.html#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="4-rmarkdown.html#cb2-11" tabindex="-1"></a>  We can have a paragraph (or two) here describing how we could go about making</span>
-<span id="cb2-12"><a href="4-rmarkdown.html#cb2-12" tabindex="-1"></a>  breakfast. If we indent the paragraph a few spaces and create a newline, it</span>
-<span id="cb2-13"><a href="4-rmarkdown.html#cb2-13" tabindex="-1"></a>  will indent below the item.</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="4-rmarkdown.html#cb4-1" tabindex="-1"></a><span class="ss">1. </span>Wake up</span>
+<span id="cb4-2"><a href="4-rmarkdown.html#cb4-2" tabindex="-1"></a><span class="ss">  - </span>Get out of bed</span>
+<span id="cb4-3"><a href="4-rmarkdown.html#cb4-3" tabindex="-1"></a><span class="ss">1. </span>Warm up food</span>
+<span id="cb4-4"><a href="4-rmarkdown.html#cb4-4" tabindex="-1"></a><span class="ss">  - </span>Open kitchen door</span>
+<span id="cb4-5"><a href="4-rmarkdown.html#cb4-5" tabindex="-1"></a><span class="ss">  - </span>Get plate out of cupboard</span>
+<span id="cb4-6"><a href="4-rmarkdown.html#cb4-6" tabindex="-1"></a><span class="ss">2. </span>Make coffee</span>
+<span id="cb4-7"><a href="4-rmarkdown.html#cb4-7" tabindex="-1"></a>  i. Warm up water</span>
+<span id="cb4-8"><a href="4-rmarkdown.html#cb4-8" tabindex="-1"></a>  ii. Grind beans</span>
+<span id="cb4-9"><a href="4-rmarkdown.html#cb4-9" tabindex="-1"></a><span class="ss">3. </span>Make breakfast</span>
+<span id="cb4-10"><a href="4-rmarkdown.html#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="4-rmarkdown.html#cb4-11" tabindex="-1"></a>  We can have a paragraph (or two) here describing how we could go about making</span>
+<span id="cb4-12"><a href="4-rmarkdown.html#cb4-12" tabindex="-1"></a>  breakfast. If we indent the paragraph a few spaces and create a newline, it</span>
+<span id="cb4-13"><a href="4-rmarkdown.html#cb4-13" tabindex="-1"></a>  will indent below the item.</span></code></pre></div>
 <ol style="list-style-type: decimal">
 <li><p>Wake up</p>
 <ul>
@@ -382,42 +382,42 @@ standard for all programming languages.</p>
 <h3><span class="header-section-number">4.2.6</span> Miscellaneous Markdown<a href="4-rmarkdown.html#miscellaneous-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Line breaks / white spacing</strong></p>
 <p>Line breaks in combination with white space are incredibly important in Markdown, as they frequently denote the start of a new paragraph.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb3-1"><a href="4-rmarkdown.html#cb3-1" tabindex="-1"></a>Here is an example of text with only a line break.</span>
-<span id="cb3-2"><a href="4-rmarkdown.html#cb3-2" tabindex="-1"></a>You may expect this line to appear in a new paragraph but it doesn&#39;t.</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="4-rmarkdown.html#cb5-1" tabindex="-1"></a>Here is an example of text with only a line break.</span>
+<span id="cb5-2"><a href="4-rmarkdown.html#cb5-2" tabindex="-1"></a>You may expect this line to appear in a new paragraph but it doesn&#39;t.</span></code></pre></div>
 <p>Here is an example of text with only a line break.
 You may expect this line to appear in a new paragraph but it doesn’t.</p>
 <p>In order to start a new paragraph, you need to add white space between the two paragraphs:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="4-rmarkdown.html#cb4-1" tabindex="-1"></a>Here is an example of text with a line break and white space.</span>
-<span id="cb4-2"><a href="4-rmarkdown.html#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="4-rmarkdown.html#cb4-3" tabindex="-1"></a>You may expect this line to appear in a new paragraph and it does.</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="4-rmarkdown.html#cb6-1" tabindex="-1"></a>Here is an example of text with a line break and white space.</span>
+<span id="cb6-2"><a href="4-rmarkdown.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="4-rmarkdown.html#cb6-3" tabindex="-1"></a>You may expect this line to appear in a new paragraph and it does.</span></code></pre></div>
 <p>Here is an example of text with a line break and white space.</p>
 <p>You may expect this line to appear in a new paragraph and it does.</p>
 <p><strong>Horizontal rules</strong></p>
 <p>Another useful way to divide up different parts of your document is by including horizontal lines, which can be added by placing three asterisks (or three hyphens) next to each other:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="4-rmarkdown.html#cb5-1" tabindex="-1"></a>***</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="4-rmarkdown.html#cb7-1" tabindex="-1"></a>***</span></code></pre></div>
 <hr />
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="4-rmarkdown.html#cb6-1" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="4-rmarkdown.html#cb8-1" tabindex="-1"></a><span class="co">---</span></span></code></pre></div>
 <hr />
 <p><strong>Blockquotes</strong></p>
 <p>If you’d like to quote someone or produce an indented text block, you can do so by adding a <code>&gt;</code> before the passage:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="4-rmarkdown.html#cb7-1" tabindex="-1"></a><span class="at">&gt; Reproducible research is the idea that data analyses, and more generally,</span></span>
-<span id="cb7-2"><a href="4-rmarkdown.html#cb7-2" tabindex="-1"></a><span class="at">scientific claims, are published with their data and software code so that</span></span>
-<span id="cb7-3"><a href="4-rmarkdown.html#cb7-3" tabindex="-1"></a><span class="at">others may verify the findings and build upon them. - Roger Peng</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="4-rmarkdown.html#cb9-1" tabindex="-1"></a><span class="at">&gt; Reproducible research is the idea that data analyses, and more generally,</span></span>
+<span id="cb9-2"><a href="4-rmarkdown.html#cb9-2" tabindex="-1"></a><span class="at">scientific claims, are published with their data and software code so that</span></span>
+<span id="cb9-3"><a href="4-rmarkdown.html#cb9-3" tabindex="-1"></a><span class="at">others may verify the findings and build upon them. - Roger Peng</span></span></code></pre></div>
 <blockquote>
 <p>Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. - Roger Peng</p>
 </blockquote>
 <p><strong>Commenting Text</strong></p>
 <p>There are times where you might want to comment out text inside an R Markdown document. Say you wrote something that you don’t really want in the resulting knitted document, but you aren’t quite sure if you should delete it completely. To create a comment, enclose the block of text in <code>&lt;!-- --&gt;</code> as seen below:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="4-rmarkdown.html#cb8-1" tabindex="-1"></a><span class="co">&lt;!--</span></span>
-<span id="cb8-2"><a href="4-rmarkdown.html#cb8-2" tabindex="-1"></a><span class="co">I&#39;d like to save this text for later and don&#39;t want to delete it yet.</span></span>
-<span id="cb8-3"><a href="4-rmarkdown.html#cb8-3" tabindex="-1"></a><span class="co">--&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb10-1"><a href="4-rmarkdown.html#cb10-1" tabindex="-1"></a><span class="co">&lt;!--</span></span>
+<span id="cb10-2"><a href="4-rmarkdown.html#cb10-2" tabindex="-1"></a><span class="co">I&#39;d like to save this text for later and don&#39;t want to delete it yet.</span></span>
+<span id="cb10-3"><a href="4-rmarkdown.html#cb10-3" tabindex="-1"></a><span class="co">--&gt;</span></span></code></pre></div>
 <!--
 I'd like to save this text for later and don't want to delete it yet.
 -->
 <p>You won’t see the commented out results here in the book.</p>
 <p><strong>Equations</strong></p>
 <p>If you’d like nice mathematical formulas in your document, you can add them between two dollar signs:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb9-1"><a href="4-rmarkdown.html#cb9-1" tabindex="-1"></a>$y = mx + b$</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb11-1"><a href="4-rmarkdown.html#cb11-1" tabindex="-1"></a>$y = mx + b$</span></code></pre></div>
 <p><span class="math inline">\(y = mx + b\)</span></p>
 </div>
 <div id="r-chunks" class="section level3 hasAnchor" number="4.2.7">
@@ -499,8 +499,8 @@ Figure 4.1: RStudio Cheatsheets Screenshot
 <div id="spell-check" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Spell-check<a href="4-rmarkdown.html#spell-check" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Near the top of your R Markdown editor window sits one of the more useful tools for writing documents: the spell-check button. It is the green check-mark with “ABC” above it:</p>
-<p><img src="images/spellcheck.png" width="\textwidth" style="display: block; margin: auto;" /></p>
-<p><img src="images/spellcheck.png" width="0.3\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="images/spellcheck.png" alt="" width="\textwidth" style="display: block; margin: auto;" /></p>
+<p><img src="images/spellcheck.png" alt="" width="0.3\textwidth" style="display: block; margin: auto;" /></p>
 <p>Before you submit a document or share it with someone else, you should spell check your document. You may need to add some R commands to the dictionary or ignore them since those may not be recognized as words, but it is easy to misspell words as we type and this feature can really help.</p>
 <!--
 **Exercises**
@@ -537,43 +537,43 @@ Figure 4.1: RStudio Cheatsheets Screenshot
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/ismayc/rbasics-book/edit/master/04-rmarkdown.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["rbasics.pdf"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "section",
-"scroll_highlight": true
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/ismayc/rbasics-book/edit/master/04-rmarkdown.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["rbasics.pdf"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section",
+    "scroll_highlight": true
+  }
 });
 });
 </script>
