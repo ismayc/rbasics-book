@@ -32,12 +32,52 @@ Working with RStudio Server allows you to become familiar with working in RStudi
 
 ### Installing R and RStudio Desktop
 
-It is worth noting that you can't just install RStudio Desktop without first installing R, as RStudio needs to have R installed to run. Step-by-step guides to installing R and RStudio Desktop with screenshots are available
+It is worth noting that you can't just install RStudio Desktop without first installing R, as RStudio needs to have R installed to run. The steps below walk through both installations, plus two optional additions: a LaTeX distribution if you want to produce PDF documents, and the R packages used later in this book. These steps are adapted from the step-by-step guides that Reed College's Data @ Reed group published at `reed.edu/data-at-reed/software/R/`, which are no longer online.
 
-- [here](http://www.reed.edu/data-at-reed/software/R/r_studio.html) for the Mac, and
-- [here](http://www.reed.edu/data-at-reed/software/R/r_studio_pc.html) for a PC.
+`r noindentbold("Step 1: Install R")`
 
-Unless you plan to create PDF documents (which requires a multiple gigabyte download of LaTeX), you can skip some of the later steps of the installation. It is recommended that you select **HTML** as the Default Output Format for R Markdown. You'll see more about this in Chapter \@ref(rmarkdown).
+Start at [CRAN](https://cran.r-project.org), the Comprehensive R Archive Network, and download the installer for your operating system.
+
+On a Mac, open [R for macOS](https://cran.r-project.org/bin/macosx/) and choose the build that matches your hardware. Macs with Apple silicon (M1 and later) need the `arm64` package, while older Intel Macs need the `x86_64` package. If you aren't sure which you have, select About This Mac from the Apple menu and read the chip or processor line. Double click the downloaded PKG file and follow the installer.
+
+On a PC, open [R for Windows](https://cran.r-project.org/bin/windows/base/) and click the "Download R for Windows" link near the top of the page. Double click the downloaded EXE file and follow the installer.
+
+You do not need to open R after the installation finishes. RStudio will start R for you.
+
+`r noindentbold("Step 2: Install RStudio Desktop")`
+
+Go to the [Posit downloads page](https://posit.co/downloads/) and choose the free RStudio Desktop installer listed for your operating system. RStudio is now developed by a company called Posit, which was known as RStudio, Inc. until 2022, so you will run across both names online (including in a few links later in this book).
+
+On a Mac, open the downloaded DMG file and drag the RStudio icon into your Applications folder. On a PC, double click the downloaded EXE file and follow the installer.
+
+Open RStudio once the installation completes. It locates your R installation on its own, and it prints the version of R it found in the Console pane at startup.
+
+`r noindentbold("Step 3: Install LaTeX, but only if you want PDF output")`
+
+Knitting an R Markdown file into a PDF requires a LaTeX distribution. The full distributions (MacTeX on a Mac, MiKTeX on a PC) are multiple gigabyte downloads, so unless you already use LaTeX for other work, install the much smaller TinyTeX instead. Type these two lines into the RStudio Console, pressing Enter after each:
+
+```{r eval=FALSE}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+The download takes a few minutes and needs no further configuration. If you don't plan to create PDFs, skip this step entirely and select **HTML** as the Default Output Format for R Markdown. You'll see more about output formats in Chapter \@ref(rmarkdown).
+
+`r noindentbold("Step 4: Install a few useful packages")`
+
+The examples in this book use a handful of add-on packages. Run this line in the Console to install them:
+
+```{r eval=FALSE}
+install.packages(c("dplyr", "ggplot2", "tidyr", "knitr", "rmarkdown"))
+```
+
+You'll see a stream of text in the Console as each package downloads and installs, which is expected and does not signal a problem unless it ends in an error. You only need to install a package once on a given machine, but you'll load it in each new R session with `library`, as described in Chapter \@ref(rmdanal).
+
+`r noindentbold("Step 5: Test the installation")`
+
+To check that the pieces work together, create a small R Markdown document. Select File > New File > R Markdown from the RStudio menu. In the dialog that appears, choose Document on the left, enter a title, and pick the Default Output Format. Choose PDF if you completed Step 3 and want to confirm your LaTeX installation, and otherwise choose HTML.
+
+RStudio creates a file containing sample text and code. Click the Knit button near the top of the editor pane and save the file when prompted. RStudio then produces a finished document in the same folder as the Rmd file. If that document opens, then R, RStudio, and (if you chose PDF) LaTeX are all installed correctly. Chapter \@ref(rmarkdown) explains what each of the pieces in that file does.
 
 ## Working in RStudio Server
 
