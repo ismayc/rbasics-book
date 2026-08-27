@@ -27,16 +27,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      # Restore cached package and TinyTeX state files
-      - name: Cache package state
-        uses: actions/cache@v5
-        with:
-          path: |
-            installed_packages.rds
-            tinytex_packages.rds
-          key: package-state-${{ runner.os }}-${{ hashFiles('**/renv.lock') }}
-          restore-keys: package-state-${{ runner.os }}-
-
       # Install ImageMagick dependencies for magick package
       - name: Install ImageMagick dependencies
         run: sudo apt-get update && sudo apt-get install -y libmagick++-dev
@@ -123,12 +113,6 @@ jobs:
         if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') || github.event_name == 'pull_request'
         run: |
           R -e 'bookdown::render_book("index.Rmd", "bookdown::gitbook")'
-
-      # Save R package state and TinyTeX installation to RDS files
-      - name: Save R Package and TinyTeX State
-        run: |
-          R -e 'saveRDS(installed.packages(), file = "installed_packages.rds")';
-          R -e 'tinytex_packages <- tinytex::tl_pkgs(); saveRDS(tinytex_packages, file = "tinytex_packages.rds")'
 
       # Deploy HTML to GitHub Pages if on main or master branch
       - name: Deploy to GitHub pages from main/master 🚀
