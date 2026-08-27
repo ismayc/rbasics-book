@@ -91,6 +91,19 @@ jobs:
           fi
         shell: bash
 
+      # renv::restore() uses the repositories recorded in renv.lock (CRAN),
+      # which serves source-only tarballs on Linux, so every compiled package
+      # is rebuilt from scratch. Point renv at the binary repository that
+      # setup-r already configured for this runner.
+      - name: Use binary packages for renv restore
+        run: |
+          repo="$(Rscript -e 'cat(getOption("repos")[["CRAN"]])')"
+          case "$repo" in
+            http*) echo "RENV_CONFIG_REPOS_OVERRIDE=$repo" >> "$GITHUB_ENV" ;;
+            *) echo "No usable CRAN repo configured ('$repo'); leaving renv.lock repos in place." ;;
+          esac
+        shell: bash
+
       # Setup renv if needed
       - uses: r-lib/actions/setup-renv@v2
 
